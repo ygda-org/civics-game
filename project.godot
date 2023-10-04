@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="Civics-game"
+run/main_scene="res://Areas/MainWorld.tscn"
 config/icon="res://icon.png"
 
 [display]
