@@ -12,5 +12,6 @@ func _physics_process(delta):
 	if target:
 		velocity = (target - position).normalized() * speed
 
-		if position.distance_to(target) > 5:
-			velocity = move_and_slide(velocity)
+		velocity = move_and_slide(velocity)
+		if position.distance_to(target) < 5:
+			target = null
