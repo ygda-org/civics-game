@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Areas/Park/Park.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Areas/Park/Park_Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Areas/Park/cans/Trashcan.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Areas/Park/cans/RecyclingCan.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2842.5, 2132.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 3.5, 745 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 140.375, 31.75 )
+
+[node name="Park" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 790, 438 )
+
+[node name="Return" type="Area2D" parent="."]
+position = Vector2( 246, 8 )
+scale = Vector2( 0.025, 0.025 )
+
+[node name="Icon" type="Sprite" parent="Return"]
+position = Vector2( 22000, 21340 )
+scale = Vector2( 90, 66.875 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Return"]
+position = Vector2( 21997.5, 21307.5 )
+shape = SubResource( 1 )
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1195, -131 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 512, -729 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 457, 607 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2( -3.5, 0 )
+shape = SubResource( 2 )
+
+[node name="StartTrash" type="Area2D" parent="."]
+position = Vector2( 183, 569 )
+
+[node name="Sprite" type="Sprite" parent="StartTrash"]
+position = Vector2( 107.5, 0 )
+scale = Vector2( 4.35938, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartTrash"]
+position = Vector2( 108.625, 0 )
+shape = SubResource( 3 )
+
+[node name="TrashGame" type="Node" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="TrashGame"]
+
+[node name="Time" type="RichTextLabel" parent="TrashGame/UI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 226.0
+margin_top = 8.0
+margin_right = 476.0
+margin_bottom = 108.0
+text = "Time Left: "
+
+[node name="Score" type="RichTextLabel" parent="TrashGame/UI"]
+margin_right = 211.0
+margin_bottom = 40.0
+text = "Score:"
+
+[node name="Timer" type="Timer" parent="TrashGame"]
+wait_time = 30.0
+
+[node name="RecyclingCan" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1022, 276 )
+
+[node name="Trashcan" parent="." instance=ExtResource( 4 )]
+position = Vector2( 848, 289 )
+
+[connection signal="body_entered" from="Return" to="." method="_on_Return_body_entered"]
+[connection signal="body_entered" from="StartTrash" to="." method="_on_StartTrash_body_entered"]
