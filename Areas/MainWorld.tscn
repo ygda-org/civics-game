@@ -69,7 +69,6 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Park"]
 position = Vector2( 19397.5, -11852.5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 6 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
