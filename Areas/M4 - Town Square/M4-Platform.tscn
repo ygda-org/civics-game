@@ -21,9 +21,3 @@ texture = ExtResource( 1 )
 position = Vector2( -0.00539875, 0.00090993 )
 rotation = -0.00179985
 shape = SubResource( 1 )
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 0, 2.001 )
-scale = Vector2( 1, 1 )
-enabled = true
-cast_to = Vector2( 0, -27 )
