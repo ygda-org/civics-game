@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Areas/M4 - Town Square/M4-Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Areas/M4 - Town Square/M4-Platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Areas/M4 - Town Square/M4-PlatformOneWay.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Areas/M4 - Town Square/M4-Mayor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Areas/M4 - Town Square/M4-Enemy.tscn" type="PackedScene" id=5]
 
 [node name="M4-Stage" type="Node2D"]
 
 [node name="M4-Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 122, 518 )
+position = Vector2( 266, 172 )
 
 [node name="Platforms" type="Node2D" parent="."]
 
@@ -77,3 +79,19 @@ scale = Vector2( 1.6, 0.44 )
 [node name="M4-PlatformOneWay11" parent="Platforms" instance=ExtResource( 3 )]
 position = Vector2( 274, 79 )
 scale = Vector2( 4.44, 0.44 )
+
+[node name="M4-Enemy" parent="." instance=ExtResource( 5 )]
+position = Vector2( 419, 518 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="M4-Enemy2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 663, 432 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="M4-Enemy3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 264, 251 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="M4-Mayor" parent="." instance=ExtResource( 4 )]
+position = Vector2( 271, 52 )
+scale = Vector2( 0.5, 0.5 )

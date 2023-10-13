@@ -33,7 +33,7 @@ func _physics_process(_delta):
 	if get_slide_count() > 0:
 		for i in get_slide_count():
 			if "M4-Player" in get_slide_collision(i).collider.name:
-				#get_slide_collision(i).collider._dead()
+				get_slide_collision(i).collider._dead()
 				direction *= -1
 	"""#disc collide
 	if get_slide_count() > 0:

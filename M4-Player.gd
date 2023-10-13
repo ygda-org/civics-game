@@ -5,7 +5,7 @@ var velocity = Vector2()
 var speed = 100
 var gravity = 10
 var floo = Vector2(0, -1)
-var jump = -215
+var jump = -230
 var move = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,26 +30,36 @@ func _physics_process(_delta):
 		#up arrow key pressed
 		if (is_on_floor() && Input.is_action_pressed("ui_up")):
 			velocity.y += jump
-		""""
+		
 		if get_slide_count() > 0:
 			for i in get_slide_count():
-				if "Enemy" in get_slide_collision(i).collider.name:
+				if "M4-Enemy" in get_slide_collision(i).collider.name:
+					print("DIE")
 					_dead()
-		if get_position().y > 256:
+		
+		if get_position().y > 1000:
 			get_tree().reload_current_scene()
-		"""
-""""		
+			
+		if get_slide_count() > 0:
+			for i in get_slide_count():
+				if "M4-Mayor" in get_slide_collision(i).collider.name:
+					print("yay ")
+					get_tree().reload_current_scene()
+		
+		
 func _dead():
-	$Timer.start()	
-	move = false
+	#$Timer.start()	
+	
+	#move = false
+	"""
 	gravity = 0
 	speed = 0
 	jump = 0
 	velocity = Vector2(0,0)
-	$AnimatedSprite.play("dead")
+	"""
+	#$AnimatedSprite.play("dead")
 	
-	$CollisionShape2D.set_deferred("disabled", true)
+	$PlayerCollision.set_deferred("disabled", true)
 
-func _on_Timer_timeout():
-	get_tree().reload_current_scene()
-"""
+#func _on_Timer_timeout():
+	#get_tree().reload_current_scene()
