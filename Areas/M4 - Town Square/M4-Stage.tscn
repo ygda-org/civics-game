@@ -8,90 +8,95 @@
 
 [node name="M4-Stage" type="Node2D"]
 
-[node name="M4-Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 266, 172 )
-
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="M4-Platform" parent="Platforms" instance=ExtResource( 2 )]
-position = Vector2( 512, 559 )
+position = Vector2( 512, 600 )
 
 [node name="M4-Platform2" parent="Platforms" instance=ExtResource( 2 )]
-position = Vector2( 459, 471 )
+position = Vector2( 460, 480 )
 scale = Vector2( 11.72, 1 )
 
 [node name="M4-Platform3" parent="Platforms" instance=ExtResource( 2 )]
-position = Vector2( 567, 380 )
+position = Vector2( 570, 360 )
 scale = Vector2( 11.72, 1 )
 
 [node name="M4-Platform4" parent="Platforms" instance=ExtResource( 2 )]
-position = Vector2( 460, 290 )
+position = Vector2( 460, 240 )
 scale = Vector2( 11.72, 1 )
 
 [node name="M4-Platform5" parent="Platforms" instance=ExtResource( 2 )]
-position = Vector2( 569, 203 )
+position = Vector2( 570, 120 )
 scale = Vector2( 11.72, 1 )
 
 [node name="M4-Platform6" parent="Platforms" instance=ExtResource( 2 )]
-position = Vector2( 459, 117 )
+position = Vector2( 459, 0 )
 scale = Vector2( 11.72, 1 )
 
-[node name="M4-PlatformOneWay" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 891, 164 )
-scale = Vector2( 1.6, 0.44 )
-
-[node name="M4-PlatformOneWay2" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 891, 132 )
-scale = Vector2( 1.6, 0.44 )
-
-[node name="M4-PlatformOneWay3" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 138, 252 )
-scale = Vector2( 1.6, 0.44 )
-
-[node name="M4-PlatformOneWay4" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 138, 220 )
-scale = Vector2( 1.6, 0.44 )
-
 [node name="M4-PlatformOneWay5" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 891, 341 )
+position = Vector2( 929, 280 )
 scale = Vector2( 1.6, 0.44 )
 
 [node name="M4-PlatformOneWay6" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 891, 309 )
+position = Vector2( 929, 320 )
 scale = Vector2( 1.6, 0.44 )
 
 [node name="M4-PlatformOneWay9" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 891, 522 )
+position = Vector2( 928, 560 )
 scale = Vector2( 1.6, 0.44 )
 
 [node name="M4-PlatformOneWay10" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 891, 490 )
+position = Vector2( 928, 520 )
+scale = Vector2( 1.6, 0.44 )
+
+[node name="M4-PlatformOneWay14" parent="Platforms" instance=ExtResource( 3 )]
+position = Vector2( 929, 80 )
+scale = Vector2( 1.6, 0.44 )
+
+[node name="M4-PlatformOneWay15" parent="Platforms" instance=ExtResource( 3 )]
+position = Vector2( 929, 40 )
 scale = Vector2( 1.6, 0.44 )
 
 [node name="M4-PlatformOneWay7" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 138, 429 )
+position = Vector2( 96, 440 )
 scale = Vector2( 1.6, 0.44 )
 
 [node name="M4-PlatformOneWay8" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 138, 397 )
+position = Vector2( 96, 400 )
+scale = Vector2( 1.6, 0.44 )
+
+[node name="M4-PlatformOneWay12" parent="Platforms" instance=ExtResource( 3 )]
+position = Vector2( 92, 200 )
+scale = Vector2( 1.6, 0.44 )
+
+[node name="M4-PlatformOneWay13" parent="Platforms" instance=ExtResource( 3 )]
+position = Vector2( 92, 160 )
 scale = Vector2( 1.6, 0.44 )
 
 [node name="M4-PlatformOneWay11" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 274, 79 )
+position = Vector2( 274, -50 )
 scale = Vector2( 4.44, 0.44 )
 
 [node name="M4-Enemy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 419, 518 )
+position = Vector2( 718, 569 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="M4-Enemy2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 663, 432 )
+position = Vector2( 278, 443 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="M4-Enemy3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 264, 251 )
+position = Vector2( 436, 441 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="M4-Mayor" parent="." instance=ExtResource( 4 )]
-position = Vector2( 271, 52 )
+position = Vector2( 271, -80 )
 scale = Vector2( 0.5, 0.5 )
+
+[node name="M4-Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 127, 555 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 509, 273 )
+current = true
+zoom = Vector2( 1.4, 1.4 )

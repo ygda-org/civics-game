@@ -4,17 +4,15 @@
 [ext_resource path="res://M4-Player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+extents = Vector2( 31.9815, 31.9815 )
 
 [node name="M4-Player" type="KinematicBody2D"]
 scale = Vector2( 0.50058, 0.50058 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Player" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0185385, 0.0185389 )
 shape = SubResource( 1 )

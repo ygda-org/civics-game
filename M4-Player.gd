@@ -2,15 +2,14 @@ extends KinematicBody2D
 
 # Declare member variables here. Examples:
 var velocity = Vector2()
-var speed = 100
+var speed = 130
 var gravity = 10
 var floo = Vector2(0, -1)
-var jump = -230
+var jump = -250
 var move = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
-	if move:
 		velocity = move_and_slide(velocity, floo)
 		#right arrow key pressed
 		if (Input.is_action_pressed("ui_right") && move):
@@ -58,7 +57,7 @@ func _dead():
 	velocity = Vector2(0,0)
 	"""
 	#$AnimatedSprite.play("dead")
-	
+	move = false;
 	$PlayerCollision.set_deferred("disabled", true)
 
 #func _on_Timer_timeout():
