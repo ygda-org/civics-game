@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 # Declare member variables here. Examples:
 var velocity = Vector2()
-var speed = 64
+var speed = 100
 var floo = Vector2(0, -1)
 var direction = 1
 var gravity = 5
@@ -33,7 +33,9 @@ func _physics_process(_delta):
 	if get_slide_count() > 0:
 		for i in get_slide_count():
 			if "M4-Player" in get_slide_collision(i).collider.name:
-				#get_slide_collision(i).collider._dead()
+				get_slide_collision(i).collider._dead()
+				direction *= -1
+			elif "M4-Enemy" in get_slide_collision(i).collider.name:
 				direction *= -1
 	"""#disc collide
 	if get_slide_count() > 0:
