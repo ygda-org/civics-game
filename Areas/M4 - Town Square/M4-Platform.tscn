@@ -19,5 +19,4 @@ texture = ExtResource( 1 )
 
 [node name="platform-collision" type="CollisionShape2D" parent="."]
 position = Vector2( -0.00539875, 0.00090993 )
-rotation = -0.00179985
 shape = SubResource( 1 )

@@ -7,6 +7,7 @@
 [ext_resource path="res://Areas/M4 - Town Square/M4-Enemy.tscn" type="PackedScene" id=5]
 
 [node name="M4-Stage" type="Node2D"]
+position = Vector2( 0, -1 )
 
 [node name="Platforms" type="Node2D" parent="."]
 
