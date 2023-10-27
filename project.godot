@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "BlackSquare",
+"language": "GDScript",
+"path": "res://Areas/Minigame 5 - Rythym/BlackPlayer.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "WhiteSquare",
+"language": "GDScript",
+"path": "res://Areas/Minigame 5 - Rythym/WhiteSquare.gd"
+} ]
+_global_script_class_icons={
+"BlackSquare": "",
+"WhiteSquare": ""
+}
+
 [application]
 
 config/name="Civics-game"
