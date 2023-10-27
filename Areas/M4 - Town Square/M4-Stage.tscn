@@ -83,11 +83,39 @@ position = Vector2( 718, 569 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="M4-Enemy2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 278, 443 )
+position = Vector2( 304, 323 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="M4-Enemy3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 436, 441 )
+position = Vector2( 627, 444 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="M4-Enemy4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 677, 323 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="M4-Enemy5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 637, 200 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="M4-Enemy6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 308, 189 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="M4-Enemy7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 355, 82 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="M4-Enemy8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 684, 88 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="M4-Enemy9" parent="." instance=ExtResource( 5 )]
+position = Vector2( 654, -30 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="M4-Enemy10" parent="." instance=ExtResource( 5 )]
+position = Vector2( 439, -28 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="M4-Mayor" parent="." instance=ExtResource( 4 )]
