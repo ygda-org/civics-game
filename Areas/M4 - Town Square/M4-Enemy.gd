@@ -37,6 +37,7 @@ func _physics_process(_delta):
 				direction *= -1
 			elif "M4-Enemy" in get_slide_collision(i).collider.name:
 				direction *= -1
+				
 	"""#disc collide
 	if get_slide_count() > 0:
 		for i in get_slide_count():
