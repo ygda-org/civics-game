@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/grass.png" type="Texture" id=1]
+[ext_resource path="res://Areas/M3 - school/match_tile.gd" type="Script" id=2]
+
+[node name="match_tile" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 53.0
+margin_bottom = 47.0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "E"
+align = 1
+valign = 1
+
+[connection signal="mouse_entered" from="Control" to="." method="_on_Control_mouse_entered"]
+[connection signal="mouse_exited" from="Control" to="." method="_on_Control_mouse_exited"]
