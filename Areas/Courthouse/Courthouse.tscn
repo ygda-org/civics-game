@@ -1,18 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Areas/Courthouse/Courthouse.gd" type="Script" id=1]
 [ext_resource path="res://Areas/Courthouse/wall.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Areas/Courthouse/Jury-Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Areas/Courthouse/courthouse-npc.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Areas/Courthouse/document-table.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Areas/Courthouse/case-1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Temp Assets/long-table.jpg" type="Texture" id=7]
+[ext_resource path="res://Areas/Courthouse/guilty-button.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Areas/Courthouse/courthouse-npc-2.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.5, 69.5 )
 
 [node name="Courthouse" type="Node2D"]
 script = ExtResource( 1 )
-
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 54, 287 )
 
 [node name="Walls" type="Node2D" parent="."]
 position = Vector2( 50, 298 )
@@ -22,21 +24,21 @@ position = Vector2( -60, 64 )
 scale = Vector2( 1.5, 1.3 )
 
 [node name="wall3" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( -58, -263 )
+position = Vector2( 146, -175 )
 scale = Vector2( 1.5, 1.3 )
 
 [node name="wall6" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 653, -274 )
+position = Vector2( 656, -605 )
 rotation = 1.5708
-scale = Vector2( 0.7, 1.3 )
+scale = Vector2( 1.4, 1.3 )
 
 [node name="wall4" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( -62, -268 )
+position = Vector2( -63, -601 )
 rotation = 1.5708
-scale = Vector2( 0.7, 1.3 )
+scale = Vector2( 1.4, 1.3 )
 
 [node name="portal-home" type="Area2D" parent="."]
-position = Vector2( -227, 169 )
+position = Vector2( -52, 217 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -45,8 +47,36 @@ __meta__ = {
 position = Vector2( -13, 52 )
 shape = SubResource( 1 )
 
+[node name="meeting-table" type="TextureRect" parent="."]
+margin_left = 336.0
+margin_top = 206.0
+margin_right = 948.0
+margin_bottom = 614.0
+rect_scale = Vector2( 0.5, 0.3 )
+texture = ExtResource( 7 )
+
+[node name="document-table" parent="." instance=ExtResource( 5 )]
+position = Vector2( 345, 45 )
+
+[node name="guilty-button" parent="." instance=ExtResource( 8 )]
+position = Vector2( 482, 221 )
+scale = Vector2( 0.8, 0.8 )
+
 [node name="courthouse-npc" parent="." instance=ExtResource( 4 )]
 position = Vector2( 215, 266 )
 
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 78, 263 )
+
+[node name="case-1" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="courthouse-npc2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 631, 260 )
+
 [connection signal="body_entered" from="portal-home" to="." method="_on_court_to_main_area_entered"]
+[connection signal="body_entered" from="document-table" to="case-1" method="_on_documenttable_body_entered"]
+[connection signal="body_exited" from="document-table" to="case-1" method="_on_documenttable_body_exited"]
 [connection signal="body_entered" from="courthouse-npc" to="courthouse-npc" method="_on_courthousenpc_body_entered"]
+[connection signal="body_entered" from="courthouse-npc2" to="courthouse-npc2" method="_on_courthousenpc2_body_entered"]
+[connection signal="body_exited" from="courthouse-npc2" to="courthouse-npc2" method="_on_courthousenpc2_body_exited"]
