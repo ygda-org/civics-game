@@ -43,7 +43,7 @@ func _physics_process(_delta):
 			for i in get_slide_count():
 				if "M4-Mayor" in get_slide_collision(i).collider.name:
 					print("yay ")
-					get_tree().reload_current_scene()
+					get_tree().change_scene("res://Areas/MainWorld.tscn")
 		
 		
 func _dead():
