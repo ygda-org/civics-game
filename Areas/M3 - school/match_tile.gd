@@ -8,7 +8,7 @@ var clickable = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Control/Label.visible = false # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,6 +16,7 @@ func _process(delta):
 	if clickable:
 		if(Input.is_action_just_pressed("click")):
 			get_parent().receive_text($Control/Label.text)
+			$Control/Label.visible = true
 
 
 func _on_Control_mouse_entered():

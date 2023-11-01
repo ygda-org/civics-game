@@ -17,3 +17,8 @@ position = Vector2( 11, 78 )
 
 [node name="match_tile4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 97, 79 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
