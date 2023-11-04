@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/more_road_assets.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.5, 3.5 )
+
+[node name="FireHydrant" type="StaticBody2D"]
+scale = Vector2( 0.75, 0.75 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="FireHydrant" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 17.95, 33.527, 11.6312, 22.4527 )
+
+[node name="FireHydrantCollision" type="CollisionShape2D" parent="."]
+position = Vector2( -0.5, 7.5 )
+shape = SubResource( 1 )
