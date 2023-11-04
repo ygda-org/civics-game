@@ -553,6 +553,7 @@ shape = SubResource( 9 )
 [node name="Lamp" parent="OverworldElements" instance=ExtResource( 15 )]
 position = Vector2( 375, 284 )
 scale = Vector2( 2, 2 )
+z_index = 1
 
 [node name="Lamp2" parent="OverworldElements" instance=ExtResource( 12 )]
 position = Vector2( 431, 277 )
@@ -572,6 +573,8 @@ position = Vector2( 430, 389 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 448, 605 )
 scale = Vector2( 1.5, 1.5 )
+z_index = 1
+z_as_relative = true
 collision_layer = 8
 collision_mask = 7
 
