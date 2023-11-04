@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/more_benches.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14, 3 )
+
+[node name="BenchFront" type="StaticBody2D"]
+
+[node name="BenchFrontSprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 31.9476, 24.4308, 32.3818, 20.6977 )
+
+[node name="BenchFrontCollision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 5 )
+shape = SubResource( 1 )

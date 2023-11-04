@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/really_big_sidewalk.png" type="Texture" id=1]
+[ext_resource path="res://Assets/road_2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/road_part.png" type="Texture" id=3]
+
+[node name="RoadTileMap" type="Node2D"]
+position = Vector2( 5, 3 )
+
+[node name="LargeTurn" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 48, 48 )
+
+[node name="SmallTurn" type="Sprite" parent="."]
+position = Vector2( 66, -19 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="RoadSidewalk" type="Sprite" parent="."]
+position = Vector2( 147, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 47, 32, 16 )
+
+[node name="GrassSidewalk" type="Sprite" parent="."]
+position = Vector2( 86, 11 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 32, 16 )
+
+[node name="Road" type="Sprite" parent="."]
+position = Vector2( 93, 54 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 48, 42, 16, 16 )
