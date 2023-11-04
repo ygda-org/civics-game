@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/lamp_and_signs.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3, 2.25 )
+
+[node name="Lamp" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Lamp Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 13.0372, 82.891, 22.1105, 51.2032 )
+
+[node name="Lamp Collision" type="CollisionShape2D" parent="."]
+position = Vector2( -6, 19.25 )
+shape = SubResource( 1 )

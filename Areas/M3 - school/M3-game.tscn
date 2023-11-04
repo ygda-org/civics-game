@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Areas/M3 - school/match_tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Areas/M3 - school/M3-game.gd" type="Script" id=2]
+
+[node name="M3-game" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="match_tile" parent="." instance=ExtResource( 1 )]
+position = Vector2( 9, 3 )
+
+[node name="match_tile2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 3 )
+
+[node name="match_tile3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 11, 78 )
+
+[node name="match_tile4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 97, 79 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

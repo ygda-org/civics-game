@@ -3,8 +3,8 @@ extends Area2D
 
 func _ready():
 	randomize()
-	var spawnX = randf() * 1191
-	var spawnY = randf() * -725
+	var spawnX = randf() * 896
+	var spawnY = randf() * 400
 
 	set_position(Vector2(spawnX, spawnY))
 

@@ -14,13 +14,13 @@ region = Rect2( 0, 0, 32, 32 )
 atlas = ExtResource( 3 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 3 )
-region = Rect2( 64, 0, 32, 32 )
-
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 3 )
 region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
@@ -30,13 +30,13 @@ region = Rect2( 0, 0, 32, 32 )
 atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 0, 32, 32 )
-
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
 region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 4 )
@@ -46,13 +46,13 @@ region = Rect2( 0, 0, 32, 32 )
 atlas = ExtResource( 4 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 4 )
-region = Rect2( 64, 0, 32, 32 )
-
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 4 )
 region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
@@ -62,13 +62,13 @@ region = Rect2( 0, 0, 32, 32 )
 atlas = ExtResource( 5 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 5 )
-region = Rect2( 64, 0, 32, 32 )
-
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 5 )
 region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=19]
 animations = [ {
@@ -77,7 +77,7 @@ animations = [ {
 "name": "downIdle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 8 ), SubResource( 7 ), SubResource( 10 ), SubResource( 9 ) ],
 "loop": true,
 "name": "downWalk",
 "speed": 5.0
@@ -87,7 +87,7 @@ animations = [ {
 "name": "leftIdle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 12 ), SubResource( 11 ), SubResource( 14 ), SubResource( 13 ) ],
 "loop": true,
 "name": "leftWalk",
 "speed": 5.0
@@ -97,7 +97,7 @@ animations = [ {
 "name": "rightIdle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 16 ), SubResource( 15 ), SubResource( 18 ), SubResource( 17 ) ],
 "loop": true,
 "name": "rightWalk",
 "speed": 5.0
@@ -107,7 +107,7 @@ animations = [ {
 "name": "upIdle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 4 ), SubResource( 3 ), SubResource( 6 ), SubResource( 5 ) ],
 "loop": true,
 "name": "upWalk",
 "speed": 5.0
@@ -117,7 +117,7 @@ animations = [ {
 extents = Vector2( 8.5, 9 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 42.5002, 32.1429 )
+extents = Vector2( 47.5005, 35.7143 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -139,7 +139,7 @@ position = Vector2( 0, 4 )
 scale = Vector2( 0.199998, 0.28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
-position = Vector2( -2.50023, 10.7143 )
+position = Vector2( -2.50003, 10.7143 )
 shape = SubResource( 2 )
 
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_Area2D_area_entered"]
