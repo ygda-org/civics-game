@@ -7,28 +7,42 @@ var gravity = 10
 var floo = Vector2(0, -1)
 var jump = -250
 var move = true
+var direction = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 		velocity = move_and_slide(velocity, floo)
 		#right arrow key pressed
-		if (Input.is_action_pressed("ui_right") && move):
-			velocity.x = speed
-			"""if sign($Position2D.position.x) == -1:
-				$Position2D.position.x *= -1"""
-		#left arrow key pressed
-		elif (Input.is_action_pressed("ui_left") && move):
+		if Input.is_action_pressed("ui_left") && move:
 			velocity.x = -speed
-			"""if sign($Position2D.position.x) == 1:
-				$Position2D.position.x *= -1"""
-		#none	
+			$AnimatedSprite.play("right")
+			$AnimatedSprite.flip_h = true
+			direction = 0
+		elif Input.is_action_pressed("ui_right") && move:
+			velocity.x = speed
+			$AnimatedSprite.play("right")
+			$AnimatedSprite.flip_h = false
+			direction = 1
 		elif move:
 			velocity.x = 0
+			if(direction == 0):
+				$AnimatedSprite.play("idleright")
+			if(direction == 1):
+				$AnimatedSprite.play("idleright")
 		#gravity
 		velocity.y += gravity
 		#up arrow key pressed
 		if (is_on_floor() && Input.is_action_pressed("ui_up")):
 			velocity.y += jump
+		
+		if velocity.y < -100:
+			$AnimatedSprite.play("jump")
+		#fall animation
+		elif (velocity.y < 5 && ! is_on_floor()):
+			$AnimatedSprite.play("fall")
+		elif (velocity.y < 2 || ! is_on_floor()):
+			$AnimatedSprite.play("right")
+		
 		
 		if get_slide_count() > 0:
 			for i in get_slide_count():

@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/more_road_assets.png" type="Texture" id=1]
+[ext_resource path="res://Assets/road_accessories.png" type="Texture" id=1]
 [ext_resource path="res://Areas/Lamp2.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.5, 2 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 6, 12.2 )
+extents = Vector2( 6, 12.6 )
 
 [node name="Lamp2" type="StaticBody2D"]
 scale = Vector2( 1, 1.25 )
@@ -17,7 +17,7 @@ script = ExtResource( 2 )
 [node name="Lamp2 Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( -0.15416, 0.0987239, 11.4507, 36.8413 )
+region_rect = Rect2( -0.15416, 0.0987239, 11.4507, 37.9013 )
 
 [node name="Lamp2 Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 16 )
@@ -26,7 +26,7 @@ shape = SubResource( 1 )
 [node name="PlayerInBack" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInBack"]
-position = Vector2( 0, -2.2 )
+position = Vector2( 0, -2.6 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="PlayerInBack" to="." method="_on_PlayerInBack_body_entered"]
