@@ -5,10 +5,16 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var score = 0
+var nHouse = 3 #this one doesnt change
+var nSelHouse = 3 #this is temp
+var array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$M4Game/Timer.start()
+	for house in get_node("Houses").get_children():
+		house.get_node("AnimatedSprite").play("default")
+		array.append(house)
 	_randhouse()
 
 func _process(delta):
@@ -18,14 +24,18 @@ func _process(delta):
 #		_randhouse()
 #help
 func _randhouse():
-	var array = []
-	for house in get_node("Houses").get_children():
-		house.get_node("AnimatedSprite").play("default")
-		array.append(house)
+	#print("it happen")
 	randomize()
-	array[randi() % array.size()].get_node("AnimatedSprite").play("selected")
-	array[randi() % array.size()].get_node("AnimatedSprite").play("selected")
-	array[randi() % array.size()].get_node("AnimatedSprite").play("selected")
+	var rands = []
+	for n in range(0, nHouse):
+		rands.append(randi() % array.size())
+	var changed = {}
+	for rand in rands:
+		changed[rand] = 0
+		array[rand].get_node("AnimatedSprite").play("selected")
+	nSelHouse = len(changed)
+	
+	
 
 func _checkdefault():
 	for house in get_node("Houses").get_children():

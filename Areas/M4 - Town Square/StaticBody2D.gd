@@ -13,8 +13,12 @@ func _ready():
 func _process(delta):
 	if inreach == true && Input.is_action_just_pressed("advance_dialog"):
 		inreach = false
-		get_parent().get_parent().get_parent().score += 1
+		var stage = get_parent().get_parent().get_parent()
+		stage.score += 1
+		stage.nSelHouse -= 1
 		get_parent().get_node("AnimatedSprite").play("default")
+		if(stage.nSelHouse == 0):
+			stage._randhouse()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
