@@ -15,20 +15,17 @@ func _physics_process(_delta):
 		#right arrow key pressed
 		if Input.is_action_pressed("ui_left") && move:
 			velocity.x = -speed
-			$AnimatedSprite.play("right")
+			$AnimatedSprite.play("move")
 			$AnimatedSprite.flip_h = true
 			direction = 0
 		elif Input.is_action_pressed("ui_right") && move:
 			velocity.x = speed
-			$AnimatedSprite.play("right")
+			$AnimatedSprite.play("move")
 			$AnimatedSprite.flip_h = false
 			direction = 1
 		elif move:
 			velocity.x = 0
-			if(direction == 0):
-				$AnimatedSprite.play("idleright")
-			if(direction == 1):
-				$AnimatedSprite.play("idleright")
+			$AnimatedSprite.play("idle")
 		#gravity
 		velocity.y += gravity
 		#up arrow key pressed
@@ -41,13 +38,11 @@ func _physics_process(_delta):
 		elif (velocity.y < 5 && ! is_on_floor()):
 			$AnimatedSprite.play("fall")
 		elif (velocity.y < 2 || ! is_on_floor()):
-			$AnimatedSprite.play("right")
-		
+			$AnimatedSprite.play("move")
 		
 		if get_slide_count() > 0:
 			for i in get_slide_count():
 				if "M4-Enemy" in get_slide_collision(i).collider.name:
-					print("DIE")
 					_dead()
 		
 		if get_position().y > 1000:
@@ -56,7 +51,6 @@ func _physics_process(_delta):
 		if get_slide_count() > 0:
 			for i in get_slide_count():
 				if "M4-Mayor" in get_slide_collision(i).collider.name:
-					print("yay ")
 					get_tree().change_scene("res://Areas/MainWorld.tscn")
 		
 		
