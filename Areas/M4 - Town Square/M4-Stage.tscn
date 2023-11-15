@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Areas/M4 - Town Square/M4-Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Areas/M4 - Town Square/M4-Platform.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Areas/M4 - Town Square/M4-PlatformOneWay.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Areas/M4 - Town Square/M4-PlatformOneWay.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Areas/M4 - Town Square/M4-House.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Areas/M4 - Town Square/M4-Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Areas/M4 - Town Square/M4-Mayor.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Areas/M4 - Town Square/M4-Enemy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Areas/M4 - Town Square/M4-House.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Areas/M4 - Town Square/M4-Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Areas/M4 - Town Square/M4-Platform.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Areas/M4 - Town Square/M4-Stage.gd" type="Script" id=7]
+[ext_resource path="res://Areas/M4 - Town Square/Houses.gd" type="Script" id=8]
 
 [node name="M4-Stage" type="Node2D"]
 position = Vector2( 0, -1 )
@@ -14,175 +15,176 @@ script = ExtResource( 7 )
 
 [node name="Platforms" type="Node2D" parent="."]
 
-[node name="M4-Platform" parent="Platforms" instance=ExtResource( 2 )]
+[node name="M4-Platform" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 512, 600 )
 
-[node name="M4-Platform3" parent="Platforms" instance=ExtResource( 2 )]
+[node name="M4-Platform3" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 570, 360 )
 scale = Vector2( 11.72, 1 )
 
-[node name="M4-Platform2" parent="Platforms" instance=ExtResource( 2 )]
+[node name="M4-Platform2" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 460, 480 )
 scale = Vector2( 11.72, 1 )
 
-[node name="M4-Platform4" parent="Platforms" instance=ExtResource( 2 )]
+[node name="M4-Platform4" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 460, 240 )
 scale = Vector2( 11.72, 1 )
 
-[node name="M4-Platform5" parent="Platforms" instance=ExtResource( 2 )]
+[node name="M4-Platform5" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 570, 120 )
 scale = Vector2( 11.72, 1 )
 
-[node name="M4-Platform6" parent="Platforms" instance=ExtResource( 2 )]
+[node name="M4-Platform6" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 459, 0 )
 scale = Vector2( 11.72, 1 )
 
-[node name="M4-PlatformOneWay5" parent="Platforms" instance=ExtResource( 3 )]
+[node name="M4-PlatformOneWay5" parent="Platforms" instance=ExtResource( 1 )]
 position = Vector2( 929, 280 )
 scale = Vector2( 1.6, 0.44 )
 
-[node name="M4-PlatformOneWay6" parent="Platforms" instance=ExtResource( 3 )]
+[node name="M4-PlatformOneWay6" parent="Platforms" instance=ExtResource( 1 )]
 position = Vector2( 929, 320 )
 scale = Vector2( 1.6, 0.44 )
 
-[node name="M4-PlatformOneWay9" parent="Platforms" instance=ExtResource( 3 )]
+[node name="M4-PlatformOneWay9" parent="Platforms" instance=ExtResource( 1 )]
 position = Vector2( 928, 560 )
 scale = Vector2( 1.6, 0.44 )
 
-[node name="M4-PlatformOneWay10" parent="Platforms" instance=ExtResource( 3 )]
+[node name="M4-PlatformOneWay10" parent="Platforms" instance=ExtResource( 1 )]
 position = Vector2( 928, 520 )
 scale = Vector2( 1.6, 0.44 )
 
-[node name="M4-PlatformOneWay14" parent="Platforms" instance=ExtResource( 3 )]
+[node name="M4-PlatformOneWay14" parent="Platforms" instance=ExtResource( 1 )]
 position = Vector2( 929, 80 )
 scale = Vector2( 1.6, 0.44 )
 
-[node name="M4-PlatformOneWay15" parent="Platforms" instance=ExtResource( 3 )]
+[node name="M4-PlatformOneWay15" parent="Platforms" instance=ExtResource( 1 )]
 position = Vector2( 929, 40 )
 scale = Vector2( 1.6, 0.44 )
 
-[node name="M4-PlatformOneWay7" parent="Platforms" instance=ExtResource( 3 )]
+[node name="M4-PlatformOneWay7" parent="Platforms" instance=ExtResource( 1 )]
 position = Vector2( 80, 440 )
 scale = Vector2( 1.6, 0.44 )
 
-[node name="M4-PlatformOneWay8" parent="Platforms" instance=ExtResource( 3 )]
+[node name="M4-PlatformOneWay8" parent="Platforms" instance=ExtResource( 1 )]
 position = Vector2( 80, 400 )
 scale = Vector2( 1.6, 0.44 )
 
-[node name="M4-PlatformOneWay12" parent="Platforms" instance=ExtResource( 3 )]
+[node name="M4-PlatformOneWay12" parent="Platforms" instance=ExtResource( 1 )]
 position = Vector2( 80, 200 )
 scale = Vector2( 1.6, 0.44 )
 
-[node name="M4-PlatformOneWay13" parent="Platforms" instance=ExtResource( 3 )]
+[node name="M4-PlatformOneWay13" parent="Platforms" instance=ExtResource( 1 )]
 position = Vector2( 80, 160 )
 scale = Vector2( 1.6, 0.44 )
 
-[node name="M4-PlatformOneWay11" parent="Platforms" instance=ExtResource( 3 )]
+[node name="M4-PlatformOneWay11" parent="Platforms" instance=ExtResource( 1 )]
 position = Vector2( 274, -50 )
 scale = Vector2( 4.44, 0.44 )
 
 [node name="Houses" type="Node2D" parent="."]
-position = Vector2( 273, 546 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( 273, 547 )
+scale = Vector2( 2.5, 2.5 )
+script = ExtResource( 8 )
 
-[node name="House" parent="Houses" instance=ExtResource( 6 )]
+[node name="House" parent="Houses" instance=ExtResource( 2 )]
 
-[node name="House2" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 100, 0 )
+[node name="House2" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 70, 0 )
 
-[node name="House3" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 200, 0 )
+[node name="House3" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 140, 0 )
 
-[node name="House4" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 300, 0 )
+[node name="House4" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 210, 0 )
 
-[node name="House9" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 0, -160 )
+[node name="House9" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 0, -96 )
 
-[node name="House10" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 100, -160 )
+[node name="House10" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 70, -96 )
 
-[node name="House11" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 200, -160 )
+[node name="House11" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 140, -96 )
 
-[node name="House12" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 300, -160 )
+[node name="House12" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 210, -96 )
 
-[node name="House13" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 0, -320 )
+[node name="House13" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 0, -192 )
 
-[node name="House14" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 100, -320 )
+[node name="House14" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 70, -192 )
 
-[node name="House15" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 200, -320 )
+[node name="House15" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 140, -192 )
 
-[node name="House16" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 300, -320 )
+[node name="House16" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 210, -192 )
 
-[node name="House5" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( -48, -80 )
+[node name="House5" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( -20, -48.4 )
 
-[node name="House6" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 52, -80 )
+[node name="House6" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 50, -48.4 )
 
-[node name="House7" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 152, -80 )
+[node name="House7" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 120, -48.4 )
 
-[node name="House8" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 252, -80 )
+[node name="House8" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 190, -48.4 )
 
-[node name="House17" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( -48, -240 )
+[node name="House17" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( -20, -144 )
 
-[node name="House18" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 52, -240 )
+[node name="House18" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 50, -144 )
 
-[node name="House19" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 152, -240 )
+[node name="House19" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 120, -144 )
 
-[node name="House20" parent="Houses" instance=ExtResource( 6 )]
-position = Vector2( 252, -240 )
+[node name="House20" parent="Houses" instance=ExtResource( 2 )]
+position = Vector2( 190, -144 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="M4-Enemy" parent="Enemies" instance=ExtResource( 5 )]
+[node name="M4-Enemy" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 718, 569 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="M4-Enemy2" parent="Enemies" instance=ExtResource( 5 )]
+[node name="M4-Enemy2" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 304, 323 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="M4-Enemy3" parent="Enemies" instance=ExtResource( 5 )]
+[node name="M4-Enemy3" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 627, 444 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="M4-Enemy4" parent="Enemies" instance=ExtResource( 5 )]
+[node name="M4-Enemy4" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 677, 323 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="M4-Enemy5" parent="Enemies" instance=ExtResource( 5 )]
+[node name="M4-Enemy5" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 637, 200 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="M4-Enemy6" parent="Enemies" instance=ExtResource( 5 )]
+[node name="M4-Enemy6" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 308, 189 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="M4-Enemy7" parent="Enemies" instance=ExtResource( 5 )]
+[node name="M4-Enemy7" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 355, 82 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="M4-Enemy8" parent="Enemies" instance=ExtResource( 5 )]
+[node name="M4-Enemy8" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 684, 88 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="M4-Enemy9" parent="Enemies" instance=ExtResource( 5 )]
+[node name="M4-Enemy9" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 654, -30 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="M4-Enemy10" parent="Enemies" instance=ExtResource( 5 )]
+[node name="M4-Enemy10" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 439, -28 )
 scale = Vector2( 0.75, 0.75 )
 
@@ -190,8 +192,9 @@ scale = Vector2( 0.75, 0.75 )
 position = Vector2( 271, -80 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="M4-Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 127, 555 )
+[node name="M4-Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 130, 567 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 509, 273 )
