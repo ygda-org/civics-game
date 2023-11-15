@@ -62,17 +62,17 @@ position = Vector2( 345, 45 )
 position = Vector2( 482, 221 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="courthouse-npc" parent="." instance=ExtResource( 4 )]
-position = Vector2( 215, 266 )
-
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 78, 263 )
 
-[node name="case-1" parent="." instance=ExtResource( 6 )]
-visible = false
+[node name="courthouse-npc" parent="." instance=ExtResource( 4 )]
+position = Vector2( 215, 266 )
 
 [node name="courthouse-npc2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 631, 260 )
+position = Vector2( 627, 261 )
+
+[node name="case-1" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [connection signal="body_entered" from="portal-home" to="." method="_on_court_to_main_area_entered"]
 [connection signal="body_entered" from="document-table" to="case-1" method="_on_documenttable_body_entered"]
