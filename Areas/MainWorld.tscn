@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Areas/Fountain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://BenchSide.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Assets/trash_cans.png" type="Texture" id=20]
 [ext_resource path="res://Areas/Old Bench NPC.tscn" type="PackedScene" id=21]
+[ext_resource path="res://NPCs/BaseNPC.tscn" type="PackedScene" id=22]
 
 [sub_resource type="TileSet" id=10]
 0/name = "actual_turn_sidewalk.png 0"
@@ -638,6 +639,9 @@ __meta__ = {
 [node name="Old Bench NPC" parent="." instance=ExtResource( 21 )]
 position = Vector2( 1046, 238 )
 scale = Vector2( 2, 2 )
+
+[node name="BaseNPC" parent="." instance=ExtResource( 22 )]
+position = Vector2( 361, -660 )
 
 [connection signal="body_entered" from="Park" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Courthouse" to="." method="_on_Courthouse_body_entered"]

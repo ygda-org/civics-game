@@ -3,6 +3,7 @@ extends KinematicBody2D
 var speed = 7000
 var velocity = Vector2.ZERO
 var direction = 1
+var frozen = false
 
 func get_input():
 	if Input.is_action_pressed("topDownForward") or Input.is_action_pressed("ui_up"):
@@ -35,6 +36,11 @@ func get_input():
 
 func _physics_process(delta):
 	velocity = Vector2.ZERO
-	get_input()
+	if (not frozen):
+		get_input()
+	if (frozen):	
+		$AnimatedSprite.stop()
 	velocity = move_and_slide(velocity*delta)
 
+func freeze(f):
+	frozen = f
