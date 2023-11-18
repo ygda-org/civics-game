@@ -5,13 +5,13 @@ extends Area2D
 # var a = 2
 # var b = "text"
 var inreach = false
-var ispressed = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_parent().find_node("Control").visible = false
 
 func _process(delta):
-	if inreach == true && Input.is_action_just_pressed("advance_dialog"):
+	if inreach == true && Input.is_action_just_pressed("Interact"):
 		inreach = false
 		var stage = get_parent().get_parent().get_parent()
 		stage.score += 1

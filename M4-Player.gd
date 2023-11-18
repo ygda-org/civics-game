@@ -55,16 +55,6 @@ func _physics_process(_delta):
 		
 		
 func _dead():
-	#$Timer.start()	
-	
-	#move = false
-	"""
-	gravity = 0
-	speed = 0
-	jump = 0
-	velocity = Vector2(0,0)
-	"""
-	#$AnimatedSprite.play("dead")
 	move = false;
 	$PlayerCollision.set_deferred("disabled", true)
 

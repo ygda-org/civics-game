@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/NPCs/ANGRY BOY.png" type="Texture" id=2]
-[ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/NPCs/NPC jessica.png" type="Texture" id=3]
 
 [sub_resource type="GDScript" id=5]
 script/source = "extends Node2D
@@ -54,58 +54,55 @@ func _on_Area2D_body_exited(body):
 "
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.5, 7 )
+extents = Vector2( 6, 3.875 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8, 9.5 )
+extents = Vector2( 6, 7.25 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 8, 5.25 )
+extents = Vector2( 6, 5.375 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 8
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 3 )
+font_data = ExtResource( 2 )
 
-[node name="BaseNPC" type="Node2D"]
+[node name="jessicaNPC" type="Node2D"]
 script = SubResource( 5 )
-LINES = "helo"
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 0, 13.5 )
+[node name="Gremlin Area" type="StaticBody2D" parent="."]
 
-[node name="Gremlin Area" type="Area2D" parent="StaticBody2D"]
-position = Vector2( 0, -14.75 )
-
-[node name="Gremlin Area Coll" type="CollisionShape2D" parent="StaticBody2D/Gremlin Area"]
-position = Vector2( -0.5, -7.75 )
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Gremlin Area"]
+position = Vector2( 0, 13.875 )
 shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="StaticBody2D"]
-position = Vector2( 0, -13.5 )
+[node name="Gremlin Area" type="Area2D" parent="Gremlin Area"]
 
-[node name="Gremlin Collision" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
-position = Vector2( 0, 34.5 )
+[node name="Gremlin Area Collision" type="CollisionShape2D" parent="Gremlin Area/Gremlin Area"]
+position = Vector2( 0, -10 )
 shape = SubResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0, 2.5 )
+[node name="Area2D" type="Area2D" parent="Gremlin Area"]
+
+[node name="area coll" type="CollisionShape2D" parent="Gremlin Area/Area2D"]
+position = Vector2( 0, 25 )
 shape = SubResource( 3 )
 
 [node name="Control" type="Control" parent="."]
 margin_left = -3.0
-margin_top = 3.0
+margin_top = 6.0
 margin_right = 33.0
-margin_bottom = 30.0
+margin_bottom = 33.0
 rect_scale = Vector2( 0.8, 0.8 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+margin_top = -8.75
 margin_right = 8.0
-margin_bottom = 14.0
+margin_bottom = 5.25
 
 [node name="Label" type="Label" parent="Control/VBoxContainer"]
 margin_right = 8.0
@@ -113,7 +110,7 @@ margin_bottom = 6.0
 custom_fonts/font = SubResource( 4 )
 text = "E"
 
-[connection signal="body_entered" from="StaticBody2D/Gremlin Area" to="." method="_on_Gremlin_Area_body_entered"]
-[connection signal="body_exited" from="StaticBody2D/Gremlin Area" to="." method="_on_Gremlin_Area_body_exited"]
-[connection signal="body_entered" from="StaticBody2D/Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="StaticBody2D/Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Gremlin Area/Gremlin Area" to="." method="_on_Gremlin_Area_body_entered"]
+[connection signal="body_exited" from="Gremlin Area/Gremlin Area" to="." method="_on_Gremlin_Area_body_exited"]
+[connection signal="body_entered" from="Gremlin Area/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Gremlin Area/Area2D" to="." method="_on_Area2D_body_exited"]

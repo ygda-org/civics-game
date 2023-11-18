@@ -6,16 +6,18 @@
 
 [sub_resource type="DynamicFont" id=1]
 outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_bottom = 5
 font_data = ExtResource( 3 )
 
-[node name="textbox" type="MarginContainer"]
-margin_right = 51.0
-margin_bottom = 46.0
+[node name="text" type="MarginContainer"]
 script = ExtResource( 2 )
 
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-margin_right = 51.0
-margin_bottom = 46.0
+margin_right = 32.0
+margin_bottom = 41.0
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 48, 48 )
 patch_margin_left = 16
@@ -23,23 +25,21 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="LetterDisplayTimer" type="Timer" parent="."]
-one_shot = true
-
 [node name="MarginContainer" type="MarginContainer" parent="."]
-margin_right = 51.0
-margin_bottom = 46.0
+margin_right = 32.0
+margin_bottom = 41.0
 custom_constants/margin_right = 12
 custom_constants/margin_top = 12
 custom_constants/margin_left = 12
 custom_constants/margin_bottom = 12
 
 [node name="Label" type="Label" parent="MarginContainer"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 12.0
-margin_top = 17.0
-margin_right = 39.0
+margin_top = 12.0
+margin_right = 20.0
 margin_bottom = 29.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
 align = 1
 valign = 1

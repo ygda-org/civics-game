@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/NPCs/ANGRY BOY.png" type="Texture" id=2]
+[ext_resource path="res://Assets/NPCs/Judge.png" type="Texture" id=2]
 [ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="GDScript" id=5]
@@ -57,10 +57,10 @@ func _on_Area2D_body_exited(body):
 extents = Vector2( 7.5, 7 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8, 9.5 )
+extents = Vector2( 5, 5.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 8, 5.25 )
+extents = Vector2( 4, 3.625 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 8
@@ -68,9 +68,8 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
-[node name="BaseNPC" type="Node2D"]
+[node name="Judge" type="Node2D"]
 script = SubResource( 5 )
-LINES = "helo"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -82,18 +81,18 @@ position = Vector2( 0, 13.5 )
 position = Vector2( 0, -14.75 )
 
 [node name="Gremlin Area Coll" type="CollisionShape2D" parent="StaticBody2D/Gremlin Area"]
-position = Vector2( -0.5, -7.75 )
+position = Vector2( -0.5, -9.75 )
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="StaticBody2D"]
 position = Vector2( 0, -13.5 )
 
 [node name="Gremlin Collision" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
-position = Vector2( 0, 34.5 )
+position = Vector2( 0, 27.5 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0, 2.5 )
+position = Vector2( 0, 0.875 )
 shape = SubResource( 3 )
 
 [node name="Control" type="Control" parent="."]

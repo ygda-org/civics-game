@@ -11,6 +11,8 @@ var text_box_position: Vector2
 var is_dialog_active = false
 var can_advance_line = false
 
+var audio = preload("res://Text Audio.tscn").instance()
+
 func _ready():
 	pass
 
@@ -31,9 +33,11 @@ func _show_text_box():
 	text_box.set_global_position(text_box_position)
 	
 	text_box.display_text(dialog_lines[current_line_index])
+	audio.get_node("Audio").play()
 	can_advance_line = false
 	
 func _on_text_box_finished_displaying():
+	audio.get_node("Audio").stop()
 	can_advance_line = true
 	 
 func _unhandled_input(event):

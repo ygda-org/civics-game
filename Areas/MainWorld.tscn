@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Areas/Fountain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -22,6 +22,14 @@
 [ext_resource path="res://Assets/trash_cans.png" type="Texture" id=20]
 [ext_resource path="res://Areas/Old Bench NPC.tscn" type="PackedScene" id=21]
 [ext_resource path="res://NPCs/BaseNPC.tscn" type="PackedScene" id=22]
+[ext_resource path="res://mus_j_overworld.ogg" type="AudioStream" id=23]
+[ext_resource path="res://Text Audio.tscn" type="PackedScene" id=24]
+[ext_resource path="res://NPCs/BackOldManNPC.tscn" type="PackedScene" id=25]
+[ext_resource path="res://NPCs/jessicaNPC.tscn" type="PackedScene" id=26]
+[ext_resource path="res://NPCs/CrowdWomanNPC.tscn" type="PackedScene" id=27]
+[ext_resource path="res://NPCs/Judge.tscn" type="PackedScene" id=28]
+[ext_resource path="res://NPCs/miku.tscn" type="PackedScene" id=29]
+[ext_resource path="res://NPCs/raymondNPC.tscn" type="PackedScene" id=30]
 
 [sub_resource type="TileSet" id=10]
 0/name = "actual_turn_sidewalk.png 0"
@@ -626,7 +634,7 @@ texture = ExtResource( 5 )
 shape = SubResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 212, -603 )
+position = Vector2( 194, -546 )
 scale = Vector2( 1.5, 1.5 )
 z_index = 1
 z_as_relative = true
@@ -636,12 +644,52 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Old Bench NPC" parent="." instance=ExtResource( 21 )]
-position = Vector2( 1046, 238 )
-scale = Vector2( 2, 2 )
+[node name="NPCs" type="Node2D" parent="."]
 
-[node name="BaseNPC" parent="." instance=ExtResource( 22 )]
-position = Vector2( 361, -660 )
+[node name="BaseNPC" parent="NPCs" instance=ExtResource( 22 )]
+position = Vector2( 363, -702 )
+LINES = "LITTLE KID: RAHHHHH!!!!!!! I HATE CIVICS"
+
+[node name="Old Bench NPC" parent="NPCs" instance=ExtResource( 21 )]
+position = Vector2( 1046, 237 )
+scale = Vector2( 2, 2 )
+LINES = "REMINISCENT MAN: Why isn't anyone here at the park?*It wasn't always like this!*People used to come here all the time.*YOU: What happened?*REMINISCENT MAN: They never cleaned up after themselves, that's what!*I'd do it myself, but these knees don't work the way they used to..."
+
+[node name="BackOldManNPC" parent="NPCs" instance=ExtResource( 25 )]
+position = Vector2( -88, -806 )
+scale = Vector2( 1.5, 1.5 )
+LINES = "OLD MAN IN CROWD: I'm not sure who to vote for...* It's great that Mayor Thomas passed a funding bill to conserve our ponds,* but we've been trying to get resources to clean public spaces for the past year now..."
+
+[node name="CrowdWomanNPC" parent="NPCs" instance=ExtResource( 27 )]
+position = Vector2( -51, -825 )
+scale = Vector2( 1.5, 1.5 )
+LINES = "WOMAN IN CROWD: Are you going to vote Jeffrey Thomas this year?"
+
+[node name="Judge" parent="NPCs" instance=ExtResource( 28 )]
+position = Vector2( 140, -1389 )
+scale = Vector2( 1.5, 1.5 )
+LINES = "YOU: Am you a judge?*JUDGE: Yes, I'm here to preside over court proceedings.*All trials will be heard by me today."
+
+[node name="jessicaNPC" parent="NPCs" instance=ExtResource( 26 )]
+position = Vector2( -20, -813 )
+scale = Vector2( 1.5, 1.5 )
+LINES = "JESS: I like what Johnson is saying about school reforms,* but I'm afraid he might be biting off more than he can chew with what he's proposing..."
+
+[node name="miku" parent="NPCs" instance=ExtResource( 29 )]
+position = Vector2( -8, -1409 )
+scale = Vector2( 1.5, 1.5 )
+LINES = "YOU: Are you here for a trial?* MIKA: I plead the 5th!*YOU: Huh?*MIKA: I have the right to remain silent!*I do not have to incriminate myself by speaking to you!*YOU: Okay..."
+
+[node name="raymondNPC" parent="NPCs" instance=ExtResource( 30 )]
+position = Vector2( 495, -1414 )
+scale = Vector2( 1.5, 1.5 )
+LINES = "YOU: What are you doing at the courthouse?*RAY: I was summoned for jury duty, so it's my civic duty to come.*YOU: Why you?*RAY: I'm fair and impartial to the case, which makes me perfect for jury duty!"
+
+[node name="Overworld Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+autoplay = true
+
+[node name="Text Audio" parent="." instance=ExtResource( 24 )]
 
 [connection signal="body_entered" from="Park" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Courthouse" to="." method="_on_Courthouse_body_entered"]
