@@ -14,7 +14,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
+func _process(delta):
+	if(DialogManager.is_dialog_active): 
+		z_index = 0
 
 func _on_PlayerInBack_body_entered(body):
 	if "Player" in body.name:
