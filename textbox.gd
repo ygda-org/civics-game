@@ -7,7 +7,7 @@ var letter_time = 0.03
 var space_time = 0.06
 var punctuation_time = 0.2
 
-const MAX_WIDTH = 500
+const MAX_WIDTH = 1024
 
 var label
 var timer
@@ -33,9 +33,7 @@ func display_text(text_to_display: String):
 		label.autowrap = true
 		yield(self, "resized")
 		rect_min_size.y = rect_size.y
-	set_global_position(Vector2(
-		get_global_position().x - rect_size.x/2,
-		get_global_position().y + 80))
+	set_global_position(Vector2((MAX_WIDTH-rect_size.x)/2, 600-rect_size.y))
 	label.text = ""
 	_display_letter()
 	
