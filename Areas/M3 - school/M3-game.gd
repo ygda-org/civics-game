@@ -4,8 +4,8 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var nTiles = 4
-var dctMatches = {"b": "a", "c": "d"}
+var nTiles = 6
+var dctMatches = {"b": "a", "c": "d", "e": "f"}
 var tile1 = "" #text of first selected tile
 var tile2 = "" #text of secont selected tile
 var dctAnsTile = {}
