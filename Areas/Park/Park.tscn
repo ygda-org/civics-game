@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Areas/Park/Park.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -189,9 +189,6 @@
 4/shapes = [  ]
 4/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 2842.5, 2132.5 )
-
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 0.75, 579 )
 
@@ -215,19 +212,6 @@ tile_set = SubResource( 5 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -327678, 3, 0, -262137, 3, 0, -262124, 3, 0, -196602, 4, 0, -196589, 4, 0, -131070, 1, 0, -131041, 4, 0, -65527, 0, 0, -65521, 3, 0, -65513, 0, 0, 12, 1, 0, 65556, 3, 0, 65557, 4, 0, 65563, 0, 0, 131088, 0, 0, 131097, 0, 0, 262153, 4, 0, 327681, 4, 0, 327683, 0, 0, 327703, 2, 0, 327708, 1, 0, 393229, 4, 0, 458759, 1, 0, 458768, 0, 0, 458770, 4, 0, 524291, 2, 0, 524294, 0, 0, 524310, 1, 0, 589850, 2, 0, 655374, 1, 0, 655380, 2, 0, 720898, 4, 0, 720904, 2, 0, 786449, 3, 0, 851995, 2, 0, 851996, 4, 0, 917507, 0, 0, 917514, 1, 0, 917522, 0, 0, 983054, 2, 0, 983070, 0, 0, 1048577, 1, 0, 1114130, 4, 0, 1114132, 1, 0, 1179677, 2, 0 )
-
-[node name="Return" type="Area2D" parent="."]
-position = Vector2( 246, 8 )
-scale = Vector2( 0.025, 0.025 )
-
-[node name="Icon" type="Sprite" parent="Return"]
-position = Vector2( 22000, 21340 )
-scale = Vector2( 90, 66.875 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Return"]
-position = Vector2( 21997.5, 21307.5 )
-shape = SubResource( 1 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -294,5 +278,4 @@ text = "Score:"
 [node name="Timer" type="Timer" parent="TrashGame"]
 wait_time = 30.0
 
-[connection signal="body_entered" from="Return" to="." method="_on_Return_body_entered"]
 [connection signal="body_entered" from="StartTrash" to="." method="_on_StartTrash_body_entered"]

@@ -4,10 +4,13 @@ var trashStarted = false
 var score = 0
 
 
+
 func _ready():
 	trashStarted = false
 
+
 func _process(delta):
+		
 	if trashStarted:
 		$TrashGame/UI/Time.text = "Time Left: " + str(int($TrashGame/Timer.time_left))
 
@@ -27,9 +30,6 @@ func changeScore(newScore):
 	score = newScore
 	$TrashGame/UI/Score.text = "Score: " + str(score)
 	
-
-func _on_Return_body_entered(body):
-	get_tree().change_scene("res://Areas/MainWorld.tscn")
 
 
 func _on_StartTrash_body_entered(body):
