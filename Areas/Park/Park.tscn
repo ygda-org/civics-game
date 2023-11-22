@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Areas/Park/Park.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Areas/Park/Park_Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Areas/Park/cans/Trashcan.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Areas/Park/cans/RecyclingCan.tscn" type="PackedScene" id=5]
@@ -193,9 +192,6 @@
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 0.75, 579 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 140.375, 31.75 )
-
 [node name="Park" type="Node2D"]
 position = Vector2( 0, 185 )
 script = ExtResource( 1 )
@@ -244,18 +240,6 @@ position = Vector2( 976, 344 )
 position = Vector2( 790, 438 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="StartTrash" type="Area2D" parent="."]
-position = Vector2( 183, 569 )
-
-[node name="Sprite" type="Sprite" parent="StartTrash"]
-position = Vector2( 107.5, 0 )
-scale = Vector2( 4.35938, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StartTrash"]
-position = Vector2( 108.625, 0 )
-shape = SubResource( 3 )
-
 [node name="TrashGame" type="Node" parent="."]
 
 [node name="UI" type="CanvasLayer" parent="TrashGame"]
@@ -281,4 +265,4 @@ text = "Score:"
 [node name="Timer" type="Timer" parent="TrashGame"]
 wait_time = 30.0
 
-[connection signal="body_entered" from="StartTrash" to="." method="_on_StartTrash_body_entered"]
+[connection signal="timeout" from="TrashGame/Timer" to="." method="_on_Timer_timeout"]

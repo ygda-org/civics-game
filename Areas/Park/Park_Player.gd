@@ -6,8 +6,11 @@ var score = 0
 var recycleHand = 0
 var wasteHand = 0
 var direction = 1
+var typeWaste
+var waste
 
 func get_input():
+
 	if Input.is_action_pressed("topDownForward"):
 		velocity.y = -1
 		velocity.x = 0
@@ -38,6 +41,18 @@ func get_input():
 			if(direction == 4):
 				$AnimatedSprite.play("leftIdle")
 	velocity = velocity.normalized() * speed
+	if Input.is_action_pressed("interact"):
+		if typeWaste == "waste":
+			print(typeWaste)
+			wasteHand += 1
+			waste.die()
+			waste = null
+		elif typeWaste == "recycle":
+			recycleHand += 1
+			waste.die()
+			waste = null
+		else:
+			waste = null
 
 func _physics_process(delta):
 	get_input()
@@ -45,14 +60,21 @@ func _physics_process(delta):
 
 
 func _on_Area2D_area_entered(area):
-	print(area.name)
 	if "Trash" in area.name and area.is_in_group("trash") and recycleHand == 0:
-		wasteHand += 1
-		area.die()
+		waste = area
+		typeWaste = "waste"
 	elif "Recycle" in area.name and area.is_in_group('trash') and wasteHand == 0:
-		recycleHand += 1
-		area.die()
+		waste = area
+		typeWaste = "recycle"
 
+
+func _on_PlayerArea_area_exited(area):
+	if "Trash" in area.name and area.is_in_group("trash") and recycleHand == 0:
+		waste = null
+		typeWaste = ""
+	elif "Recycle" in area.name and area.is_in_group('trash') and wasteHand == 0:
+		waste = null
+		typeWaste = ""
 
 
 func _on_PlayerArea_body_entered(body):
@@ -64,4 +86,6 @@ func _on_PlayerArea_body_entered(body):
 		score += recycleHand
 		get_parent().changeScore(score)
 		recycleHand = 0
+
+
 

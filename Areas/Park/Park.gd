@@ -3,18 +3,14 @@ extends Node2D
 var trashStarted = false
 var score = 0
 
-
-
-func _ready():
-	trashStarted = false
-
-
 func _process(delta):
 		
 	if trashStarted:
 		$TrashGame/UI/Time.text = "Time Left: " + str(int($TrashGame/Timer.time_left))
 
-func startTrash():
+func _ready():
+	trashStarted = true
+	$TrashGame/UI/Score.text = "Score: " + str(score)
 	randomize()
 	$TrashGame/Timer.start()
 	var r = randi()%10
@@ -29,9 +25,16 @@ func startTrash():
 func changeScore(newScore):
 	score = newScore
 	$TrashGame/UI/Score.text = "Score: " + str(score)
+	if score == 10:
+		ParkGlobals.isWin = true
+		get_tree().change_scene("res://Areas/Park/ParkEndMenu.tscn")
 	
 
 
-func _on_StartTrash_body_entered(body):
-	if body.name == "Player":
-		startTrash()
+func _on_Timer_timeout():
+	if score == 10:
+		ParkGlobals.isWin = true
+	else:
+		ParkGlobals.isWin = false
+	ParkGlobals.score = score
+	get_tree().change_scene("res://Areas/Park/ParkEndMenu.tscn")
