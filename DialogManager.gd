@@ -33,7 +33,9 @@ func end_dialog():
 func _show_text_box():
 	text_box = text_box_scene.instance()
 	text_box.connect("finished_displaying", self, "_on_text_box_finished_displaying")
-	get_tree().root.add_child(text_box)
+	print(get_tree().root.get_children())
+	get_tree().root.get_children()[1].get_node("CanvasLayer").add_child(text_box)
+	#get_tree().root.add_child(text_box)
 	text_box.set_global_position(text_box_position)
 	
 	text_box.display_text(dialog_lines[current_line_index])
