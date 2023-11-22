@@ -33,6 +33,7 @@ func display_text(text_to_display: String):
 		label.autowrap = true
 		yield(self, "resized")
 		rect_min_size.y = rect_size.y
+	rect_size = Vector2(1024, 100)
 	set_global_position(Vector2((MAX_WIDTH-rect_size.x)/2, 600-rect_size.y))
 	label.text = ""
 	_display_letter()
