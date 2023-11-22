@@ -10,10 +10,21 @@ func get_input():
 	$AnimatedSprite.speed_scale = sprint_multiplier
 
 	if Input.is_action_pressed("sprint"):
-		sprint_multiplier = 2.0
+		sprint_multiplier = 1.2
 		$AnimatedSprite.speed_scale = sprint_multiplier
-
-	if Input.is_action_pressed("topDownForward") or Input.is_action_pressed("ui_up"):
+		if direction == 1:
+			velocity.y -= 1
+			$AnimatedSprite.play("walkUp")
+		if direction == 2:
+			velocity.y += 1
+			$AnimatedSprite.play("walkDown")
+		if direction == 3:
+			velocity.x += 1
+			$AnimatedSprite.play("sprintRight")
+		if direction == 4:
+			velocity.x -= 1
+			$AnimatedSprite.play("sprintLeft")
+	elif Input.is_action_pressed("topDownForward") or Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
 		$AnimatedSprite.play("walkUp")
 		direction = 1
