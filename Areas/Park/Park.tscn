@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Areas/Park/Park.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/road_2.png" type="Texture" id=7]
 [ext_resource path="res://Assets/sidewalk.png" type="Texture" id=8]
 [ext_resource path="res://Assets/some_MW_tiles.png" type="Texture" id=9]
+[ext_resource path="res://UI/Pause.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=4]
 0/name = "sidewalk.png 0"
@@ -274,6 +275,8 @@ margin_top = 8.0
 margin_right = 219.0
 margin_bottom = 48.0
 text = "Score:"
+
+[node name="Pause" parent="TrashGame/UI" instance=ExtResource( 10 )]
 
 [node name="Timer" type="Timer" parent="TrashGame"]
 wait_time = 30.0

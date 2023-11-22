@@ -17,7 +17,6 @@ config/icon="res://icon.png"
 [autoload]
 
 DialogManager="*res://DialogManager.gd"
-PauseScript="*res://Pause_script.gd"
 
 [display]
 
