@@ -14,7 +14,7 @@ func _process(delta):
 		$Control.visible = true
 	else:
 		$Control.visible = false
-	if (willhappen and DialogManager.is_dialog_active and Input.is_action_pressed("interact")):
+	if (inreach and willhappen and DialogManager.is_dialog_active and Input.is_action_pressed("interact")):
 		dialogue_happened = true
 		player_body.freeze(true)
 	if (not DialogManager.is_dialog_active and dialogue_happened == true):
@@ -44,3 +44,4 @@ func _on_Area2D_body_exited(body):
 	$Control.visible = false
 	inreach = false
 	willhappen = false
+	DialogManager.end_dialog()

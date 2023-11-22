@@ -1,9 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/house-front.png" type="Texture" id=1]
 [ext_resource path="res://Assets/house-side.png" type="Texture" id=2]
 [ext_resource path="res://Areas/M4 - Town Square/StaticBody2D.gd" type="Script" id=3]
 [ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://particle.png" type="Texture" id=5]
+
+[sub_resource type="ParticlesMaterial" id=6]
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
@@ -36,6 +43,13 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [node name="House" type="Node2D"]
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 14, -21 )
+scale = Vector2( 0.05, 0.05 )
+speed_scale = 4.65
+process_material = SubResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )

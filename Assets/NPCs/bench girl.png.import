@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bench lesbian.png-727c99226e483a70168b2bf64b41e787.stex"
+path="res://.import/bench girl.png-9ca5b0ccb51e6470b2506e046ded53f3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/NPCs/bench lesbian.png"
-dest_files=[ "res://.import/bench lesbian.png-727c99226e483a70168b2bf64b41e787.stex" ]
+source_file="res://Assets/NPCs/bench girl.png"
+dest_files=[ "res://.import/bench girl.png-9ca5b0ccb51e6470b2506e046ded53f3.stex" ]
 
 [params]
 

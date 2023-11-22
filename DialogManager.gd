@@ -24,6 +24,10 @@ func start_dialog(position: Vector2, lines: Array):
 	is_dialog_active = true
 	can_advance_line = true
 	text_box = null
+
+func end_dialog():
+	is_dialog_active = false
+	can_advance_line = false
 	
 
 func _show_text_box():

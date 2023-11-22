@@ -1,57 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/NPCs/Crowd old.png" type="Texture" id=1]
+[ext_resource path="res://NPCs/BaseNPC.gd" type="Script" id=2]
 [ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=3]
-
-[sub_resource type="GDScript" id=5]
-script/source = "extends Node2D
-
-export var LINES = \"\"
-var dialogue_happened = false
-var player_body
-var inreach = false
-var willhappen
-
-func _ready():
-	pass
-
-func _process(delta):
-	if inreach:
-		$Control.visible = true
-	else:
-		$Control.visible = false
-	if (willhappen and DialogManager.is_dialog_active and Input.is_action_pressed(\"interact\")):
-		dialogue_happened = true
-		player_body.freeze(true)
-	if (not DialogManager.is_dialog_active and dialogue_happened == true):
-		inreach = false
-		willhappen = false
-		dialogue_happened = false
-		player_body.freeze(false)
-
-func _on_Area2D_body_entered(body):
-	$Control.visible = true
-	inreach = true
-	if (body.name == \"Player\" and not DialogManager.is_dialog_active):
-		player_body = body
-		willhappen = true
-		DialogManager.start_dialog(position, LINES.split(\"*\"))
-
-func _on_Gremlin_Area_body_entered(body):
-	if \"Player\" in body.name:
-		body.z_index = z_index-1
-		
-
-func _on_Gremlin_Area_body_exited(body):
-	if \"Player\" in body.name:
-		body.z_index = z_index + 1
-		
-
-func _on_Area2D_body_exited(body):
-	$Control.visible = false
-	inreach = false
-	willhappen = false
-"
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 3.875 )
@@ -69,8 +20,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
 [node name="BackOldManNPC" type="Node2D"]
-script = SubResource( 5 )
-LINES = "heyyyyyyy"
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

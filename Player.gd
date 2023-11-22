@@ -10,7 +10,7 @@ func get_input():
 	$AnimatedSprite.speed_scale = sprint_multiplier
 
 	if Input.is_action_pressed("sprint"):
-		sprint_multiplier = 1.2
+		sprint_multiplier = 1.3
 		$AnimatedSprite.speed_scale = sprint_multiplier
 		if direction == 1:
 			velocity.y -= 1
