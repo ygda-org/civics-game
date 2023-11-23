@@ -25,3 +25,7 @@ func _on_Exit_pressed():
 		get_tree().change_scene("res://UI/MainMenu.tscn")
 	else:
 		get_tree().change_scene("res://Areas/MainWorld.tscn")
+
+func _on_Visibility_pressed():
+	visible = false
+	get_parent().get_node("VisibilityMenu").visible = true

@@ -25,7 +25,6 @@ func display_text(text_to_display: String):
 	label.text = "\n"
 	yield(self, "resized")
 	label.text = text_to_display
-	
 	yield(self, "resized")
 	rect_min_size.x = min(rect_size.x, MAX_WIDTH)
 	
