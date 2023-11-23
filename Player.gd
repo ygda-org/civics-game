@@ -5,12 +5,13 @@ var velocity = Vector2.ZERO
 var direction = 1
 var frozen = false
 var is_sprinting = false
+var sprint_multiplier
 
 func get_velo():
-	return velocity
+	return velocity*sprint_multiplier
 
 func get_input():
-	var sprint_multiplier = 1.0
+	sprint_multiplier = 1.0
 	$AnimatedSprite.speed_scale = sprint_multiplier
 
 	if Input.is_action_pressed("sprint"):
