@@ -98,5 +98,4 @@ text = "Credits"
 
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_Options_pressed"]
-[connection signal="pressed" from="Credits" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
