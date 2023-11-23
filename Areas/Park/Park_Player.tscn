@@ -131,7 +131,6 @@ position = Vector2( -0.5, 7 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-current = true
 smoothing_enabled = true
 
 [node name="PlayerArea" type="Area2D" parent="."]
