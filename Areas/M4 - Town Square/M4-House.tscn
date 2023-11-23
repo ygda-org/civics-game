@@ -1,23 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/house-front.png" type="Texture" id=1]
-[ext_resource path="res://Assets/house-side.png" type="Texture" id=2]
 [ext_resource path="res://Areas/M4 - Town Square/StaticBody2D.gd" type="Script" id=3]
 [ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://particle.png" type="Texture" id=5]
 
-[sub_resource type="ParticlesMaterial" id=6]
-flag_disable_z = true
-gravity = Vector3( 0, 98, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=4]
@@ -27,7 +16,7 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ) ],
+"frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "selected",
 "speed": 5.0
@@ -36,6 +25,30 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17.125, 11.25 )
 
+[sub_resource type="Gradient" id=7]
+offsets = PoolRealArray( 0, 0.0117647, 0.958824 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.964706, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=10]
+gradient = SubResource( 7 )
+
+[sub_resource type="Curve" id=9]
+_data = [ Vector2( 0.227979, 1 ), 0.0, 0.267075, 0, 0, Vector2( 1, 0.391524 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 9 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+emission_shape = 2
+emission_box_extents = Vector3( -400, 0, 1 )
+flag_disable_z = true
+direction = Vector3( -100, 100, 0 )
+gravity = Vector3( 0, -40, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 1.0
+scale_curve = SubResource( 11 )
+color_ramp = SubResource( 10 )
+
 [sub_resource type="DynamicFont" id=5]
 size = 8
 outline_size = 1
@@ -43,13 +56,6 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [node name="House" type="Node2D"]
-
-[node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( 14, -21 )
-scale = Vector2( 0.05, 0.05 )
-speed_scale = 4.65
-process_material = SubResource( 6 )
-texture = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
@@ -60,6 +66,14 @@ script = ExtResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House Body"]
 position = Vector2( -0.875, 7 )
 shape = SubResource( 1 )
+
+[node name="houseparticle" type="Particles2D" parent="."]
+position = Vector2( -1, 18 )
+scale = Vector2( 0.05, 0.05 )
+amount = 20
+lifetime = 5.0
+process_material = SubResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="Node2D" type="Node2D" parent="."]
 

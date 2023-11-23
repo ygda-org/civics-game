@@ -13,6 +13,7 @@ var array = []
 func _ready():
 	$M4Game/Timer.start()
 	for house in get_node("Houses").get_children():
+		house.get_node("houseparticle").visible = false
 		house.get_node("AnimatedSprite").play("default")
 		array.append(house)
 	_randhouse()
@@ -32,6 +33,7 @@ func _randhouse():
 	var changed = {}
 	for rand in rands:
 		changed[rand] = 0
+		array[rand].get_node("houseparticle").visible = true
 		array[rand].get_node("AnimatedSprite").play("selected")
 	nSelHouse = len(changed)
 	

@@ -14,6 +14,7 @@ func _process(delta):
 		stage.score += 1
 		stage.nSelHouse -= 1
 		get_parent().get_node("AnimatedSprite").play("default")
+		get_parent().get_node("houseparticle").visible = false
 		if(stage.nSelHouse == 0):
 			stage._randhouse()
 

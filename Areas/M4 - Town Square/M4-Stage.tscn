@@ -190,8 +190,7 @@ position = Vector2( 439, -28 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="M4-Mayor" parent="." instance=ExtResource( 4 )]
-position = Vector2( 271, -80 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 272, -93 )
 
 [node name="M4-Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 130, 567 )
