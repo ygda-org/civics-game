@@ -1,18 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/Pause.gd" type="Script" id=1]
 [ext_resource path="res://VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://UI/VolumeSlider.gd" type="Script" id=3]
-[ext_resource path="res://button.png" type="Texture" id=4]
-[ext_resource path="res://ui_symbols.png" type="Texture" id=5]
-[ext_resource path="res://exitbutton.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 37
 font_data = ExtResource( 2 )
-
-[sub_resource type="StreamTexture" id=2]
-load_path = "res://.import/ui_symbols.png-20ceb3ac1848b5c1c2985e9435e69577.stex"
 
 [node name="Pause" type="Control"]
 visible = false
@@ -26,29 +20,15 @@ margin_bottom = 619.0
 color = Color( 0, 0, 0, 0.392157 )
 
 [node name="Resume" type="TextureButton" parent="."]
-margin_left = 390.0
+margin_left = 358.0
 margin_top = 76.0
-margin_right = 599.0
-margin_bottom = 132.0
-
-[node name="button" type="Sprite" parent="Resume"]
-position = Vector2( 107, 29 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 4 )
-region_enabled = true
-region_rect = Rect2( 34, 32, 105, 27 )
-
-[node name="play" type="Sprite" parent="Resume"]
-position = Vector2( 182, 27 )
-scale = Vector2( 4, 3 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 60, 37, 9, 14 )
+margin_right = 639.0
+margin_bottom = 184.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Resume"]
-margin_left = 28.0
+margin_left = 72.0
 margin_top = 10.0
-margin_right = 180.0
+margin_right = 212.0
 margin_bottom = 55.0
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
@@ -63,24 +43,10 @@ max_value = 1.0
 step = 0.05
 script = ExtResource( 3 )
 
-[node name="button2" type="Sprite" parent="VolumeSlider"]
-position = Vector2( 194, -42 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 4 )
-region_enabled = true
-region_rect = Rect2( 34, 32, 105, 27 )
-
-[node name="volume" type="Sprite" parent="VolumeSlider"]
-position = Vector2( 270, -42 )
-scale = Vector2( 4, 4 )
-texture = SubResource( 2 )
-region_enabled = true
-region_rect = Rect2( 44, 40, 10, 10 )
-
 [node name="RichTextLabel2" type="RichTextLabel" parent="VolumeSlider"]
-margin_left = 114.0
+margin_left = 125.0
 margin_top = -61.0
-margin_right = 265.0
+margin_right = 276.0
 margin_bottom = 14.0
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
@@ -88,29 +54,15 @@ text = "Volume
 "
 
 [node name="Exit" type="TextureButton" parent="."]
-margin_left = 390.0
+margin_left = 363.0
 margin_top = 446.0
-margin_right = 601.0
-margin_bottom = 502.0
-
-[node name="button3" type="Sprite" parent="Exit"]
-position = Vector2( 105, 28 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 4 )
-region_enabled = true
-region_rect = Rect2( 34, 32, 105, 27 )
-
-[node name="exit" type="Sprite" parent="Exit"]
-position = Vector2( 183, 29 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 6 )
-region_enabled = true
-region_rect = Rect2( 119, 39, 13, 13 )
+margin_right = 644.0
+margin_bottom = 554.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Exit"]
-margin_left = 58.0
+margin_left = 92.0
 margin_top = 10.0
-margin_right = 217.0
+margin_right = 187.0
 margin_bottom = 55.0
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )

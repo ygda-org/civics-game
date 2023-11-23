@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/MainMenu.gd" type="Script" id=2]
@@ -6,9 +6,6 @@
 [sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 1 )
-
-[sub_resource type="StreamTexture" id=4]
-load_path = "res://.import/button.png-234620e182281afdeb4aab4d2ed4f8a7.stex"
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
@@ -31,66 +28,45 @@ custom_fonts/normal_font = SubResource( 1 )
 text = "Civics Game"
 
 [node name="Start" type="TextureButton" parent="."]
-margin_left = 343.0
+margin_left = 329.0
 margin_top = 178.0
-margin_right = 662.0
+margin_right = 648.0
 margin_bottom = 258.0
 
-[node name="button" type="Sprite" parent="Start"]
-position = Vector2( 158, 40 )
-scale = Vector2( 3, 3 )
-texture = SubResource( 4 )
-region_enabled = true
-region_rect = Rect2( 34, 32, 105, 27 )
-
 [node name="RichTextLabel2" type="RichTextLabel" parent="Start"]
-margin_left = 80.0
-margin_top = 25.0
+margin_left = 90.0
+margin_top = 18.0
 margin_right = 252.0
-margin_bottom = 70.0
+margin_bottom = 58.0
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 text = "Start"
 
 [node name="Options" type="TextureButton" parent="."]
-margin_left = 343.0
+margin_left = 329.0
 margin_top = 374.0
-margin_right = 640.0
+margin_right = 648.0
 margin_bottom = 454.0
 
-[node name="button2" type="Sprite" parent="Options"]
-position = Vector2( 157, 39 )
-scale = Vector2( 3, 3 )
-texture = SubResource( 4 )
-region_enabled = true
-region_rect = Rect2( 34, 32, 105, 27 )
-
 [node name="RichTextLabel2" type="RichTextLabel" parent="Options"]
-margin_left = 54.0
-margin_top = 25.0
-margin_right = 296.0
+margin_left = 67.0
+margin_top = 17.0
+margin_right = 322.0
 margin_bottom = 57.0
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 text = "Options"
 
 [node name="Credits" type="TextureButton" parent="."]
-margin_left = 14.0
-margin_top = 545.0
-margin_right = 217.0
-margin_bottom = 592.0
-
-[node name="button3" type="Sprite" parent="Credits"]
-position = Vector2( 102, 22 )
-scale = Vector2( 2, 2 )
-texture = SubResource( 4 )
-region_enabled = true
-region_rect = Rect2( 34, 32, 105, 27 )
+margin_left = 24.0
+margin_top = 548.0
+margin_right = 157.0
+margin_bottom = 595.0
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Credits"]
-margin_left = 50.0
+margin_left = 16.0
 margin_top = 14.0
-margin_right = 167.0
+margin_right = 131.0
 margin_bottom = 36.0
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 3 )

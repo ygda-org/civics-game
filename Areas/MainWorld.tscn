@@ -1186,7 +1186,7 @@ LINES = "MATT: Argh, I don't have enough money to buy a Mika plush!*YOU: It coul
 [node name="blondekidNPC" parent="NPCs" instance=ExtResource( 37 )]
 position = Vector2( -33, -131 )
 scale = Vector2( 1.2, 1.2 )
-LINES = "LITTLE GIRL: I've learned so much about civil rights at school!*YOU: Oh, really?*LITTLE GIRL: Yes!*LITTLE GIRL: When the Civil War began for the US,*LITTLE GIRL: It started to give African Americans more civil rights in and out of the army.*LITTLE GIRL: But things really started to pick up from 1954 with the Civil Rights Movement!*LITTLE GIRL: World War 2 helped more women enter a broader workforce, and people of different genders, races, and abilities...*LITTLE GIRL: ...Started to demand equal treatment and opportunities!*YOU: Wow, it's great that you know so much!*LITTLE GIRL: Ehe~"
+LINES = "LITTLE GIRL: I've learned so much about civil rights at school!*YOU: Oh, really?*LITTLE GIRL: Yes!*LITTLE GIRL: When World War 1 began for the US,*LITTLE GIRL: It started to give African Americans more civil rights in and out of the army.*LITTLE GIRL: But things really started to pick up from 1954 with the Civil Rights Movement!*LITTLE GIRL: World War 2 helped more women enter a broader workforce,*LITTLE GIRL: And people of different genders, races, and abilities...*LITTLE GIRL: ...Started to demand equal treatment and opportunities!*YOU: Wow, it's great that you know so much!*LITTLE GIRL: Ehe~"
 
 [node name="emogirlNPC" parent="NPCs" instance=ExtResource( 39 )]
 position = Vector2( -346, -366 )
