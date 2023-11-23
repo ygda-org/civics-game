@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://NPCs/BaseNPC.gd" type="Script" id=1]
-[ext_resource path="res://Assets/fountain_revised.png" type="Texture" id=2]
+[ext_resource path="res://Assets/fountainrev2.png" type="Texture" id=2]
 [ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -23,6 +23,7 @@ font_data = ExtResource( 3 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.913725, 0.913725, 0.913725, 1 )
 texture = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

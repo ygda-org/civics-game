@@ -8,10 +8,10 @@
 extents = Vector2( 6, 3.875 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 6, 7.25 )
+extents = Vector2( 6, 4.625 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7.5, 5.375 )
+extents = Vector2( 6, 5.375 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 8
@@ -34,13 +34,13 @@ shape = SubResource( 1 )
 [node name="Gremlin Area" type="Area2D" parent="Gremlin Area"]
 
 [node name="Gremlin Area Collision" type="CollisionShape2D" parent="Gremlin Area/Gremlin Area"]
-position = Vector2( 0, 21.75 )
+position = Vector2( 0, -15.375 )
 shape = SubResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="Gremlin Area"]
 
 [node name="area coll" type="CollisionShape2D" parent="Gremlin Area/Area2D"]
-position = Vector2( 0, -12 )
+position = Vector2( 0, 26 )
 shape = SubResource( 2 )
 
 [node name="Control" type="Control" parent="."]
@@ -61,7 +61,7 @@ margin_bottom = 6.0
 custom_fonts/font = SubResource( 4 )
 text = "E"
 
-[connection signal="body_entered" from="Gremlin Area/Gremlin Area" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Gremlin Area/Gremlin Area" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Gremlin Area/Gremlin Area" to="." method="_on_Gremlin_Area_body_entered"]
+[connection signal="body_exited" from="Gremlin Area/Gremlin Area" to="." method="_on_Gremlin_Area_body_exited"]
 [connection signal="body_entered" from="Gremlin Area/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Gremlin Area/Area2D" to="." method="_on_Area2D_body_exited"]
