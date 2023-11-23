@@ -14,7 +14,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if clickable:
-		if(Input.is_action_just_pressed("click")):
+		if(Input.is_action_just_pressed("click") and not get_parent().bothTilesActive):
 			get_parent().receive_text($Control/Label.text)
 			$Control/Label.visible = true
 

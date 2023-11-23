@@ -10,6 +10,8 @@ var tile1 = "" #text of first selected tile
 var tile2 = "" #text of secont selected tile
 var dctAnsTile = {}
 var oncooldown = false
+var bothTilesActive = false
+var matched = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
@@ -34,24 +36,17 @@ func _ready():
 	#print(dctAnsTile)
 	
 func receive_text(mtext):
+	
 	if not oncooldown:
 		if not tile1:
 			tile1 = mtext
 		elif not tile2:
 			tile2 = mtext
-			if(tile1 in dctMatches and dctMatches[tile1] == tile2): 
-					get_node(str(dctAnsTile[tile1])).queue_free()
-					get_node(str(dctAnsTile[tile2])).queue_free()
-					tile1 = ""
-					tile2 = ""
-			elif(tile2 in dctMatches and dctMatches[tile2] == tile1): #merge with first cond and move into timout func tmrw
-					get_node(str(dctAnsTile[tile1])).queue_free()
-					get_node(str(dctAnsTile[tile2])).queue_free()
-					tile1 = ""
-					tile2 = ""
-			else:
-				oncooldown = true
-				$Timer.start()
+			bothTilesActive = true
+			if(tile1 in dctMatches and dctMatches[tile1] == tile2) or (tile2 in dctMatches and dctMatches[tile2] == tile1): #merge with first cond and move into timout func tmrw
+					matched = true
+			oncooldown = true
+			$Timer.start()
 			
 	#print(tile1)
 	#print(tile2)
@@ -61,11 +56,18 @@ func receive_text(mtext):
 
 
 func _on_Timer_timeout():
+	if(matched == true):
+		get_node(str(dctAnsTile[tile1])).queue_free()
+		get_node(str(dctAnsTile[tile2])).queue_free()
+		tile1 = ""
+		tile2 = ""
+	else:
+		print(tile1)
+		print(dctAnsTile[tile1])
+		get_node(str(dctAnsTile[tile1])).get_node("Control/Label").visible = false
+		get_node(str(dctAnsTile[tile2])).get_node("Control/Label").visible = false
+		tile1 = ""
+		tile2 = ""
 	oncooldown = false
-	print(tile1)
-	print(dctAnsTile[tile1])
-	get_node(str(dctAnsTile[tile1])).get_node("Control/Label").visible = false
-	get_node(str(dctAnsTile[tile2])).get_node("Control/Label").visible = false
-	tile1 = ""
-	tile2 = ""
+	bothTilesActive = false
 	 # Replace with function body.
