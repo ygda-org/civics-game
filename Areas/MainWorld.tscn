@@ -1271,6 +1271,7 @@ region_rect = Rect2( 48.884, 21.684, 1, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 197, -576 )
+scale = Vector2( 1.5, 1.5 )
 
 [connection signal="body_entered" from="Park" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Courthouse" to="." method="_on_Courthouse_body_entered"]
