@@ -6,6 +6,9 @@ var direction = 1
 var frozen = false
 var is_sprinting = false
 
+func get_velo():
+	return velocity
+
 func get_input():
 	var sprint_multiplier = 1.0
 	$AnimatedSprite.speed_scale = sprint_multiplier

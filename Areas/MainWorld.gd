@@ -1,7 +1,8 @@
 extends Node2D
 
 
-
+func _process(delta):
+	$CanvasLayer/PlayerIndicator.position += $Player.get_velo()*0.00039322245322
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
