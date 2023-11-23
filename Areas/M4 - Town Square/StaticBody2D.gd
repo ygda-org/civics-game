@@ -1,17 +1,14 @@
 extends Area2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var inreach = false
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	get_parent().find_node("Control").visible = false
 
 func _process(delta):
-	if inreach == true && Input.is_action_just_pressed("Interact"):
+	if inreach == true && Input.is_action_just_pressed("interact"):
 		inreach = false
 		var stage = get_parent().get_parent().get_parent()
 		stage.score += 1
@@ -19,9 +16,7 @@ func _process(delta):
 		get_parent().get_node("AnimatedSprite").play("default")
 		if(stage.nSelHouse == 0):
 			stage._randhouse()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
 
 
 func _on_StaticBody2D_body_entered(body):
@@ -32,4 +27,4 @@ func _on_StaticBody2D_body_entered(body):
 func _on_StaticBody2D_body_exited(body):
 	if("M4-Player" in body.name):
 		get_parent().find_node("Control").visible = false
-		inreach = false # Replace with function body.
+		inreach = false 
