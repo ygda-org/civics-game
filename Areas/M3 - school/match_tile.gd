@@ -16,7 +16,9 @@ func _process(delta):
 	if clickable:
 		if(Input.is_action_just_pressed("click") and not get_parent().bothTilesActive):
 			get_parent().receive_text($Control/Label.text)
-			$Control/Label.visible = true
+			$Control/Disabled.visible = false
+			$Control/Enabled.visible = true
+			
 
 
 func _on_Control_mouse_entered():

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/reset.png" type="Texture" id=1]
+[ext_resource path="res://Areas/M3 - school/M3_resetButton.gd" type="Script" id=2]
+
+[node name="M3_resetButton" type="TextureRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_M3_resetButton_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_M3_resetButton_mouse_exited"]
