@@ -21,11 +21,15 @@ func _process(delta):
 
 func _on_PlayerInBack_body_entered(body):
 	if "Player" in body.name:
-		#print("in")
-		body.z_index = z_index-1 # Replace with function body.
+		print("in")
+		body.behindCount += 1
+		body.z_index = z_index -1 # Replace with function body.
+		
 
 
 func _on_PlayerInBack_body_exited(body):
 	if "Player" in body.name:
 		#print("out")
-		body.z_index = z_index + 1
+		body.behindCount -= 1
+		if(body.behindCount == 0):
+			body.z_index = z_index + 1

@@ -5,6 +5,7 @@ var velocity = Vector2.ZERO
 var direction = 1
 var frozen = false
 var is_sprinting = false
+var behindCount = 0
 var sprint_multiplier
 
 func get_velo():

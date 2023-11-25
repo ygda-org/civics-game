@@ -165,7 +165,6 @@ z_as_relative = false
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-z_index = 1
 frames = SubResource( 18 )
 animation = "sprintLeft"
 

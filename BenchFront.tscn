@@ -10,6 +10,7 @@ extents = Vector2( 14, 2 )
 extents = Vector2( 14, 6 )
 
 [node name="BenchFront" type="StaticBody2D"]
+z_index = 1
 script = ExtResource( 2 )
 
 [node name="BenchFront Sprite" type="Sprite" parent="."]

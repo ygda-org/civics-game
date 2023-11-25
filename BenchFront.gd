@@ -21,9 +21,14 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	if "Player" in body.name:
-		body.z_index = z_index-1 # Replace with function body.
-
+		print("in")
+		body.behindCount += 1
+		body.z_index = z_index -1 # Replace with function body.
 
 func _on_Area2D_body_exited(body):
 	if "Player" in body.name:
-		body.z_index = z_index + 1
+		print("out")
+		body.behindCount -= 1
+		if(body.behindCount == 0):
+			body.z_index = z_index + 1
+

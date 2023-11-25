@@ -1243,6 +1243,7 @@ LINES = "BENCH: In Loving Memory of Judas Caldwell, beloved husband and wife.*YO
 [node name="benchgirlNPC" parent="NPCs" instance=ExtResource( 38 )]
 position = Vector2( 973, -1085 )
 scale = Vector2( 1.5, 1.5 )
+z_index = 3
 LINES = "BENCH GIRL: I wish I worked in D.C, the buildings there are so cool!*BENCH GIRL: Like the Jefferson Memorial, the Washington Monument, the White House—*BENCH GIRL: What if I just saw the President live and work there every day?*YOU: Where would you work, though?*BENCH GIRL: Ideally, somewhere on Capitol Hill.*BENCH GIRL: The Library of Congress, which is the largest library in the world...*BENCH GIRL: And Congress, which passes federal bills, are both there!"
 
 [node name="jimibenchDIALOGUE" parent="NPCs" instance=ExtResource( 43 )]
@@ -1314,6 +1315,7 @@ region_rect = Rect2( 48.884, 21.684, 1, 1 )
 position = Vector2( 197, -576 )
 scale = Vector2( 1.5, 1.5 )
 z_index = 1
+z_as_relative = true
 
 [connection signal="body_entered" from="Park" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Courthouse" to="." method="_on_Courthouse_body_entered"]
