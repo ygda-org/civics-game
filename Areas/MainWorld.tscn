@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://NPCs/realFountainDIALOGUE.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -661,11 +661,20 @@ extents = Vector2( 1560, 560 )
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 54.25, 29 )
 
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 93.5185, 27.5926 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 9.25926, 10.3704 )
+
 [sub_resource type="StreamTexture" id=11]
 load_path = "res://.import/school.png-c7fe976986472f04e7e63fc1eb64277c.stex"
 
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 131.5, 50 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 112.5, 41.5 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 54.25, 29 )
@@ -1052,6 +1061,7 @@ position = Vector2( 239, -794.5 )
 
 [node name="BenchFront4" parent="OverworldElements/BenchFronts" instance=ExtResource( 18 )]
 position = Vector2( -41, -795 )
+z_index = 2
 
 [node name="BenchFront5" parent="OverworldElements/BenchFronts" instance=ExtResource( 18 )]
 position = Vector2( 441.5, -471.5 )
@@ -1098,9 +1108,6 @@ shape = SubResource( 6 )
 modulate = Color( 0.905882, 0.870588, 0.870588, 1 )
 position = Vector2( 203, -1554 )
 scale = Vector2( 2.7, 2.7 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="Courthouse"]
 scale = Vector2( 0.8, 0.8 )
@@ -1109,6 +1116,20 @@ texture = ExtResource( 47 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Courthouse"]
 position = Vector2( 1.25, 9.33325 )
 shape = SubResource( 14 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Courthouse"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Courthouse/StaticBody2D"]
+position = Vector2( -0.555542, 7.96295 )
+shape = SubResource( 23 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Courthouse/StaticBody2D"]
+position = Vector2( -57.7778, 41.8519 )
+shape = SubResource( 24 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Courthouse/StaticBody2D"]
+position = Vector2( 62.2222, 42.2222 )
+shape = SubResource( 24 )
 
 [node name="School" type="Area2D" parent="."]
 modulate = Color( 0.921569, 0.917647, 0.917647, 1 )
@@ -1124,6 +1145,12 @@ texture = SubResource( 11 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="School"]
 position = Vector2( -1.5, 113 )
 shape = SubResource( 13 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="School"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="School/StaticBody2D"]
+position = Vector2( -1.5, 22.5 )
+shape = SubResource( 25 )
 
 [node name="Town Square - M4" type="Area2D" parent="."]
 position = Vector2( 459, -908 )
@@ -1157,6 +1184,7 @@ LINES = "JESS: I like what Johnson is saying about school reforms,* JESS: But I'
 [node name="Judge" parent="NPCs" instance=ExtResource( 28 )]
 position = Vector2( 65, -1394 )
 scale = Vector2( 1.5, 1.5 )
+z_index = 1
 LINES = "YOU: Am you a judge?*JUDGE: Yes, I'm here to preside over court proceedings.*JUDGE: All trials will be heard by me today."
 
 [node name="miku" parent="NPCs" instance=ExtResource( 29 )]
