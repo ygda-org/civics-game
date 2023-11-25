@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 DialogManager="*res://DialogManager.gd"
 ParkGlobals="*res://Areas/Park/ParkGlobals.gd"
 MainGlobals="*res://MainGlobals.gd"
+GodotTTS="*res://addons/godot_tts/TTS.gd"
 
 [display]
 

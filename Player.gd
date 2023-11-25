@@ -8,6 +8,7 @@ var is_sprinting = false
 var behindCount = 0
 var sprint_multiplier
 
+
 func get_velo():
 	return velocity*sprint_multiplier
 

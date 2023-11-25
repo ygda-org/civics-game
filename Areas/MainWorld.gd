@@ -3,6 +3,8 @@ extends Node2D
 func _ready():
 	$Player.position = MainGlobals.spawnPos
 	$CanvasLayer/PlayerIndicator.position = MainGlobals.indicatorSpawn
+	GodotTTS.speak("test")
+	print(GodotTTS._get_has_screen_reader())
 
 func _process(delta):
 	$CanvasLayer/PlayerIndicator.position += $Player.get_velo()*0.00032322245322
