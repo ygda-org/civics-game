@@ -13,18 +13,25 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if clickable:
-		if(Input.is_action_just_pressed("click") and not get_parent().bothTilesActive):
+	if clickable and get_parent().zoomed == false:
+		if(Input.is_action_just_pressed("click") and $Control/Enabled.visible):
+			get_parent().zoom($Control/Label.text)	
+			clickable = false
+		elif(Input.is_action_just_pressed("click") and not get_parent().bothTilesActive):
 			get_parent().receive_text($Control/Label.text)
 			$Control/Disabled.visible = false
 			$Control/Enabled.visible = true
+			clickable = false
+			
 			
 
 
 func _on_Control_mouse_entered():
-	clickable = true
+	if not get_parent().zoomed:
+		clickable = true
 	#print("hi") # Replace with function body.
 
 
 func _on_Control_mouse_exited():
+	#print("out")
 	clickable = false # Replace with function body.

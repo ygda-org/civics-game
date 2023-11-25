@@ -13,6 +13,7 @@ var tile1 = "" #text of first selected tile
 var tile2 = "" #text of secont selected tile
 var dctAnsTile = {}
 var bothTilesActive = false
+var zoomed = false
 var matched = false
 var correct = 0
 var wrong = 0
@@ -40,7 +41,10 @@ func _ready():
 	#print(dctAnsTile)
 	$M3_matchButton.visible = false
 	$M3_resetButton.visible = false
+	$M3_zoom.visible = false
+	
 func receive_text(mtext):
+	
 	if not tile1:
 		tile1 = mtext
 	elif not tile2:
@@ -52,14 +56,20 @@ func receive_text(mtext):
 		#$Timer.start()
 		$M3_matchButton.visible = true
 		$M3_resetButton.visible = true
-	print(mtext)
+	zoom(mtext)
+	#print("yes")
 		
 	#print(tile1)
 	#print(tile2)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
+func zoom(mtext):
+	#print("hi")
+	$M3_zoom.visible = true
+	$M3_zoom.active = true
+	$M3_zoom/Label.text = mtext
+	zoomed = true
 
 func on_match():
 	if(matched == true):
