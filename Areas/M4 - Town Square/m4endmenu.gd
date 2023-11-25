@@ -5,7 +5,7 @@ func _ready():
 	if M4Globals.numhouses == 1:
 		$Result.bbcode_text = 	"[center] " + "You got " + str(M4Globals.score) + " points and passed out flyers to 1 house!" + "[/center]"	
 	else:
-		$Result.bbcode_text = 	"[center] " + "You got " + str(M4Globals.score) + " points and passed out flyers to " + str(M4Globals.numhouses) + " house(s)!" + "[/center]"	
+		$Result.bbcode_text = 	"[center] " + "You got " + str(M4Globals.score) + " points and passed out flyers to " + str(M4Globals.numhouses) + " houses!" + "[/center]"	
 	if M4Globals.numhouses <= 1:
 		$stars.play("one")
 	elif M4Globals.numhouses >= 5 || M4Globals.get2mayor == true:

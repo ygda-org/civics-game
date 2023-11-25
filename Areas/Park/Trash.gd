@@ -2,9 +2,10 @@ extends Area2D
 
 
 func _ready():
-	randomize()
-	var spawnX = randf() * 896
-	var spawnY = randf() * 400
+	var random = RandomNumberGenerator.new()
+	random.randomize()
+	var spawnX = random.randf_range(25, 900)
+	var spawnY = random.randf_range(120-185, 550-185)
 
 	set_position(Vector2(spawnX, spawnY))
 

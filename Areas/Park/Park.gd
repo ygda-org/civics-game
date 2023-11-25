@@ -14,7 +14,7 @@ func _ready():
 	var random = RandomNumberGenerator.new()
 	random.randomize()
 	$TrashGame/Timer.start()
-	var r = random.randi()%11
+	var r = random.randi_range(3,8)
 	print(r)
 	for i in range(r):
 		var waste = preload("res://Areas/Park/Trash.tscn")

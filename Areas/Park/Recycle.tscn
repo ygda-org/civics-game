@@ -8,6 +8,5 @@ load_path = "res://.import/trash_assets.png-6d548db98a1eee458f1b83bb16a36afe.ste
 [node name="Recycle" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="0"]
-scale = Vector2( 3, 3 )
 texture = SubResource( 1 )
 region_rect = Rect2( 36.0792, 36.651, 21.7243, 9.0518 )

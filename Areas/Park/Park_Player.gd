@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 15000
+var speed = 13000
 var velocity = Vector2.ZERO
 var score = 0
 var recycleHand = 0

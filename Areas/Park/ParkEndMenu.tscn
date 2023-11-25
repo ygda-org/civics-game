@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Areas/Park/ParkEndMenu.gd" type="Script" id=2]
@@ -6,6 +6,9 @@
 [sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 1 )
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/title.png-50ae1153955eed1e1a910d67a0682202.stex"
 
 [node name="ParkEndMenu" type="Control"]
 anchor_right = 1.0
@@ -21,34 +24,56 @@ custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 
 [node name="Restart" type="TextureButton" parent="."]
-margin_left = 372.0
+margin_left = 356.0
 margin_top = 201.0
-margin_right = 685.0
-margin_bottom = 304.0
+margin_right = 704.0
+margin_bottom = 295.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Restart"]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 174, 45 )
+scale = Vector2( 4.8, 4 )
+texture = SubResource( 2 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Restart"]
-margin_left = 51.0
-margin_top = 24.0
-margin_right = 282.0
-margin_bottom = 72.0
+margin_left = 24.0
+margin_top = 30.0
+margin_right = 388.0
+margin_bottom = 78.0
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
-text = "Restart"
+text = "Restart (R)"
 
 [node name="Exit" type="TextureButton" parent="."]
-margin_left = 414.0
+margin_left = 354.0
 margin_top = 366.0
-margin_right = 617.0
-margin_bottom = 469.0
+margin_right = 708.0
+margin_bottom = 459.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Exit"]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 174, 45 )
+scale = Vector2( 4.8, 4 )
+texture = SubResource( 2 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Exit"]
-margin_left = 51.0
-margin_top = 24.0
-margin_right = 175.0
-margin_bottom = 72.0
+margin_left = 43.0
+margin_top = 30.0
+margin_right = 389.0
+margin_bottom = 78.0
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
-text = "Exit"
+text = "Exit (esc)"
 
 [connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
