@@ -889,6 +889,7 @@ position = Vector2( -651, -1545 )
 
 [node name="Tree35" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
 position = Vector2( 1186, 296 )
+z_index = 2
 
 [node name="Tree36" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
 position = Vector2( 1325, 267 )
@@ -1058,6 +1059,7 @@ position = Vector2( 500, 0.5 )
 
 [node name="BenchFront3" parent="OverworldElements/BenchFronts" instance=ExtResource( 18 )]
 position = Vector2( 239, -794.5 )
+z_index = 2
 
 [node name="BenchFront4" parent="OverworldElements/BenchFronts" instance=ExtResource( 18 )]
 position = Vector2( -41, -795 )
@@ -1195,7 +1197,7 @@ scale = Vector2( 1.5, 1.5 )
 LINES = "YOU: Are you here for a trial?* MIKA: I plead the 5th!*YOU: Huh?*MIKA: I have the right to remain silent!*MIKA: I do not have to incriminate myself by speaking to you!*YOU: Okay..."
 
 [node name="raymondNPC" parent="NPCs" instance=ExtResource( 30 )]
-position = Vector2( 497, -1414 )
+position = Vector2( 710, -1415 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "YOU: What are you doing at the courthouse?*RAY: I was summoned for jury duty, so it's my civic duty to come.*YOU: Why you?*RAY: I'm fair and impartial to the case, which makes me perfect for jury duty!"
 
@@ -1344,7 +1346,7 @@ region_rect = Rect2( 48.884, 21.684, 1, 1 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 197, -576 )
 scale = Vector2( 1.5, 1.5 )
-z_index = 1
+z_index = 4
 z_as_relative = true
 
 [connection signal="body_entered" from="Park" to="." method="_on_Area2D_body_entered"]
