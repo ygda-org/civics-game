@@ -21,21 +21,22 @@ func _input(event):
 
 
 func _on_brightnessSlider_value_changed(value:float) -> void:
-	get_parent().get_parent().find_node("WorldEnvironment").environment.adjustment_brightness = value
+	get_parent().get_parent().get_parent().find_node("WorldEnvironment").environment.adjustment_brightness = value
 	MainGlobals.brightness = value
 	
+	
 func _on_contrastSlider_value_changed(value:float) -> void:
-	get_parent().get_parent().find_node("WorldEnvironment").environment.adjustment_contrast = value
+	get_parent().get_parent().get_parent().find_node("WorldEnvironment").environment.adjustment_contrast = value
 	MainGlobals.contrast = value
 
 func _on_saturationSlider_value_changed(value:float) -> void:
-	get_parent().get_parent().find_node("WorldEnvironment").environment.adjustment_saturation = value
+	get_parent().get_parent().get_parent().find_node("WorldEnvironment").environment.adjustment_saturation = value
 	MainGlobals.saturation = value
-	
+
 func _on_Reset_pressed():
-	get_parent().get_parent().find_node("WorldEnvironment").environment.adjustment_brightness = 1
-	get_parent().get_parent().find_node("WorldEnvironment").environment.adjustment_contrast = 1
-	get_parent().get_parent().find_node("WorldEnvironment").environment.adjustment_saturation = 1
+	get_parent().get_parent().get_parent().find_node("WorldEnvironment").environment.adjustment_brightness = 1
+	get_parent().get_parent().get_parent().find_node("WorldEnvironment").environment.adjustment_contrast = 1
+	get_parent().get_parent().get_parent().find_node("WorldEnvironment").environment.adjustment_saturation = 1
 	MainGlobals.brightness = 1
 	MainGlobals.contrast = 1
 	MainGlobals.saturation = 1

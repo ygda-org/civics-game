@@ -4,17 +4,19 @@
 [ext_resource path="res://Areas/Park/Trash.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+extents = Vector2( 20, 20 )
 
 [node name="Trash" type="Area2D" groups=["trash"]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 21.2946, 19.6035, 19.0088, 17.8019 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4, -4 )
 shape = SubResource( 1 )
 
 [connection signal="area_entered" from="." to="." method="_on_Trash_area_entered"]

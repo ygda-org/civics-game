@@ -1,6 +1,9 @@
 extends Node2D
 
 func _ready():
+	find_node("WorldEnvironment").environment.adjustment_brightness = MainGlobals.brightness
+	find_node("WorldEnvironment").environment.adjustment_contrast = MainGlobals.contrast
+	find_node("WorldEnvironment").environment.adjustment_saturation = MainGlobals.saturation
 	$Player.position = MainGlobals.spawnPos
 	$CanvasLayer/PlayerIndicator.position = MainGlobals.indicatorSpawn
 	GodotTTS.speak("test")
@@ -19,7 +22,7 @@ func _on_Area2D_body_entered(body):
 
 func _on_Town_Square__M4_body_entered(body):
 	if body.name == "Player":
-		get_tree().change_scene("res://Areas/M4 - Town Square/M4-Stage.tscn")
+		get_tree().change_scene("res://Areas/M4 - Town Square/m4rev.tscn")
 		MainGlobals.spawnPos = Vector2(470, -880)
 		MainGlobals.indicatorSpawn = Vector2(90,40)
 
