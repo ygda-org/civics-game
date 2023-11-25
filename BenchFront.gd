@@ -28,5 +28,6 @@ func _on_Area2D_body_exited(body):
 	if "Player" in body.name:
 		body.behindCount -= 1
 		if(body.behindCount == 0):
-			body.z_index = z_index + 1
+			body.z_index = 4
+			
 

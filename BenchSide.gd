@@ -27,5 +27,6 @@ func _on_Area2D_body_exited(body):
 		#print("out")
 		body.behindCount -= 1
 		if(body.behindCount == 0):
-			body.z_index = z_index + 1
+			body.z_index = 4
+			
 

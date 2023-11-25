@@ -27,4 +27,4 @@ func _on_PlayerInBack_body_exited(body):
 		#print("out")
 		body.behindCount -= 1
 		if(body.behindCount == 0):
-			body.z_index = z_index + 1
+			body.z_index = 4
