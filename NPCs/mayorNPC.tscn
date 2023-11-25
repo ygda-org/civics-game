@@ -54,7 +54,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 27.5, 9 )
+extents = Vector2( 27.5, 12 )
 
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 8, 9.5 )
@@ -87,7 +87,7 @@ position = Vector2( 0, 13.5 )
 position = Vector2( 0, -14.75 )
 
 [node name="Gremlin Area Coll" type="CollisionShape2D" parent="StaticBody2D/Gremlin Area"]
-position = Vector2( 1.5, -10.75 )
+position = Vector2( 1.5, -7.75 )
 shape = SubResource( 12 )
 
 [node name="Area2D" type="Area2D" parent="StaticBody2D"]

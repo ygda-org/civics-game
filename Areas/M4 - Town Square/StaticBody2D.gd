@@ -2,21 +2,36 @@ extends Area2D
 
 
 var inreach = false
+var rng = RandomNumberGenerator.new()
+
+# Called when the node enters the scene tree for the first time.
+
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 
 
 func _ready():
+	rng.randomize()
+	var num = rng.randi_range(1,2)
+	print(num)
+	if(int(num) == 1): 
+		get_parent().get_node("AnimatedSprite").play("selected")
+		get_parent().get_node("houseparticle").visible = true
+	else:
+		get_parent().get_node("AnimatedSprite").play("default")
+		get_parent().get_node("houseparticle").visible = false
 	get_parent().find_node("Control").visible = false
-
+	
+	
 func _process(delta):
 	if inreach == true && Input.is_action_just_pressed("interact"):
 		inreach = false
-		var stage = get_parent().get_parent().get_parent()
-		stage.score += 1
-		stage.nSelHouse -= 1
+		M4Globals.numhouses += 1
+		M4Globals.score += 50
 		get_parent().get_node("AnimatedSprite").play("default")
 		get_parent().get_node("houseparticle").visible = false
-		if(stage.nSelHouse == 0):
-			stage._randhouse()
 
 
 

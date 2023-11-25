@@ -1310,7 +1310,7 @@ LINES = "FLYER: Liberty Landing Elementary - Home of the Eagles!*FLYER: Come joi
 [node name="flyermanNPC" parent="NPCs" instance=ExtResource( 53 )]
 position = Vector2( 494, -506 )
 scale = Vector2( 1.5, 1.5 )
-LINES = "YOU: What are you doing?*FLYER MAN: I'm trying to raise awareness about issues in town, like the littering problem in the park, the upcoming election, or all the youths skipping school nowadays.*YOU: Is it working*FLYER MAN: No... people keep ignoring me and I'm too scared to ask them to take flyers...*YOU: I'll take some!"
+LINES = "YOU: What are you doing?*FLYER MAN: I'm trying to raise awareness about issues in town, like the littering problem in the park, the upcoming election, or all the youths skipping school nowadays.*YOU: Is it working?*FLYER MAN: No... people keep ignoring me and I'm too scared to ask them to take flyers...*YOU: I'll take some!"
 
 [node name="noskipschoolDIALOGUE" parent="NPCs" instance=ExtResource( 54 )]
 position = Vector2( -397, 166 )

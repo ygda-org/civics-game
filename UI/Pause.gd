@@ -11,7 +11,6 @@ func _input(event):
 		get_tree().paused = newPauseState
 		visible = newPauseState
 
-
 func _on_Resume_pressed():
 	newPauseState = !get_tree().paused
 	get_tree().paused = newPauseState

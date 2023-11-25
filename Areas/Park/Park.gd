@@ -18,10 +18,14 @@ func _ready():
 	print(r)
 	for i in range(r):
 		var waste = preload("res://Areas/Park/Trash.tscn")
-		add_child(waste.instance())
+		var wasteinst = waste.instance()
+		wasteinst.z_index = -1
+		add_child(wasteinst)
 	for i in range(10-r):
 		var recycle = preload("res://Areas/Park/Recycle.tscn")
-		add_child(recycle.instance())
+		var recycleinst = recycle.instance()
+		recycleinst.z_index = -1
+		add_child(recycleinst)
 	trashStarted = true
 	
 func changeScore(newScore):

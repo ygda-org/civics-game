@@ -88,9 +88,9 @@ text = "Volume
 "
 
 [node name="Visibility" type="TextureButton" parent="."]
-margin_left = 372.0
+margin_left = 368.0
 margin_top = 337.0
-margin_right = 630.0
+margin_right = 626.0
 margin_bottom = 432.0
 
 [node name="button3" type="Sprite" parent="Visibility"]
