@@ -30,7 +30,7 @@ animations = [ {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "default",
-"speed": 3.0
+"speed": 2.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=10]
@@ -158,6 +158,6 @@ mouse_filter = 2
 custom_fonts/normal_font = SubResource( 3 )
 text = "Credits"
 
-[connection signal="pressed" from="Control/Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="Control/Options" to="." method="_on_Options_pressed"]
-[connection signal="pressed" from="Control/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="Control/Start" to="Control" method="_on_Start_pressed"]
+[connection signal="pressed" from="Control/Options" to="Control" method="_on_Options_pressed"]
+[connection signal="pressed" from="Control/Credits" to="Control" method="_on_Credits_pressed"]
