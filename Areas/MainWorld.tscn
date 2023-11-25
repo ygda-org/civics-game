@@ -889,7 +889,6 @@ position = Vector2( -651, -1545 )
 
 [node name="Tree35" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
 position = Vector2( 1186, 296 )
-z_index = 2
 
 [node name="Tree36" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
 position = Vector2( 1325, 267 )
@@ -1197,7 +1196,7 @@ scale = Vector2( 1.5, 1.5 )
 LINES = "YOU: Are you here for a trial?* MIKA: I plead the 5th!*YOU: Huh?*MIKA: I have the right to remain silent!*MIKA: I do not have to incriminate myself by speaking to you!*YOU: Okay..."
 
 [node name="raymondNPC" parent="NPCs" instance=ExtResource( 30 )]
-position = Vector2( 710, -1415 )
+position = Vector2( 492, -1410 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "YOU: What are you doing at the courthouse?*RAY: I was summoned for jury duty, so it's my civic duty to come.*YOU: Why you?*RAY: I'm fair and impartial to the case, which makes me perfect for jury duty!"
 
