@@ -15,19 +15,16 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _process(delta):
-	if(DialogManager.is_dialog_active): 
-		z_index = 0
+
 
 func _on_Area2D_body_entered(body):
 	if "Player" in body.name:
-		print("in")
 		body.behindCount += 1
 		body.z_index = z_index -1 # Replace with function body.
+		print(body.z_index)
 
 func _on_Area2D_body_exited(body):
 	if "Player" in body.name:
-		print("out")
 		body.behindCount -= 1
 		if(body.behindCount == 0):
 			body.z_index = z_index + 1

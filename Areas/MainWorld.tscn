@@ -1076,6 +1076,7 @@ scale = Vector2( 2, 2 )
 position = Vector2( 786, -458.5 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
+z_index = 2
 
 [node name="Park" type="Area2D" parent="."]
 position = Vector2( 1287, 186 )
@@ -1108,6 +1109,7 @@ shape = SubResource( 6 )
 modulate = Color( 0.905882, 0.870588, 0.870588, 1 )
 position = Vector2( 203, -1554 )
 scale = Vector2( 2.7, 2.7 )
+z_index = 1
 
 [node name="Sprite" type="Sprite" parent="Courthouse"]
 scale = Vector2( 0.8, 0.8 )

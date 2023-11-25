@@ -7,7 +7,7 @@ var inreach = false
 var willhappen
 
 func _ready():
-	pass
+	z_index = 3
 
 func _process(delta):
 	if inreach:

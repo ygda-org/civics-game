@@ -7,6 +7,7 @@ var inreach = false
 var willhappen
 
 func _ready():
+	z_index = 3
 	$AnimatedSprite.play("default")
 
 func _process(delta):
