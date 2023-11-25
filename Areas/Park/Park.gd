@@ -11,9 +11,11 @@ func _process(delta):
 func _ready():
 	trashStarted = true
 	$TrashGame/UI/Score.text = "Score: " + str(score)
-	randomize()
+	var random = RandomNumberGenerator.new()
+	random.randomize()
 	$TrashGame/Timer.start()
-	var r = randi()%10
+	var r = random.randi()%11
+	print(r)
 	for i in range(r):
 		var waste = preload("res://Areas/Park/Trash.tscn")
 		add_child(waste.instance())
