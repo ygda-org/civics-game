@@ -20,8 +20,9 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if "Player" in body.name:
 		body.behindCount += 1
-		body.z_index = z_index -1 # Replace with function body.
-		print(body.z_index)
+		if(body.z_index > z_index -1):
+			body.z_index = z_index -1 # Replace with function body.
+		#print(body.z_index)
 
 func _on_Area2D_body_exited(body):
 	if "Player" in body.name:
