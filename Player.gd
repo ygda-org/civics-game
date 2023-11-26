@@ -8,6 +8,12 @@ var is_sprinting = false
 var behindCount = 0
 var sprint_multiplier
 
+var sfx_manager_scene = preload("res://SFX/SFX_Manager.tscn")
+var sfx_manager
+
+func _ready():
+	sfx_manager = sfx_manager_scene.instance()
+	add_child(sfx_manager)
 
 func get_velo():
 	return velocity*sprint_multiplier
@@ -26,10 +32,20 @@ func get_input():
 		velocity.y -= 1
 		$AnimatedSprite.play("walkUp")
 		direction = 1
+		
+		if is_sprinting == true:
+			sfx_manager.play_sfx("footsteps_hard_sprint")
+		else:
+			sfx_manager.play_sfx("foosteps_hard_walk")
+			
 	elif Input.is_action_pressed("topDownBackwards") or Input.is_action_pressed("ui_down"):
 		velocity.y += 1
 		$AnimatedSprite.play("walkDown")
 		direction = 2
+		if is_sprinting == true:
+			sfx_manager.play_sfx("foosteps_hard_sprint")
+		else:
+			sfx_manager.play_sfx("foosteps_hard_walk")
 	elif Input.is_action_pressed("topDownRight") or Input.is_action_pressed("ui_right"):
 		velocity.x += 1
 		if not is_sprinting:
@@ -37,6 +53,10 @@ func get_input():
 		else:
 			$AnimatedSprite.play("sprintRight")
 		direction = 3
+		if is_sprinting == true:
+			sfx_manager.play_sfx("foosteps_hard_sprint")
+		else:
+			sfx_manager.play_sfx("foosteps_hard_walk")
 	elif Input.is_action_pressed("topDownLeft") or Input.is_action_pressed("ui_left"):
 		velocity.x -= 1
 		if is_sprinting:
@@ -44,6 +64,10 @@ func get_input():
 		else:
 			$AnimatedSprite.play("walkLeft")
 		direction = 4
+		if is_sprinting == true:
+			sfx_manager.play_sfx("foosteps_hard_sprint")
+		else:
+			sfx_manager.play_sfx("foosteps_hard_walk")
 	else:
 		velocity = Vector2.ZERO
 		if direction == 1:
