@@ -70,22 +70,28 @@ func _on_Area2D_area_entered(area):
 
 func _on_PlayerArea_area_exited(area):
 	if "Trash" in area.name and area.is_in_group("trash") and recycleHand == 0:
+		GodotTTS.speak("Trash")
 		waste = null
 		typeWaste = ""
 	elif "Recycle" in area.name and area.is_in_group('trash') and wasteHand == 0:
+		GodotTTS.speak("Recycling")
 		waste = null
 		typeWaste = ""
 
 
 func _on_PlayerArea_body_entered(body):
 	if body.name == "Trashcan":
+		GodotTTS.speak("Collided with trash can")
 		score += wasteHand
 		get_parent().changeScore(score)
 		wasteHand = 0
 	elif body.name == "RecyclingCan":
+		GodotTTS.speak("Collided with recycling can")
 		score += recycleHand
 		get_parent().changeScore(score)
 		recycleHand = 0
+	elif body.name == "Walls":
+		GodotTTS.speak("Collided with wall")
 
 
 

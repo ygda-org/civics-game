@@ -1,9 +1,6 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var nTiles = 6
 var masterLst = [
 	{"Cause of the Revolutionary War": "The British placed heavy stamp, sugar, and tea taxes on the American Colonies",
