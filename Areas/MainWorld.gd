@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	print(OS.window_size)
 	find_node("WorldEnvironment").environment.adjustment_brightness = MainGlobals.brightness
 	find_node("WorldEnvironment").environment.adjustment_contrast = MainGlobals.contrast
 	find_node("WorldEnvironment").environment.adjustment_saturation = MainGlobals.saturation
@@ -11,7 +12,10 @@ func _ready():
 	print(GodotTTS._get_can_detect_screen_reader())
 
 func _process(delta):
-	$CanvasLayer/PlayerIndicator.position += $Player.get_velo()*0.00032322245322
+	if OS.has_feature("JavaScript"):
+			$CanvasLayer/PlayerIndicator.position += $Player.get_velo()*0.00060322245322
+	else:
+		$CanvasLayer/PlayerIndicator.position += $Player.get_velo()*0.00032322245322
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
