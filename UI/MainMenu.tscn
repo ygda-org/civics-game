@@ -1,13 +1,15 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/MainMenu.gd" type="Script" id=2]
 [ext_resource path="res://title.png" type="Texture" id=3]
 [ext_resource path="res://UI/playermenu.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Back.png" type="Texture" id=5]
+[ext_resource path="res://UI/worldenv.gd" type="Script" id=6]
 
 [sub_resource type="Environment" id=4]
 background_mode = 4
+adjustment_enabled = true
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 5 )
@@ -48,6 +50,7 @@ font_data = ExtResource( 1 )
 font_data = ExtResource( 1 )
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 4 )
@@ -60,12 +63,9 @@ region_enabled = true
 region_rect = Rect2( 0, 1, 300, 176 )
 
 [node name="playermenu" type="KinematicBody2D" parent="."]
-position = Vector2( 504, 514 )
-scale = Vector2( 5, 5 )
+position = Vector2( 507, 515 )
+scale = Vector2( 5.2, 5.2 )
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="playermenu"]
 frames = SubResource( 9 )
@@ -75,7 +75,7 @@ shape = SubResource( 10 )
 
 [node name="button" type="Sprite" parent="."]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 497, 223 )
+position = Vector2( 501, 223 )
 scale = Vector2( 4.5, 4.5 )
 texture = ExtResource( 3 )
 region_enabled = true
@@ -98,7 +98,8 @@ region_enabled = true
 region_rect = Rect2( 113, 251, 74, 23 )
 
 [node name="Control" type="Control" parent="."]
-margin_right = 40.0
+margin_left = 1.0
+margin_right = 41.0
 margin_bottom = 40.0
 script = ExtResource( 2 )
 
@@ -119,45 +120,52 @@ margin_bottom = 242.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/Start"]
-margin_left = 36.0
-margin_top = 21.3333
-margin_right = 208.0
-margin_bottom = 66.3333
+margin_left = 30.0
+margin_top = 24.0
+margin_right = 522.0
+margin_bottom = 69.0
+rect_scale = Vector2( 0.7, 0.7 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
-text = "Start"
+text = "Start (1)"
 
 [node name="Options" type="TextureButton" parent="Control"]
-margin_left = 310.0
+margin_left = 309.0
 margin_top = 310.0
-margin_right = 571.0
+margin_right = 570.0
 margin_bottom = 381.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/Options"]
-margin_left = 24.6667
-margin_top = 20.6667
-margin_right = 266.667
-margin_bottom = 52.6667
+margin_left = 25.3333
+margin_top = 24.6667
+margin_right = 436.333
+margin_bottom = 56.6667
+rect_scale = Vector2( 0.7, 0.7 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
-text = "Options"
+text = "Options (2)"
 
 [node name="Credits" type="TextureButton" parent="Control"]
-margin_left = -14.0
+margin_left = 10.0
 margin_top = 545.0
-margin_right = 189.0
+margin_right = 163.0
 margin_bottom = 592.0
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/Credits"]
-margin_left = 50.0
-margin_top = 14.0
-margin_right = 167.0
-margin_bottom = 36.0
+margin_left = 19.0
+margin_top = 16.0
+margin_right = 209.0
+margin_bottom = 38.0
+rect_scale = Vector2( 0.8, 0.8 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 3 )
-text = "Credits"
+text = "Credits (3)"
+
+[node name="walkingtime" type="Timer" parent="."]
+wait_time = 4.5
 
 [connection signal="pressed" from="Control/Start" to="Control" method="_on_Start_pressed"]
 [connection signal="pressed" from="Control/Options" to="Control" method="_on_Options_pressed"]
 [connection signal="pressed" from="Control/Credits" to="Control" method="_on_Credits_pressed"]
+[connection signal="timeout" from="walkingtime" to="Control" method="_on_walkingtime_timeout"]

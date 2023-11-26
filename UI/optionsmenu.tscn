@@ -1,0 +1,128 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://title.png" type="Texture" id=1]
+[ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/worldenv.gd" type="Script" id=3]
+[ext_resource path="res://UI/optionsmenu.gd" type="Script" id=4]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+adjustment_enabled = true
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+extra_spacing_top = 5
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+extra_spacing_bottom = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 2 )
+
+[node name="optionsmenu" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 508, 287 )
+scale = Vector2( 3.6, 3.6 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 1, 300, 176 )
+
+[node name="button" type="Sprite" parent="."]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 501, 245 )
+scale = Vector2( 6, 5.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
+
+[node name="button2" type="Sprite" parent="."]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 501, 414 )
+scale = Vector2( 6, 5.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
+
+[node name="button4" type="Sprite" parent="."]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 121, 53 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = 1.0
+margin_right = 41.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+margin_left = 280.0
+margin_top = 38.0
+margin_right = 493.0
+margin_bottom = 83.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "Options"
+
+[node name="Volume" type="TextureButton" parent="Control"]
+margin_left = 277.0
+margin_top = 193.0
+margin_right = 574.0
+margin_bottom = 264.0
+rect_scale = Vector2( 1.5, 1.5 )
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/Volume"]
+margin_left = 35.3333
+margin_top = 12.0
+margin_right = 371.333
+margin_bottom = 135.0
+rect_scale = Vector2( 0.7, 0.7 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 3 )
+text = "Volume Settings (1)"
+
+[node name="Display" type="TextureButton" parent="Control"]
+margin_left = 281.0
+margin_top = 355.0
+margin_right = 574.0
+margin_bottom = 433.0
+rect_scale = Vector2( 1.5, 1.5 )
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/Display"]
+margin_left = 32.6667
+margin_top = 16.6667
+margin_right = 368.667
+margin_bottom = 139.667
+rect_scale = Vector2( 0.7, 0.7 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 3 )
+text = "Display Settings (2)"
+
+[node name="Back" type="TextureButton" parent="Control"]
+margin_left = 31.0
+margin_top = 23.0
+margin_right = 215.0
+margin_bottom = 81.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Back"]
+margin_left = 18.0
+margin_top = 23.0
+margin_right = 188.0
+margin_bottom = 63.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 4 )
+text = "Back (esc)"
+
+[connection signal="pressed" from="Control/Volume" to="Control" method="_on_Volume_pressed"]
+[connection signal="pressed" from="Control/Display" to="Control" method="_on_Display_pressed"]
+[connection signal="pressed" from="Control/Back" to="Control" method="_on_Back_pressed"]
