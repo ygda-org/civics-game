@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Left.png" type="Texture" id=2]
@@ -160,6 +160,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 9 )
 
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 8.4375, 9.5 )
+
 [node name="Player" type="KinematicBody2D"]
 z_as_relative = false
 script = ExtResource( 1 )
@@ -179,3 +182,12 @@ limit_left = -1000
 limit_top = -1750
 limit_right = 1400
 limit_bottom = 650
+
+[node name="CheckCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckCollision"]
+position = Vector2( 0.5625, 10 )
+shape = SubResource( 27 )
+
+[connection signal="area_entered" from="CheckCollision" to="." method="_on_CheckCollision_area_entered"]
+[connection signal="body_entered" from="CheckCollision" to="." method="_on_CheckCollision_body_entered"]

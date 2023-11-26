@@ -126,26 +126,23 @@ var normal_rate_percentage setget , _get_rate_percentage
 
 
 func speak(text, interrupt := true):
-	var utterance
-	if tts != null:
-		utterance = tts.speak(text, interrupt)
-	elif OS.has_feature('JavaScript'):
-		var code = (
+	if ttsEnabled:
+		var utterance
+		if tts != null:
+			utterance = tts.speak(text, interrupt)
+		elif OS.has_feature('JavaScript'):
+			var code = (
+				"""
+				let utterance = new SpeechSynthesisUtterance("%s")
+				utterance.rate = %s
 			"""
-			let utterance = new SpeechSynthesisUtterance("%s")
-			utterance.rate = %s
-		"""
-			% [text.replace("\n", " "), javascript_rate]
-		)
-		if interrupt:
-			code += """
-				window.speechSynthesis.cancel()
-			"""
-		code += "window.speechSynthesis.speak(utterance)"
-		JavaScript.eval(code)
-	else:
-		print_debug("%s: %s" % [text, interrupt])
-	return utterance
+				% [text.replace("\n", " "), javascript_rate]
+			)
+			code += "window.speechSynthesis.speak(utterance)"
+			JavaScript.eval(code)
+		else:
+			print_debug("%s: %s" % [text, interrupt])
+		return utterance
 
 
 func stop():
@@ -260,3 +257,10 @@ func _exit_tree():
 	if not tts or not TTS:
 		return
 	tts.free()
+	
+
+var ttsEnabled = false
+
+func _process(delta):
+	if Input.is_action_pressed("sprint") and Input.is_action_just_pressed("N"):
+		ttsEnabled = !ttsEnabled

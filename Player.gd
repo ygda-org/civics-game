@@ -67,3 +67,21 @@ func _physics_process(delta):
 
 func freeze(f):
 	frozen = f
+
+
+func _on_CheckCollision_body_entered(body):
+	if body.name == "Player" or body.get_parent().get_parent().name == "NPCs":
+		print('asdf')
+		return
+	if body.name == "Walls" or body.name == "fences":
+		GodotTTS.speak("Collided with " + str(body.name))
+	else:
+		GodotTTS.speak("Collided with " + str(body.get_parent().name))
+
+
+
+func _on_CheckCollision_area_entered(area):
+	if area.name == "Area2D" and area.get_parent().get_parent().get_parent().name == "NPCs":
+		GodotTTS.speak("Press E to interact with " + str(area.get_parent().get_parent().name))
+	elif area.name != "Area2D" and area.name != "Gremlin Area" and area.name != "PlayerInBack":
+		GodotTTS.speak("In " + str(area.name))

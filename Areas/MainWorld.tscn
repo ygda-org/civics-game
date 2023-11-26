@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://NPCs/realFountainDIALOGUE.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -23,7 +23,6 @@
 [ext_resource path="res://NPCs/actualOld Bench NPC.tscn" type="PackedScene" id=21]
 [ext_resource path="res://NPCs/BaseNPC.tscn" type="PackedScene" id=22]
 [ext_resource path="res://mus_j_overworld.ogg" type="AudioStream" id=23]
-[ext_resource path="res://Text Audio.tscn" type="PackedScene" id=24]
 [ext_resource path="res://NPCs/BackOldManNPC.tscn" type="PackedScene" id=25]
 [ext_resource path="res://NPCs/jessicaNPC.tscn" type="PackedScene" id=26]
 [ext_resource path="res://NPCs/CrowdWomanNPC.tscn" type="PackedScene" id=27]
@@ -1324,8 +1323,6 @@ LINES = "SIGN: The Dangers of Ditching School"
 [node name="Overworld Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 23 )
 autoplay = true
-
-[node name="Text Audio" parent="." instance=ExtResource( 24 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2

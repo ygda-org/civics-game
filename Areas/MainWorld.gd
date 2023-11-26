@@ -1,15 +1,13 @@
 extends Node2D
 
 func _ready():
-	print(OS.window_size)
 	find_node("WorldEnvironment").environment.adjustment_brightness = MainGlobals.brightness
 	find_node("WorldEnvironment").environment.adjustment_contrast = MainGlobals.contrast
 	find_node("WorldEnvironment").environment.adjustment_saturation = MainGlobals.saturation
 	$Player.position = MainGlobals.spawnPos
 	$CanvasLayer/PlayerIndicator.position = MainGlobals.indicatorSpawn
-	if GodotTTS._get_can_detect_screen_reader():
-		GodotTTS.speak("test")
-	print(GodotTTS._get_can_detect_screen_reader())
+	GodotTTS.speak("welcome to liberty landing!")
+
 
 func _process(delta):
 	if OS.has_feature("JavaScript"):
