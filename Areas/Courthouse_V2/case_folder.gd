@@ -15,9 +15,9 @@ func _ready():
 
 func _process(delta):
 	
-	if get_parent().visible and Input.is_action_just_pressed(input):
+	if get_parent().get_parent().visible and Input.is_action_just_pressed(input):
 		print("yes")
-		get_parent().choose_case(number)
+		get_parent().get_parent().choose_case(number)
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
