@@ -5,10 +5,13 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var clickable = false
+export var number: String
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Control/Label.visible = false # Replace with function body.
+	$Control/number.text = {"first" : "1", "second" : "2", "third" : "3", "fourth" : "4", "fifth" : "5", "sixth" : "6"}[number]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,6 +21,15 @@ func _process(delta):
 			get_parent().zoom($Control/Label.text)	
 			clickable = false
 		elif(Input.is_action_just_pressed("click") and not get_parent().bothTilesActive):
+			get_parent().receive_text($Control/Label.text)
+			$Control/Disabled.visible = false
+			$Control/Enabled.visible = true
+			clickable = false
+	elif get_parent().zoomed == false:
+		if(Input.is_action_just_pressed(number) and $Control/Enabled.visible):
+			get_parent().zoom($Control/Label.text)	
+			clickable = false
+		elif(Input.is_action_just_pressed(number) and not get_parent().bothTilesActive):
 			get_parent().receive_text($Control/Label.text)
 			$Control/Disabled.visible = false
 			$Control/Enabled.visible = true

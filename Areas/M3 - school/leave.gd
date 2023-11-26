@@ -12,7 +12,8 @@ func _ready():
 
 
 func _process(delta):
-	if(inreach and Input.is_action_just_pressed("click") and not get_parent().zoomed):
+	if(((inreach and Input.is_action_just_pressed("click")) or Input.is_action_just_pressed("leave")) and not get_parent().zoomed):
+		print("no")
 		get_tree().change_scene("res://Areas/MainWorld.tscn")
 
 
