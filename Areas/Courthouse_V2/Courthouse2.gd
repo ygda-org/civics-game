@@ -7,4 +7,5 @@ extends Node2D
 
 func _ready():
 	$docTableOpen.visible = false
+	$caseInfo.visible = false
 	$docTable/Label.visible = false
