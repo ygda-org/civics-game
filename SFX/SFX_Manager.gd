@@ -23,12 +23,12 @@ func stop_all_sfx():
 # Check if a specific sound effect is currently playing
 func is_sfx_playing(sfx_name: String) -> bool:
 	var sfx_node = get_node(sfx_name)
-	return sfx_node and sfx_node.playing
+	return sfx_node.is_playing()
 
 # Check if any sound effect is currently playing
 func is_any_sfx_playing() -> bool:
 	for child in get_children():
-		if child is AudioStreamPlayer and child.playing:
+		if child is AudioStreamPlayer and child.is_playing():
 			return true
 	return false
 

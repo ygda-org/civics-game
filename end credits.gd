@@ -18,7 +18,7 @@ func _ready():
 	$credits/reallines.get_child(0).modulate.a = 0
 
 func _process(delta):
-	if frame >= 9:
+	if frame >= 6:
 		end()
 	if started:
 		$skipbutton.visible = true

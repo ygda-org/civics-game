@@ -55,11 +55,11 @@ stream = ExtResource( 15 )
 
 [node name="footsteps_hard_sprint" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
-volume_db = 24.0
+volume_db = 2.0
 
 [node name="footsteps_hard_walk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
-volume_db = 24.0
+volume_db = 2.0
 
 [node name="footsteps_soft_sprint" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 26 )

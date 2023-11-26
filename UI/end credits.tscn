@@ -104,7 +104,7 @@ extents = Vector2( 8.75, 16 )
 script = ExtResource( 3 )
 
 [node name="polaroidtimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 20.0
 autostart = true
 
 [node name="movetimer" type="Timer" parent="."]
@@ -112,11 +112,11 @@ wait_time = 2.5
 one_shot = true
 
 [node name="ppausetimer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 5.0
 one_shot = true
 
 [node name="start timer" type="Timer" parent="."]
-wait_time = 0.001
+wait_time = 10.0
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -177,21 +177,16 @@ margin_bottom = 490.0
 color = Color( 0.329412, 0.254902, 0.568627, 0.403922 )
 
 [node name="reallines" type="RichTextLabel" parent="credits"]
-margin_left = 36.0
+margin_left = 27.0
 margin_top = 118.0
-margin_right = 598.0
+margin_right = 589.0
 margin_bottom = 489.0
 custom_fonts/normal_font = SubResource( 10 )
 bbcode_enabled = true
-bbcode_text = "[center]
-
-
-
-
-
-
-Thanks to your civic engagement in Liberty Landing,
+bbcode_text = "[center]Thanks to your civic engagement 
+in Liberty Landing,
 you've been declared an outstanding citizen!
+
 Everyone is thankful for your help and hard work.
 
 
@@ -209,8 +204,10 @@ and encourage them to do the same!
 
 
 
-Make sure to stay up to date 
-about laws and decisions that can affect you! 
+Make sure to stay
+up to date 
+about laws and decisions 
+that can affect you! 
 
 
 
@@ -278,15 +275,10 @@ Thank you for playing Liberty Landing!
 Feel free to continue exploring and talking to
 all the characters around the map!
 [/center]"
-text = "
-
-
-
-
-
-
-Thanks to your civic engagement in Liberty Landing,
+text = "Thanks to your civic engagement 
+in Liberty Landing,
 you've been declared an outstanding citizen!
+
 Everyone is thankful for your help and hard work.
 
 
@@ -304,8 +296,10 @@ and encourage them to do the same!
 
 
 
-Make sure to stay up to date 
-about laws and decisions that can affect you! 
+Make sure to stay
+up to date 
+about laws and decisions 
+that can affect you! 
 
 
 
@@ -373,6 +367,7 @@ Thank you for playing Liberty Landing!
 Feel free to continue exploring and talking to
 all the characters around the map!
 "
+scroll_active = false
 
 [node name="Skip" type="TextureButton" parent="credits"]
 margin_left = 768.0
