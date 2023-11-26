@@ -12,9 +12,11 @@ var is_dialog_active = false
 var can_advance_line = false
 
 var audio = preload("res://Text Audio.tscn").instance()
+var sfx_manager_scene = preload("res://SFX/SFX_Manager.tscn")
+var sfx_manager = sfx_manager_scene.instance()
 
 func _ready():
-	pass
+	add_child(sfx_manager)
 
 func start_dialog(position: Vector2, lines: Array):
 	if is_dialog_active:
@@ -41,10 +43,16 @@ func _show_text_box():
 	
 	text_box.display_text(dialog_lines[current_line_index])
 	audio.get_node("Audio").play()
+	
+	if !sfx_manager.is_sfx_playing("sys_text"):
+			sfx_manager.stop_sfx("sys_text")
+			sfx_manager.play_sfx("sys_text")
+	
 	can_advance_line = false
 	
 func _on_text_box_finished_displaying():
 	audio.get_node("Audio").stop()
+	sfx_manager.stop_sfx("sys_text")
 	can_advance_line = true
 	 
 func _unhandled_input(event):
