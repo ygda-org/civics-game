@@ -38,6 +38,7 @@ func _process(delta):
 func _on_StaticBody2D_body_entered(body):
 	if("M4-Player" in body.name && get_parent().get_node("AnimatedSprite").get_animation() == "selected"):# Replace with function body.
 		get_parent().find_node("Control").visible = true
+		GodotTTS.speak("House")
 		inreach = true
 
 func _on_StaticBody2D_body_exited(body):

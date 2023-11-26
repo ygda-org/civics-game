@@ -43,7 +43,19 @@ func _physics_process(delta):
 		
 		
 func _dead():
+	GodotTTS.speak("You got hit")
 	emit_signal("hit")
 
 #func _on_Timer_timeout():
 	#get_tree().reload_current_scene()
+
+
+func _on_Area2D_body_entered(body):
+	print(body.name)
+	if body.name == "M4-Enemy":
+		GodotTTS.speak("Enemy approaching")
+
+
+func _on_Area2D_area_entered(area):
+	if area.name == "deadBody":
+		GodotTTS.speak("Enemy approaching")

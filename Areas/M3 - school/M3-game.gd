@@ -43,7 +43,7 @@ func _ready():
 	
 	
 func receive_text(mtext):
-	
+	GodotTTS.speak(mtext)
 	if not tile1:
 		tile1 = mtext
 	elif not tile2:
@@ -81,6 +81,7 @@ func on_match():
 		tile1 = ""
 		tile2 = ""
 		correct += 1
+		GodotTTS.speak("You matched correctly")
 		if(correct%3 == 0):
 			roundNum += 1
 			getNewRound()
@@ -88,6 +89,7 @@ func on_match():
 		#print(tile1)
 		#print(dctAnsTile[tile1])
 		wrong += 1
+		GodotTTS.speak("You matched wrong")
 		get_node(str(dctAnsTile[tile1])).get_node("Control/Disabled").visible = true
 		get_node(str(dctAnsTile[tile1])).get_node("Control/Enabled").visible = false
 		get_node(str(dctAnsTile[tile2])).get_node("Control/Disabled").visible = true
