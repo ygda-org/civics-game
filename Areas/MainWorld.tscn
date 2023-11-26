@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=82 format=2]
 
 [ext_resource path="res://NPCs/realFountainDIALOGUE.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -657,6 +657,33 @@ extents = Vector2( 13.2235, 3038.34 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 1560, 560 )
 
+[sub_resource type="Gradient" id=26]
+offsets = PoolRealArray( 0, 0.0117647, 0.958824 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.964706, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=27]
+gradient = SubResource( 26 )
+
+[sub_resource type="Curve" id=28]
+_data = [ Vector2( 0.227979, 1 ), 0.0, 0.267075, 0, 0, Vector2( 1, 0.391524 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=29]
+curve = SubResource( 28 )
+
+[sub_resource type="ParticlesMaterial" id=34]
+emission_shape = 1
+emission_sphere_radius = 250.0
+flag_disable_z = true
+direction = Vector3( -100, 100, 0 )
+gravity = Vector3( 0, -45, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 1.0
+scale_curve = SubResource( 29 )
+color_ramp = SubResource( 27 )
+
+[sub_resource type="StreamTexture" id=35]
+load_path = "res://.import/particle.png-c2ba3d91e96c62035d672392a1197218.stex"
+
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 54.25, 29 )
 
@@ -1081,9 +1108,6 @@ z_index = 2
 [node name="Park" type="Area2D" parent="."]
 position = Vector2( 1287, 186 )
 scale = Vector2( 0.025, 0.025 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite2" type="Sprite" parent="Park"]
 position = Vector2( -80, 2200 )
@@ -1104,6 +1128,15 @@ region_rect = Rect2( 48, 87, 37, 21 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Park"]
 position = Vector2( -80.0078, 239.999 )
 shape = SubResource( 6 )
+
+[node name="parkparticle" type="Particles2D" parent="Park"]
+position = Vector2( 0, -120 )
+scale = Vector2( 6, 6 )
+amount = 10
+lifetime = 3.0
+visibility_rect = Rect2( -150, -100, 300, 200 )
+process_material = SubResource( 34 )
+texture = SubResource( 35 )
 
 [node name="Courthouse" type="Area2D" parent="."]
 modulate = Color( 0.905882, 0.870588, 0.870588, 1 )
@@ -1133,6 +1166,15 @@ shape = SubResource( 24 )
 position = Vector2( 62.2222, 42.2222 )
 shape = SubResource( 24 )
 
+[node name="courthouseparticle" type="Particles2D" parent="Courthouse"]
+position = Vector2( 2.22222, 25.9259 )
+scale = Vector2( 0.0555556, 0.0555556 )
+amount = 10
+lifetime = 3.0
+visibility_rect = Rect2( -150, -100, 300, 200 )
+process_material = SubResource( 34 )
+texture = SubResource( 35 )
+
 [node name="School" type="Area2D" parent="."]
 modulate = Color( 0.921569, 0.917647, 0.917647, 1 )
 position = Vector2( -733, 142 )
@@ -1154,11 +1196,17 @@ shape = SubResource( 13 )
 position = Vector2( -1.5, 22.5 )
 shape = SubResource( 25 )
 
+[node name="schoolparticle" type="Particles2D" parent="School"]
+position = Vector2( -2, 140 )
+scale = Vector2( 0.15, 0.15 )
+amount = 10
+lifetime = 3.0
+visibility_rect = Rect2( -150, -100, 300, 200 )
+process_material = SubResource( 34 )
+texture = SubResource( 35 )
+
 [node name="Town Square - M4" type="Area2D" parent="."]
 position = Vector2( 459, -945 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="Town Square - M4"]
 scale = Vector2( 2, 2 )
@@ -1169,6 +1217,15 @@ region_rect = Rect2( 46.7856, 48.8754, 12.5067, 36.2664 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Town Square - M4"]
 position = Vector2( -0.5, 0 )
 shape = SubResource( 9 )
+
+[node name="townsquareparticle" type="Particles2D" parent="Town Square - M4"]
+position = Vector2( 1, -8.00098 )
+scale = Vector2( 0.15, 0.15 )
+amount = 10
+lifetime = 3.0
+visibility_rect = Rect2( -150, -100, 300, 200 )
+process_material = SubResource( 34 )
+texture = SubResource( 35 )
 
 [node name="NPCs" type="Node2D" parent="."]
 
