@@ -4,14 +4,47 @@ extends CanvasLayer
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+var curNum = 0
 var text = "You have chosen case 0"
 var info = ". Press i to view Info"
+var masterLst = [
+	{"Name": "Joshua Cavin",
+	"Age": "32",
+	"Case": "Last Thursday, two police officers were in Mr. Calvin’s neighborhood and saw the suncatchers on his upstairs windows and suspected that he was partaking in illicit substances. When they were at his door, Mr. Calvin resisted the police officers and was arrested for not cooperating. He then refused to pay the $2,000,000 fine that he received and was charged with further punishment.",
+	"Verdict": "Not Guilty",
+	"Support": [4, 8]
+	},
+	{"Name": "Trevor Dillon",
+	"Age": "27",
+	"Case": "Trevor Dillon was in charge of voter registration for the upcoming House of Representatives elections for the congressional district. He is being sued by Martha Winthrop because when she attempted to register to vote, he stated that she supposedly did not meet eligibility requirements on account of being too young. Upon being presented her documents that showed she was 18, he denied her the right to vote on account of being a woman.",
+	"Verdict": "Guilty",
+	"Support": [19, 26]
+	},
+	{"Name" : "Jiminy’s Juice Bar",
+	"Case": "Jiminy’s Juice Bar was accused of withholding payment from their workers and threatening harm to their families if they quit. In defense, they cite that in their mission statement, the company owns any and all people who enter their establishment. Jiminy’s Juice Bar was also flagging and reporting the statements of their workers to have the posts taken off of social media.",
+	"Verdict": "Guilty",
+	"Support": [13, 1]
+	},
+	{"Name": "Amber Fox",
+	"Age": "24",
+	"Case": "This past Wednesday, police officers arrested Amber Fox, a 24 year-old woman working as a barista for a local cafe, for purchasing alcoholic beverages after work. The police argued that under the 18th Amendment of the U.S. Constitution she was prohibited from purchasing alcoholic beverages. Ms. Fox’s criminal case was postponed for several months, to which Ms. Fox demanded that all charges be immediately dropped.",
+	"Verdict": "Not Guilty",
+	"Support": [21, 6]
+	},
+	{"Name": "Wilhelm Windrow",
+	"Age": "37",
+	"Case": "Wilhelm Windrow, a U.S. army soldier, was reported by his neighbor, Trent Moreau, to have been staying in his house without Moreau’s permission because he “preferred Trent’s house over his own.” Windrow argues that Moreau wasn’t a U.S. citizen since he was born in France, therefore he should have the right to live in the house, despite the fact that Moreau was legally naturalized as a U.S. citizen two decades prior.",
+	"Verdict": "Guilty",
+	"Support": [3, 14]
+	}
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Label.visible = false # Replace with function body.
 
 func choose_case(num):
+	curNum = num
 	text = text.substr(0, len(text)-2)
 	text += " " + str(num)
 	$Label.text = text + info
@@ -19,8 +52,12 @@ func choose_case(num):
 	
 func _process(delta):
 	if Input.is_action_just_pressed("back"):
+		print("back")
 		visible = false
 		get_parent().get_node("Player").frozen = false
+	if Input.is_action_just_pressed("info") and curNum>0:
+		visible = false
+		get_parent().get_node("caseInfo").generateInfo(masterLst[curNum - 1])
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
