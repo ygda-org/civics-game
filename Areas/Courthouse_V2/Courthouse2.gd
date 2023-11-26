@@ -5,3 +5,6 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
+func _ready():
+	$docTableOpen.visible = false
+	$docTable/Label.visible = false

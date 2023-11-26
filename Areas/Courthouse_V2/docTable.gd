@@ -8,19 +8,24 @@ var inrange = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Label.visible = false # Replace with function body.
+	$Label.text = "E"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if inrange and Input.is_action_just_pressed("interact"):
+		get_parent().get_node("docTableOpen").visible = true
+		get_parent().get_node("Player").frozen = true
 
 
 
 func _on_docTable_body_entered(body):
-	inrange = true # Replace with function body.
-	$Label.visible = true
+	if("Player" in body.name):
+		inrange = true # Replace with function body.
+		$Label.visible = true
 
 
 func _on_docTable_body_exited(body):
-	inrange = false # Replace with function body.
-	$Label.visible = false
+	if("Player in body.name"):
+		inrange = false # Replace with function body.
+		$Label.visible = false
