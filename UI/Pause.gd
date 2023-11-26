@@ -20,6 +20,7 @@ func _on_Exit_pressed():
 	newPauseState = !get_tree().paused
 	get_tree().paused = newPauseState
 	visible = newPauseState
+	MainGlobals.menusongpos = 0
 	if "MainWorld" in str(get_tree().current_scene):
 		get_tree().change_scene("res://UI/MainMenu.tscn")
 	else:

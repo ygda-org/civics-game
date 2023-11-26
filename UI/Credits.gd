@@ -1,6 +1,10 @@
 extends Control
 
-
+func _ready():
+	MenuSong.play(MainGlobals.menusongpos)
+func _process(delta):
+	MainGlobals.menusongpos = MenuSong.get_playback_position()
+	
 func _on_Back_pressed():
 	get_tree().change_scene("res://UI/MainMenu.tscn")
 

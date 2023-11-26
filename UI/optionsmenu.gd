@@ -8,7 +8,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	MenuSong.play(MainGlobals.menusongpos)
+func _process(delta):
+	MainGlobals.menusongpos = MenuSong.get_playback_position()
 
 func _input(event):
 	if Input.is_action_pressed("pause"):

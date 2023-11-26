@@ -1,0 +1,423 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Assets/Forward-Movement.png" type="Texture" id=1]
+[ext_resource path="res://title.png" type="Texture" id=2]
+[ext_resource path="res://end credits.gd" type="Script" id=3]
+[ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://mus_j_credits.ogg" type="AudioStream" id=5]
+[ext_resource path="res://mayorendpic.png" type="Texture" id=6]
+[ext_resource path="res://schoolendpic.png" type="Texture" id=7]
+[ext_resource path="res://parkendpic.png" type="Texture" id=8]
+
+[sub_resource type="Environment" id=19]
+background_mode = 4
+adjustment_enabled = true
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 1
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 1308, 1550 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 1
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 1320, 1562 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 1
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 1034, 1562 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 15 ) ],
+"loop": true,
+"name": "courthouse",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 15 ) ],
+"loop": true,
+"name": "mayor",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "park",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 16 ) ],
+"loop": true,
+"name": "school",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 24
+extra_spacing_top = 13
+extra_spacing_bottom = 13
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=18]
+font_data = ExtResource( 4 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "walk",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 8.75, 16 )
+
+[node name="end credits" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="polaroidtimer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
+[node name="movetimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="ppausetimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="start timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 19 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 508, 287 )
+scale = Vector2( 3.6, 3.6 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 1, 300, 176 )
+
+[node name="polaroid" type="AnimatedSprite" parent="."]
+position = Vector2( 848, 804 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 14 )
+animation = "courthouse"
+
+[node name="skipbutton" type="Sprite" parent="."]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 859, 543 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
+
+[node name="mainmenu" type="Sprite" parent="."]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 298, 543 )
+scale = Vector2( 3.5473, 2.5 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
+
+[node name="title" type="RichTextLabel" parent="."]
+margin_left = 15.0
+margin_top = 32.0
+margin_right = 307.0
+margin_bottom = 72.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/normal_font = SubResource( 8 )
+text = "Thank You!"
+
+[node name="credits" type="Control" parent="."]
+margin_left = 1.0
+margin_right = 41.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="credits"]
+margin_left = 30.0
+margin_top = 117.0
+margin_right = 574.0
+margin_bottom = 490.0
+color = Color( 0.329412, 0.254902, 0.568627, 0.403922 )
+
+[node name="reallines" type="RichTextLabel" parent="credits"]
+margin_left = 36.0
+margin_top = 118.0
+margin_right = 598.0
+margin_bottom = 489.0
+custom_fonts/normal_font = SubResource( 10 )
+bbcode_enabled = true
+bbcode_text = "[center]Thank you for playing blahblah!
+
+Thanks to your help and hard work, your civic engagement in Liberty Landing makes you an outstanding citizen! 
+
+
+
+We hope you enjoyed your journey in this town! placehodlers blahsslablha
+
+
+
+It is important to perform 
+your civic duties and responsibilities. 
+
+
+
+Help out those around you 
+and encourage them to do the same!
+
+
+
+Make sure to stay up to date 
+about laws and decisions that can affect you! 
+
+
+
+We hope you continue to 
+stay a stellar citizen or resident in the future!
+
+
+
+
+
+Credits
+
+
+Young Game Developers Association
+
+
+Programming
+
+Raymond Fu
+Michael Hatami
+Jessica Chen
+Nikita idk
+Matthew Kao
+
+
+Art
+
+Mandy Huang
+Jessica Chen
+Matthew Kao
+Dylan Lu
+Julia Wang
+
+
+
+Music and SFX
+
+Jimi Vance
+
+
+Writing and Research
+
+Matthew Kao
+Mandy Huang
+Jimi Vance
+Emily Toth
+
+
+
+Special Thanks To
+
+TJHSST
+\"caleb\", 
+\"brian\", 
+\"Godot\"
+
+
+
+Thank you to the 
+Library of Congress 
+and
+whatever the friends choice award is 
+for making this all possible!
+
+
+
+
+And thank you for playing! :)
+Feel free to continue exploring and talking to all the characters
+around the map!
+
+[/center]"
+text = "Thank you for playing blahblah!
+
+Thanks to your help and hard work, your civic engagement in Liberty Landing makes you an outstanding citizen! 
+
+
+
+We hope you enjoyed your journey in this town! placehodlers blahsslablha
+
+
+
+It is important to perform 
+your civic duties and responsibilities. 
+
+
+
+Help out those around you 
+and encourage them to do the same!
+
+
+
+Make sure to stay up to date 
+about laws and decisions that can affect you! 
+
+
+
+We hope you continue to 
+stay a stellar citizen or resident in the future!
+
+
+
+
+
+Credits
+
+
+Young Game Developers Association
+
+
+Programming
+
+Raymond Fu
+Michael Hatami
+Jessica Chen
+Nikita idk
+Matthew Kao
+
+
+Art
+
+Mandy Huang
+Jessica Chen
+Matthew Kao
+Dylan Lu
+Julia Wang
+
+
+
+Music and SFX
+
+Jimi Vance
+
+
+Writing and Research
+
+Matthew Kao
+Mandy Huang
+Jimi Vance
+Emily Toth
+
+
+
+Special Thanks To
+
+TJHSST
+\"caleb\", 
+\"brian\", 
+\"Godot\"
+
+
+
+Thank you to the 
+Library of Congress 
+and
+whatever the friends choice award is 
+for making this all possible!
+
+
+
+
+And thank you for playing! :)
+Feel free to continue exploring and talking to all the characters
+around the map!
+
+"
+
+[node name="Skip" type="TextureButton" parent="credits"]
+margin_left = 768.0
+margin_top = 513.0
+margin_right = 952.0
+margin_bottom = 571.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="credits/Skip"]
+margin_left = 35.0
+margin_top = 23.0
+margin_right = 205.0
+margin_bottom = 63.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 18 )
+text = "Skip (S)"
+
+[node name="mainmenu" type="TextureButton" parent="credits"]
+margin_left = 167.0
+margin_top = 515.0
+margin_right = 433.0
+margin_bottom = 571.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="credits/mainmenu"]
+margin_left = 24.0
+margin_top = 20.0
+margin_right = 291.0
+margin_bottom = 78.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 18 )
+text = "Main Menu (esc)"
+
+[node name="playermenu" type="KinematicBody2D" parent="."]
+position = Vector2( 650, 499 )
+scale = Vector2( 5.2, 5.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="playermenu"]
+frames = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playermenu"]
+shape = SubResource( 7 )
+
+[connection signal="timeout" from="polaroidtimer" to="." method="_on_polaroid_timeout"]
+[connection signal="timeout" from="movetimer" to="." method="_on_movetimer_timeout"]
+[connection signal="timeout" from="ppausetimer" to="." method="_on_ppausetimer_timeout"]
+[connection signal="timeout" from="start timer" to="." method="_on_start_timer_timeout"]
+[connection signal="pressed" from="credits/Skip" to="." method="_on_Skip_pressed"]
+[connection signal="pressed" from="credits/mainmenu" to="." method="_on_mainmenu_pressed"]

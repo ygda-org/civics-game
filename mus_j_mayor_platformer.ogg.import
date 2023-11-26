@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mus_j_mayor_platformer.ogg-9c79bf2137750a28da3363f580d4c199.oggstr"
+
+[deps]
+
+source_file="res://mus_j_mayor_platformer.ogg"
+dest_files=[ "res://.import/mus_j_mayor_platformer.ogg-9c79bf2137750a28da3363f580d4c199.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -7,7 +7,9 @@ var newPauseState
 # var b = "text"
 
 func _ready():
-	pass
+	MenuSong.play(MainGlobals.menusongpos)
+func _process(delta):
+	MainGlobals.menusongpos = MenuSong.get_playback_position()
 	
 func _input(event):
 	if event.is_action_pressed("first"):
