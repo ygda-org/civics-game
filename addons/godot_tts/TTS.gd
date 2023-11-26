@@ -261,6 +261,7 @@ func _exit_tree():
 
 var ttsEnabled = false
 
-func _process(delta):
+func _input(event):
 	if Input.is_action_pressed("sprint") and Input.is_action_just_pressed("N"):
 		ttsEnabled = !ttsEnabled
+		print(ttsEnabled)
