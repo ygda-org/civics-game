@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_park_trash_2.wav-aad9659367c4a7e78aea2378bac4601d.sample"
+
+[deps]
+
+source_file="res://SFX/sfx_park_trash_2.wav"
+dest_files=[ "res://.import/sfx_park_trash_2.wav-aad9659367c4a7e78aea2378bac4601d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_platformer_spread_news.wav-0e5c350e126d8a6ec915dda7392e22f7.sample"
+
+[deps]
+
+source_file="res://SFX/sfx_platformer_spread_news.wav"
+dest_files=[ "res://.import/sfx_platformer_spread_news.wav-0e5c350e126d8a6ec915dda7392e22f7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
