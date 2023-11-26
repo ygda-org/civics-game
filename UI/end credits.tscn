@@ -104,7 +104,7 @@ extents = Vector2( 8.75, 16 )
 script = ExtResource( 3 )
 
 [node name="polaroidtimer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 10.0
 autostart = true
 
 [node name="movetimer" type="Timer" parent="."]
@@ -112,11 +112,11 @@ wait_time = 2.5
 one_shot = true
 
 [node name="ppausetimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 4.0
 one_shot = true
 
 [node name="start timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 0.001
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -183,18 +183,23 @@ margin_right = 598.0
 margin_bottom = 489.0
 custom_fonts/normal_font = SubResource( 10 )
 bbcode_enabled = true
-bbcode_text = "[center]Thank you for playing blahblah!
-
-Thanks to your help and hard work, your civic engagement in Liberty Landing makes you an outstanding citizen! 
+bbcode_text = "[center]
 
 
 
-We hope you enjoyed your journey in this town! placehodlers blahsslablha
 
 
 
-It is important to perform 
-your civic duties and responsibilities. 
+Thanks to your civic engagement in Liberty Landing,
+you've been declared an outstanding citizen!
+Everyone is thankful for your help and hard work.
+
+
+
+
+Remember, it is important to perform 
+your civic duties and responsibilities.
+
 
 
 
@@ -203,8 +208,10 @@ and encourage them to do the same!
 
 
 
+
 Make sure to stay up to date 
 about laws and decisions that can affect you! 
+
 
 
 
@@ -214,11 +221,10 @@ stay a stellar citizen or resident in the future!
 
 
 
+CREDITS
 
-Credits
 
-
-Young Game Developers Association
+Young Game Developers Association (YGDA)
 
 
 Programming
@@ -226,8 +232,8 @@ Programming
 Raymond Fu
 Michael Hatami
 Jessica Chen
-Nikita idk
 Matthew Kao
+Nikita Lugovoy
 
 
 Art
@@ -237,7 +243,6 @@ Jessica Chen
 Matthew Kao
 Dylan Lu
 Julia Wang
-
 
 
 Music and SFX
@@ -257,38 +262,39 @@ Emily Toth
 Special Thanks To
 
 TJHSST
-\"caleb\", 
-\"brian\", 
-\"Godot\"
+Caleb Arulandu
+Godot Engine
 
 
 
-Thank you to the 
-Library of Congress 
-and
-whatever the friends choice award is 
-for making this all possible!
+Additional Thanks to 
+The Library of Congress and
+Friends of the Library of Congress
+for making all of this possible.
 
 
 
-
-And thank you for playing! :)
-Feel free to continue exploring and talking to all the characters
-around the map!
-
+Thank you for playing Liberty Landing!
+Feel free to continue exploring and talking to
+all the characters around the map!
 [/center]"
-text = "Thank you for playing blahblah!
-
-Thanks to your help and hard work, your civic engagement in Liberty Landing makes you an outstanding citizen! 
+text = "
 
 
 
-We hope you enjoyed your journey in this town! placehodlers blahsslablha
 
 
 
-It is important to perform 
-your civic duties and responsibilities. 
+Thanks to your civic engagement in Liberty Landing,
+you've been declared an outstanding citizen!
+Everyone is thankful for your help and hard work.
+
+
+
+
+Remember, it is important to perform 
+your civic duties and responsibilities.
+
 
 
 
@@ -297,8 +303,10 @@ and encourage them to do the same!
 
 
 
+
 Make sure to stay up to date 
 about laws and decisions that can affect you! 
+
 
 
 
@@ -308,11 +316,10 @@ stay a stellar citizen or resident in the future!
 
 
 
+CREDITS
 
-Credits
 
-
-Young Game Developers Association
+Young Game Developers Association (YGDA)
 
 
 Programming
@@ -320,8 +327,8 @@ Programming
 Raymond Fu
 Michael Hatami
 Jessica Chen
-Nikita idk
 Matthew Kao
+Nikita Lugovoy
 
 
 Art
@@ -331,7 +338,6 @@ Jessica Chen
 Matthew Kao
 Dylan Lu
 Julia Wang
-
 
 
 Music and SFX
@@ -351,25 +357,21 @@ Emily Toth
 Special Thanks To
 
 TJHSST
-\"caleb\", 
-\"brian\", 
-\"Godot\"
+Caleb Arulandu
+Godot Engine
 
 
 
-Thank you to the 
-Library of Congress 
-and
-whatever the friends choice award is 
-for making this all possible!
+Additional Thanks to 
+The Library of Congress and
+Friends of the Library of Congress
+for making all of this possible.
 
 
 
-
-And thank you for playing! :)
-Feel free to continue exploring and talking to all the characters
-around the map!
-
+Thank you for playing Liberty Landing!
+Feel free to continue exploring and talking to
+all the characters around the map!
 "
 
 [node name="Skip" type="TextureButton" parent="credits"]

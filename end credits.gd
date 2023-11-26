@@ -18,7 +18,7 @@ func _ready():
 	$credits/reallines.get_child(0).modulate.a = 0
 
 func _process(delta):
-	if frame >= 5:
+	if frame >= 9:
 		end()
 	if started:
 		$skipbutton.visible = true
@@ -53,19 +53,19 @@ func _on_polaroid_timeout():
 	if frame == 1:
 		$polaroid.play("park")
 		$polaroid.rotate(12.2)
-		$polaroid.position = Vector2(830, 793)
+		$polaroid.position = Vector2(795, 793)
 	if frame == 2:
 		$polaroid.play("mayor")
 		$polaroid.rotate(-24.4)
-		$polaroid.position = Vector2(830, 793)
+		$polaroid.position = Vector2(795, 793)
 	if frame == 3:
 		$polaroid.play("school")
 		$polaroid.rotate(24.4)
-		$polaroid.position = Vector2(830, 793)
+		$polaroid.position = Vector2(795, 793)
 	if frame == 4:
 		$polaroid.play("courthouse")
 		$polaroid.rotate(-24.4)
-		$polaroid.position = Vector2(830, 793)
+		$polaroid.position = Vector2(795, 793)
 	
 	frame+=1
 	print(frame)
