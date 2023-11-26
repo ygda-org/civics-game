@@ -135,7 +135,7 @@ region_rect = Rect2( 0, 1, 300, 176 )
 
 [node name="polaroid" type="AnimatedSprite" parent="."]
 position = Vector2( 848, 804 )
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 14 )
 animation = "courthouse"
 
