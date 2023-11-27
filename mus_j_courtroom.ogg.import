@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mus_j_courtroom.ogg-049a52ddfd42852f5d82335aad25c828.oggstr"
+
+[deps]
+
+source_file="res://mus_j_courtroom.ogg"
+dest_files=[ "res://.import/mus_j_courtroom.ogg-049a52ddfd42852f5d82335aad25c828.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -16,10 +16,10 @@ func generateInfo(dict):
 		sfx_manager.stop_sfx("courtroom_paper")
 		sfx_manager.play_sfx("courtroom_paper")
 	visible = true
-	var text = "Name: " + dict["Name"]
+	var text = "Name: " + dict["Name"] 
 	if("Age" in dict):
-		text += "\n" + "Age: " + dict["Age"]
-	text += "\n" + "Case: " + dict["Case"]
+		text += "\n" + "\n"+"Age: " + dict["Age"]
+	text += "\n" + "\n"+"Case: " + dict["Case"]
 	$Label.text = text
 
 func _process(delta):

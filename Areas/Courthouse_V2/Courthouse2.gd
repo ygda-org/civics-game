@@ -44,12 +44,20 @@ var masterLst = [
 func _ready():
 	GodotTTS.speak("jury duty.  you have been summoned to jury duty. help the court decide the verdict. first, walk to the document table. pick a case and read about it. second, go to the jurors table and select two ammendments to support your claim. third, declare your claim, innocent or guilty? press 1 to start.")
 	add_child(sfx_manager)
+	find_node("WorldEnvironment").environment.adjustment_brightness = MainGlobals.brightness
+	find_node("WorldEnvironment").environment.adjustment_contrast = MainGlobals.contrast
+	find_node("WorldEnvironment").environment.adjustment_saturation = MainGlobals.saturation
 	$docTableOpen.visible = false
 	$caseInfo.visible = false
 	$docTable/Label.visible = false
 	$juryTableOpen.visible = false
 	$AmendmentInfo.visible = false
 	$Verdict.visible = false
+
+
+func _process(delta):
+	$CanvasLayer2/round.text = "Cases Solved: " + str(NumSolved)
+
 func setNum(num):
 	if(get_node("docTableOpen/HBoxContainer/case_folder" + str(num) +"/unsolved").visible == true):
 		caseSolved = false
@@ -63,9 +71,10 @@ func solve_case():
 			sfx_manager.play_sfx("courtroom_gavel")
 	get_node("docTableOpen/HBoxContainer/case_folder" + str(caseNum) +"/unsolved").visible = false
 	get_node("docTableOpen/Label").text = ""
-	NumSolved += 1
-	if(NumSolved == 5):
-		print("w")
+	if caseSolved == false:
+		NumSolved += 1
+	if(NumSolved == 3):
+		get_tree().change_scene("res://Areas/Courthouse_V2/courthouseendmenu.tscn")
 		MainGlobals.courthousewin = true
 	caseSolved = true
 	#get_node("case_folder" + str(caseNum)).queue_free()

@@ -33,7 +33,7 @@ func _ready():
 func generateInfo(curAmends):
 	var text = ""
 	for amend in curAmends:
-		text += 'Amendment ' + str(amend) + ": " + dctAmendments[amend] + "\n"
+		text += 'Amendment ' + str(amend) + ": " + dctAmendments[amend] + "\n"+"\n"
 	$Label.text = text
 
 func _process(delta):

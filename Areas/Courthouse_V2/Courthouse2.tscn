@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Assets/courthouse_layer2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/courthouse_layer1.png" type="Texture" id=2]
@@ -13,8 +13,15 @@
 [ext_resource path="res://Areas/Courthouse_V2/AmendmentInfo.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Areas/Courthouse_V2/Verdict.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Areas/Courthouse_V2/exit.gd" type="Script" id=13]
-[ext_resource path="res://UI/Pause.tscn" type="PackedScene" id=14]
+[ext_resource path="res://title.png" type="Texture" id=14]
 [ext_resource path="res://UI/CourtInstructions.tscn" type="PackedScene" id=15]
+[ext_resource path="res://UI/VisibilityMenu.tscn" type="PackedScene" id=16]
+[ext_resource path="res://UI/Pause.tscn" type="PackedScene" id=17]
+[ext_resource path="res://mus_j_courtroom.ogg" type="AudioStream" id=18]
+
+[sub_resource type="Environment" id=13]
+background_mode = 4
+adjustment_enabled = true
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.88966, 20.5833 )
@@ -42,6 +49,9 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 6 )
 
+[sub_resource type="DynamicFont" id=12]
+font_data = ExtResource( 6 )
+
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 54.5, 9 )
 
@@ -56,6 +66,13 @@ extents = Vector2( 3, 85.5 )
 [node name="Courthouse" type="Node2D"]
 position = Vector2( -1, -2 )
 script = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+autoplay = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 13 )
 
 [node name="bg" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -114,6 +131,44 @@ custom_fonts/font = SubResource( 8 )
 align = 1
 valign = 1
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer2"]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 103, 24 )
+scale = Vector2( 2.7, 2 )
+texture = ExtResource( 14 )
+region_enabled = true
+region_rect = Rect2( 112.101, 251.158, 75.6884, 23.0454 )
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer2"]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 880.5, 23 )
+scale = Vector2( 3.64, 2 )
+texture = ExtResource( 14 )
+region_enabled = true
+region_rect = Rect2( 112.101, 251.158, 75.6884, 23.0454 )
+
+[node name="round" type="RichTextLabel" parent="CanvasLayer2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 258.0
+margin_top = 15.0
+margin_right = 476.0
+margin_bottom = 45.0
+custom_fonts/normal_font = SubResource( 12 )
+text = "Cases Solved: 0"
+
+[node name="Pause(esc)" type="RichTextLabel" parent="CanvasLayer2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -487.0
+margin_top = 16.0
+margin_right = -316.0
+margin_bottom = 44.0
+custom_fonts/normal_font = SubResource( 12 )
+text = "Pause (esc)"
+
 [node name="docTableOpen" parent="." instance=ExtResource( 7 )]
 
 [node name="caseInfo" parent="." instance=ExtResource( 8 )]
@@ -152,7 +207,9 @@ shape = SubResource( 11 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Pause" parent="CanvasLayer" instance=ExtResource( 14 )]
+[node name="Pause" parent="CanvasLayer" instance=ExtResource( 17 )]
+
+[node name="VisibilityMenu" parent="CanvasLayer" instance=ExtResource( 16 )]
 
 [node name="Instructions" parent="CanvasLayer" instance=ExtResource( 15 )]
 

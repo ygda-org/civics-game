@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mus_j_school.ogg-25a6d47ff712366ed851521be28308a4.oggstr"
+
+[deps]
+
+source_file="res://mus_j_school.ogg"
+dest_files=[ "res://.import/mus_j_school.ogg-25a6d47ff712366ed851521be28308a4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
