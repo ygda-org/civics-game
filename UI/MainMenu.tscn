@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/MainMenu.gd" type="Script" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Assets/Back.png" type="Texture" id=5]
 [ext_resource path="res://UI/worldenv.gd" type="Script" id=6]
 [ext_resource path="res://mus_j_intro.ogg" type="AudioStream" id=7]
-[ext_resource path="res://UI/main_menu_buttons.gd" type="Script" id=8]
 
 [sub_resource type="Environment" id=4]
 background_mode = 4
@@ -39,9 +38,6 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 8.75, 16 )
-
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 36.9445, 11.0556 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -80,7 +76,6 @@ shape = SubResource( 10 )
 
 [node name="buttons" type="Node2D" parent="."]
 position = Vector2( -9.15527e-05, 0 )
-script = ExtResource( 8 )
 
 [node name="button" type="Sprite" parent="buttons"]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
@@ -90,12 +85,6 @@ texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 113, 251, 74, 23 )
 
-[node name="button_area" type="Area2D" parent="buttons/button"]
-
-[node name="button_collision" type="CollisionShape2D" parent="buttons/button/button_area"]
-position = Vector2( -0.0555573, -0.277779 )
-shape = SubResource( 11 )
-
 [node name="button2" type="Sprite" parent="buttons"]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
 position = Vector2( 503.5, 362.5 )
@@ -104,12 +93,6 @@ texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 113, 251, 74, 23 )
 
-[node name="button2_area" type="Area2D" parent="buttons/button2"]
-
-[node name="button2_collision" type="CollisionShape2D" parent="buttons/button2/button2_area"]
-position = Vector2( -0.0555573, -0.277779 )
-shape = SubResource( 11 )
-
 [node name="button3" type="Sprite" parent="buttons"]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
 position = Vector2( 88.0001, 567 )
@@ -117,12 +100,6 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 113, 251, 74, 23 )
-
-[node name="button3_area" type="Area2D" parent="buttons/button3"]
-
-[node name="button3_collision" type="CollisionShape2D" parent="buttons/button3/button3_area"]
-position = Vector2( -0.0555573, -0.277779 )
-shape = SubResource( 11 )
 
 [node name="Control" type="Control" parent="."]
 margin_left = 1.0
@@ -195,10 +172,14 @@ wait_time = 4.0
 [node name="intro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 
-[connection signal="mouse_entered" from="buttons/button/button_area" to="buttons" method="_on_button_area_mouse_entered"]
-[connection signal="mouse_exited" from="buttons/button/button_area" to="buttons" method="_on_button_area_mouse_exited"]
+[connection signal="mouse_entered" from="Control/Start" to="Control" method="_on_Start_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Start" to="Control" method="_on_Start_mouse_exited"]
 [connection signal="pressed" from="Control/Start" to="Control" method="_on_Start_pressed"]
+[connection signal="mouse_entered" from="Control/Options" to="Control" method="_on_Options_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Options" to="Control" method="_on_Options_mouse_exited"]
 [connection signal="pressed" from="Control/Options" to="Control" method="_on_Options_pressed"]
+[connection signal="mouse_entered" from="Control/Credits" to="Control" method="_on_Credits_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Credits" to="Control" method="_on_Credits_mouse_exited"]
 [connection signal="pressed" from="Control/Credits" to="Control" method="_on_Credits_pressed"]
 [connection signal="timeout" from="walkingtime" to="Control" method="_on_walkingtime_timeout"]
 [connection signal="finished" from="intro" to="playermenu" method="_on_intro_finished"]

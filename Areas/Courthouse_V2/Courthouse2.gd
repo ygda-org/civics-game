@@ -43,8 +43,13 @@ func _ready():
 	$docTable/Label.visible = false
 	$juryTableOpen.visible = false
 	$AmendmentInfo.visible = false
+	$Verdict.visible = false
 func setNum(num):
 	caseNum = num
+	
+func solve_case():
+	pass
+	#get_node("case_folder" + str(caseNum)).queue_free()
 
 
 # Replace with function body.

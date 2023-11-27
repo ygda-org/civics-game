@@ -72,9 +72,11 @@ stream = ExtResource( 12 )
 
 [node name="menu_move" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
+volume_db = -2.0
 
 [node name="menu_select" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
+volume_db = 5.0
 
 [node name="minigame_lose" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 22 )
