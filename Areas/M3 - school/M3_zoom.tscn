@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/grass.png" type="Texture" id=1]
 [ext_resource path="res://Assets/grey_tile.png" type="Texture" id=2]
@@ -7,6 +7,9 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 4 )
 
 [node name="M3_zoom" type="Node2D"]
@@ -33,6 +36,16 @@ custom_fonts/font = SubResource( 1 )
 align = 1
 valign = 1
 autowrap = true
+
+[node name="Label2" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 2 )
+text = "b"
+align = 1
+valign = 1
 
 [connection signal="mouse_entered" from="back" to="." method="_on_back_mouse_entered"]
 [connection signal="mouse_exited" from="back" to="." method="_on_back_mouse_exited"]

@@ -41,9 +41,10 @@ func _on_Town_Square__M4_body_entered(body):
 
 
 func _on_School_body_entered(body):
-	pass # Replace with function body.
+	if body.name == "Player":
+		get_tree().change_scene("res://Areas/M3 - school/M3-game.tscn")
 
 
 func _on_Courthouse_body_entered(body):
-	pass # Replace with function body.
-	
+	if body.name == "Player":
+		get_tree().change_scene("res://Areas/Courthouse_V2/Courthouse2.tscn") 
