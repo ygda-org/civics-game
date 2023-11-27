@@ -22,11 +22,19 @@ var playStart = true
 var startTTSPlayed = false
 
 func _input(event):
-	if Input.is_action_pressed("cheatcourthouse"):
-		MainGlobals.courthousewin = true
-	if Input.is_action_pressed("cheatschool"):
-		MainGlobals.schoolwin = true
-	if Input.is_action_pressed("cheatpark"):
-		MainGlobals.parkwin = true
-	if Input.is_action_pressed("cheattownsquare"):
-		MainGlobals.townsquarewin = true
+	if Input.is_action_just_pressed("cheatcourthouse") && !MainGlobals.courthousewin:
+		courthousewin = true
+	elif Input.is_action_just_pressed("cheatcourthouse") && MainGlobals.courthousewin:
+		courthousewin = false
+	if Input.is_action_just_pressed("cheatschool") && !MainGlobals.schoolwin:
+		schoolwin = true
+	elif Input.is_action_just_pressed("cheatschool") && MainGlobals.schoolwin:
+		schoolwin = false
+	if Input.is_action_just_pressed("cheattownsquare") && !MainGlobals.townsquarewin:
+		townsquarewin = true
+	elif Input.is_action_just_pressed("cheattownsquare") && MainGlobals.townsquarewin:
+		townsquarewin = false
+	if Input.is_action_just_pressed("cheatpark") && !MainGlobals.parkwin:
+		parkwin = true
+	elif Input.is_action_just_pressed("cheatpark") && MainGlobals.parkwin:
+		parkwin = false

@@ -15,12 +15,20 @@ func _ready():
 func _process(delta):
 	if MainGlobals.schoolwin:
 		$checks/schoolcheck.play("checked")
+	else:
+		$checks/schoolcheck.play("unchecked")
 	if MainGlobals.parkwin:
 		$checks/parkcheck.play("checked")
+	else:
+		$checks/parkcheck.play("unchecked")
 	if MainGlobals.townsquarewin:
 		$checks/townsquarecheck.play("checked")
+	else:
+		$checks/townsquarecheck.play("unchecked")
 	if MainGlobals.courthousewin:
 		$checks/courthousecheck.play("checked")
+	else:
+		$checks/courthousecheck.play("unchecked")
 	if open:
 		$ColorRect.visible = true
 		$Control.visible = true
