@@ -16,12 +16,14 @@ func _ready():
 func choose_case(num):
 	curNum = num
 	get_parent().setNum(num)
-	text = text.substr(0, len(text)-2)
-	text += " " + str(num)
-	get_parent().get_node("juryTableOpen").set_amends(num)
-	$Label.text = text + info
-	$Label.visible = true
-	
+	if(not get_parent().caseSolved):
+		print("e")
+		text = text.substr(0, len(text)-2)
+		text += " " + str(num)
+		get_parent().get_node("juryTableOpen").set_amends(num)
+		$Label.text = text + info
+		$Label.visible = true
+		
 func _process(delta):
 	if Input.is_action_just_pressed("back") and visible:
 		print("back")

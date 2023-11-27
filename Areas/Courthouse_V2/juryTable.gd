@@ -16,7 +16,7 @@ func _process(delta):
 		get_parent().get_node("juryTableOpen").print_case(get_parent().masterLst[get_parent().caseNum -1])
 		
 func _on_juryTable_body_entered(body):
-	if "Player" in body.name and get_parent().caseNum > 0:
+	if "Player" in body.name and get_parent().caseNum > 0 and not get_parent().caseSolved:
 		$Label.visible = true
 		inrange = true # Replace with function body.
 

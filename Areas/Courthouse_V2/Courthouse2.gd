@@ -5,6 +5,8 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var caseNum = 0
+var NumSolved = 0
+var caseSolved = false
 var masterLst = [
 	{"Name": "Joshua Cavin",
 	"Age": "32",
@@ -45,11 +47,23 @@ func _ready():
 	$AmendmentInfo.visible = false
 	$Verdict.visible = false
 func setNum(num):
-	caseNum = num
+	if(get_node("docTableOpen/HBoxContainer/case_folder" + str(num) +"/unsolved").visible == true):
+		caseSolved = false
+		caseNum = num
+	else:
+		caseSolved = true
 	
 func solve_case():
-	pass
+	get_node("docTableOpen/HBoxContainer/case_folder" + str(caseNum) +"/unsolved").visible = false
+	get_node("docTableOpen/Label").text = ""
+	NumSolved += 1
+	if(NumSolved == 5):
+		print("w")
+		MainGlobals.courthousewin = true
+	caseSolved = true
 	#get_node("case_folder" + str(caseNum)).queue_free()
 
 
 # Replace with function body.
+
+

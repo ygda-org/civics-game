@@ -6,7 +6,7 @@ var direction = 1
 var frozen = false
 var is_sprinting = false
 var behindCount = 0
-var sprint_multiplier
+var sprint_multiplier = 1
 
 func _ready():
 	pass

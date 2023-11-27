@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/courthouse_layer2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/courthouse_layer1.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Areas/Courthouse_V2/juryTableOpen.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Areas/Courthouse_V2/AmendmentInfo.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Areas/Courthouse_V2/Verdict.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Areas/Courthouse_V2/exit.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.88966, 20.5833 )
@@ -46,6 +47,9 @@ extents = Vector2( 54.5, 9 )
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 6 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 3, 85.5 )
 
 [node name="Courthouse" type="Node2D"]
 position = Vector2( -1, -2 )
@@ -133,7 +137,20 @@ text = "E"
 
 [node name="Verdict" parent="." instance=ExtResource( 12 )]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.33, 0.33 )
+
+[node name="exit" type="Area2D" parent="."]
+script = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
+position = Vector2( 164, 8.5 )
+shape = SubResource( 11 )
+
 [connection signal="body_entered" from="docTable" to="docTable" method="_on_docTable_body_entered"]
 [connection signal="body_exited" from="docTable" to="docTable" method="_on_docTable_body_exited"]
 [connection signal="body_entered" from="juryTable" to="juryTable" method="_on_juryTable_body_entered"]
 [connection signal="body_exited" from="juryTable" to="juryTable" method="_on_juryTable_body_exited"]
+[connection signal="body_entered" from="exit" to="exit" method="_on_exit_body_entered"]
+[connection signal="body_exited" from="exit" to="exit" method="_on_exit_body_exited"]
