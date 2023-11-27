@@ -20,8 +20,6 @@ func _ready():
 
 var spokeSkip = false
 func _process(delta):
-	if frame >= 6:
-		end()
 	if started:
 		if spokeSkip == false:
 			GodotTTS.speak("Press s to skip end credits")
@@ -96,3 +94,7 @@ func _on_Skip_pressed():
 
 func _on_mainmenu_pressed():
 	get_tree().change_scene("res://UI/MainMenu.tscn")
+
+
+func _on_totaltimer_timeout():
+	end()

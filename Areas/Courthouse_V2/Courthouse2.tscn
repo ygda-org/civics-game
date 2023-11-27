@@ -169,15 +169,26 @@ margin_bottom = 44.0
 custom_fonts/normal_font = SubResource( 12 )
 text = "Pause (esc)"
 
+[node name="pause" type="TextureButton" parent="CanvasLayer2"]
+margin_left = 12.0
+margin_top = 1.0
+margin_right = 198.0
+margin_bottom = 44.0
+
 [node name="docTableOpen" parent="." instance=ExtResource( 7 )]
+visible = false
 
 [node name="caseInfo" parent="." instance=ExtResource( 8 )]
+visible = false
 
 [node name="juryTableOpen" parent="." instance=ExtResource( 10 )]
+visible = false
 
 [node name="AmendmentInfo" parent="." instance=ExtResource( 11 )]
+visible = false
 
 [node name="juryTable" type="Area2D" parent="."]
+visible = false
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="juryTable"]
@@ -193,6 +204,7 @@ custom_fonts/font = SubResource( 10 )
 text = "E"
 
 [node name="Verdict" parent="." instance=ExtResource( 12 )]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -212,9 +224,11 @@ shape = SubResource( 11 )
 [node name="VisibilityMenu" parent="CanvasLayer" instance=ExtResource( 16 )]
 
 [node name="Instructions" parent="CanvasLayer" instance=ExtResource( 15 )]
+visible = false
 
 [connection signal="body_entered" from="docTable" to="docTable" method="_on_docTable_body_entered"]
 [connection signal="body_exited" from="docTable" to="docTable" method="_on_docTable_body_exited"]
+[connection signal="pressed" from="CanvasLayer2/pause" to="CanvasLayer/Pause" method="_on_pause_pressed"]
 [connection signal="body_entered" from="juryTable" to="juryTable" method="_on_juryTable_body_entered"]
 [connection signal="body_exited" from="juryTable" to="juryTable" method="_on_juryTable_body_exited"]
 [connection signal="body_entered" from="exit" to="exit" method="_on_exit_body_entered"]

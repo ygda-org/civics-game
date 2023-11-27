@@ -48,3 +48,9 @@ func _on_Exit_pressed():
 func _on_Visibility_pressed():
 	visible = false
 	get_parent().get_node("VisibilityMenu").visible = true
+
+
+func _on_pause_pressed():
+	newPauseState = !get_tree().paused
+	get_tree().paused = newPauseState
+	visible = newPauseState

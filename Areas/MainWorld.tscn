@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://NPCs/realFountainDIALOGUE.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -59,6 +59,8 @@
 [ext_resource path="res://UI/VisibilityMenu.tscn" type="PackedScene" id=57]
 [ext_resource path="res://UI/objectives.tscn" type="PackedScene" id=58]
 [ext_resource path="res://Areas/schoolTop.gd" type="Script" id=59]
+[ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=60]
+[ext_resource path="res://title.png" type="Texture" id=61]
 
 [sub_resource type="Environment" id=22]
 background_mode = 4
@@ -707,6 +709,9 @@ extents = Vector2( 67, 86.5 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 12.5, 36 )
+
+[sub_resource type="DynamicFont" id=38]
+font_data = ExtResource( 60 )
 
 [node name="MainWorld" type="Node2D"]
 script = ExtResource( 4 )
@@ -1402,6 +1407,30 @@ texture = ExtResource( 56 )
 region_enabled = true
 region_rect = Rect2( 48.884, 21.684, 1, 1 )
 
+[node name="Sprite3" type="Sprite" parent="CanvasLayer"]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 665.25, 25 )
+scale = Vector2( 2.7, 2 )
+texture = ExtResource( 61 )
+region_enabled = true
+region_rect = Rect2( 112.101, 251.158, 75.6884, 23.0454 )
+
+[node name="Pause(esc)" type="RichTextLabel" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 75.25
+margin_top = 17.0
+margin_right = 325.25
+margin_bottom = 117.0
+custom_fonts/normal_font = SubResource( 38 )
+text = "Pause (esc)"
+
+[node name="pause" type="TextureButton" parent="CanvasLayer"]
+margin_left = 568.0
+margin_top = 1.0
+margin_right = 764.0
+margin_bottom = 44.0
+
 [node name="CanvasLayerText" type="CanvasLayer" parent="."]
 
 [node name="objectives" parent="." instance=ExtResource( 58 )]
@@ -1428,3 +1457,4 @@ z_as_relative = true
 [connection signal="body_entered" from="School/schoolTop" to="School/schoolTop" method="_on_schoolTop_body_entered"]
 [connection signal="body_exited" from="School/schoolTop" to="School/schoolTop" method="_on_schoolTop_body_exited"]
 [connection signal="body_entered" from="Town Square - M4" to="." method="_on_Town_Square__M4_body_entered"]
+[connection signal="pressed" from="CanvasLayer/pause" to="pausemenu/Pause" method="_on_pause_pressed"]

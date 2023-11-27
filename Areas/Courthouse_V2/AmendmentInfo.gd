@@ -21,7 +21,7 @@ var dctAmendments = {
 	
 	19: "Citizens may not be denied the right to vote on account of sex.",
 	
-	21: "The eighteenth article of amendment to the Constitution of the United States is hereby repealed.",
+	21: "The 18th Amendment, which prohibited the production, transportation, and sale of alcohol, is hereby repealed.",
 	
 	26: "Citizens over the age of 18 may not be denied the right to vote on account of age.",
 }

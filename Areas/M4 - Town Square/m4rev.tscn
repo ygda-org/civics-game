@@ -216,6 +216,12 @@ margin_bottom = 55.0
 custom_fonts/normal_font = SubResource( 9 )
 text = "Score:"
 
+[node name="pause" type="TextureButton" parent="m4revgame/CanvasLayer"]
+margin_left = 12.0
+margin_top = 1.0
+margin_right = 198.0
+margin_bottom = 44.0
+
 [node name="Pause" parent="m4revgame/CanvasLayer" instance=ExtResource( 11 )]
 margin_left = -1.0
 margin_top = 1.0
@@ -226,6 +232,7 @@ margin_bottom = 1.0
 script = ExtResource( 12 )
 
 [node name="Instructions" parent="m4revgame/CanvasLayer" instance=ExtResource( 16 )]
+visible = false
 margin_left = -5.0
 margin_top = -4.0
 margin_right = -5.0
@@ -246,6 +253,7 @@ script = ExtResource( 7 )
 [connection signal="hit" from="M4-Player" to="." method="_on_M4Player_hit"]
 [connection signal="timeout" from="m4revgame/scoreTimer" to="." method="_on_scoreTimer_timeout"]
 [connection signal="timeout" from="m4revgame/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="m4revgame/CanvasLayer/pause" to="m4revgame/CanvasLayer/Pause" method="_on_pause_pressed"]
 [connection signal="timeout" from="mayortimer" to="." method="_on_mayortimer_timeout"]
 [connection signal="timeout" from="housetimer" to="." method="_on_housetimer_timeout"]
 [connection signal="timeout" from="enemytimer" to="." method="_on_enemytimer_timeout"]

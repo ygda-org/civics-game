@@ -80,3 +80,7 @@ func _on_Courthouse_body_entered(body):
 		MainGlobals.indicatorSpawn = Vector2(74,14)
 
 
+
+
+func _on_pause_pressed():
+	pass # Replace with function body.

@@ -46,13 +46,13 @@ func set_amends(caseNum):
 	if(caseNum== 1):
 		curAmends = [4, 8, 14, 19, 21]
 	if(caseNum == 2):
-		curAmends = [19, 26, 13, 8, 6]
+		curAmends = [6, 8, 13, 19, 26]
 	if(caseNum == 3):
-		curAmends = [13, 1, 3, 4, 6]
+		curAmends = [1, 3, 4, 6, 13]
 	if(caseNum == 4): 
-		curAmends = [21, 6, 19, 14, 26]
+		curAmends = [6, 14, 19, 21, 26]
 	if(caseNum == 5):
-		curAmends = [3, 14, 1, 8, 19]
+		curAmends = [1, 3, 8, 14, 19]
 	for child in $HBoxContainer.get_children():
 		child.set_amend()
 	get_parent().get_node("AmendmentInfo").generateInfo(curAmends)
