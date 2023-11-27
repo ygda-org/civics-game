@@ -1,9 +1,7 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
 var caseNum = 0
 var NumSolved = 0
 var caseSolved = false
@@ -44,6 +42,7 @@ var masterLst = [
 ]
 
 func _ready():
+	GodotTTS.speak("jury duty.  you have been summoned to jury duty. help the court decide the verdict. first, walk to the document table. pick a case and read about it. second, go to the jurors table and select two ammendments to support your claim. third, declare your claim, innocent or guilty? press 1 to start.")
 	add_child(sfx_manager)
 	$docTableOpen.visible = false
 	$caseInfo.visible = false
@@ -72,6 +71,6 @@ func solve_case():
 	#get_node("case_folder" + str(caseNum)).queue_free()
 
 
-# Replace with function body.
+
 
 

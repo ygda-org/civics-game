@@ -35,6 +35,7 @@ var inplay = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GodotTTS.speak("pop quiz. how well do you know civics? your teacher wants to find out with a pop quiz. press one through six to find out what a card says. press b to return back to the cards. after selecting two cards, you can choose m to match or r to reset. match the cards to their correct answers. Press 1 to start.")
 	find_node("WorldEnvironment").environment.adjustment_brightness = MainGlobals.brightness
 	find_node("WorldEnvironment").environment.adjustment_contrast = MainGlobals.contrast
 	find_node("WorldEnvironment").environment.adjustment_saturation = MainGlobals.saturation

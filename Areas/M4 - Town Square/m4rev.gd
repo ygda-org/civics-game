@@ -1,17 +1,17 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
 var enemy = preload("res://Areas/M4 - Town Square/m4enemyrev.tscn")
 var house = preload("res://Areas/M4 - Town Square/M4-House.tscn")
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
+	GodotTTS.speak("spread the news. go door to door and help the citizens learn about the mayors campaign. use w or up arrow to jump over obstacles. dont bump into others handing out flyers too. press e at houses to gain points for informing citizens about the election. you get stars based on your performance. get to the end or get to three houses to win three stars. press 1 to start.")
 	find_node("WorldEnvironment").environment.adjustment_brightness = MainGlobals.brightness
 	find_node("WorldEnvironment").environment.adjustment_contrast = MainGlobals.contrast
 	find_node("WorldEnvironment").environment.adjustment_saturation = MainGlobals.saturation
 	$m4revgame/Timer.start()
+
 
 func _process(delta):
 	$m4revgame/CanvasLayer/Timer.text = "Time Left: " + str(int($m4revgame/Timer.time_left))

@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Instructions.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Control
+
+
+
+func _ready():
+	pause_mode = Node.PAUSE_MODE_PROCESS
+
+
+	visible = true
+	get_tree().paused = true
+
+
+
+func _process(delta):
+	if Input.is_action_just_pressed(\"first\"):
+		get_tree().paused = false
+		visible = false
+
+
+func _on_Start_pressed():
+	get_tree().paused = false
+	visible = false
+"
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/civics game instructions (town square).png-fa5502a289971c6cb12d9d4bb44aa301.stex"
+
+[node name="Instructions" instance=ExtResource( 1 )]
+script = SubResource( 2 )
+
+[node name="Instruction" parent="." index="2"]
+texture = SubResource( 1 )

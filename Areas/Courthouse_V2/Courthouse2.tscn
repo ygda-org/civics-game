@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Assets/courthouse_layer2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/courthouse_layer1.png" type="Texture" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Areas/Courthouse_V2/AmendmentInfo.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Areas/Courthouse_V2/Verdict.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Areas/Courthouse_V2/exit.gd" type="Script" id=13]
+[ext_resource path="res://UI/Pause.tscn" type="PackedScene" id=14]
+[ext_resource path="res://UI/CourtInstructions.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.88966, 20.5833 )
@@ -147,6 +149,12 @@ script = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
 position = Vector2( 164, 8.5 )
 shape = SubResource( 11 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource( 14 )]
+
+[node name="Instructions" parent="CanvasLayer" instance=ExtResource( 15 )]
 
 [connection signal="body_entered" from="docTable" to="docTable" method="_on_docTable_body_entered"]
 [connection signal="body_exited" from="docTable" to="docTable" method="_on_docTable_body_exited"]

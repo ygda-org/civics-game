@@ -1422,7 +1422,6 @@ transform = Transform2D( 0.5, 0, 0, 0.5, 500, 0 )
 layer = 3
 
 [node name="VisibilityMenu" parent="pausemenu" instance=ExtResource( 57 )]
-visible = false
 
 [node name="Pause" parent="pausemenu" instance=ExtResource( 44 )]
 
