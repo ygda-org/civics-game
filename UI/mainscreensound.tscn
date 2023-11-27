@@ -172,9 +172,9 @@ margin_bottom = -116.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/Return"]
 margin_left = 34.0
-margin_top = -25.0
+margin_top = -21.0
 margin_right = 204.0
-margin_bottom = 15.0
+margin_bottom = 19.0
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 13 )
 text = "Back (esc)"

@@ -23,13 +23,6 @@ func _ready():
 		$Player.freeze(true)
 		MainGlobals.playStart = false
 
-func _input(event):
-	if Input.is_action_pressed("cheatcode"):
-		MainGlobals.schoolwin = true
-		MainGlobals.parkwin = true
-		MainGlobals.townsquarewin = true
-		MainGlobals.courthousewin = true
-
 func _process(delta):
 	if not DialogManager.is_dialog_active and not MainGlobals.playStart:
 		$Player.freeze(false)
