@@ -5,12 +5,15 @@ func _ready():
 	if ParkGlobals.isWin == true:
 		$Result.bbcode_text = 	"[center] " + "Congrats! You got all 10 pieces!"+ " [/center]"
 		$stars.play("three")
+		$win.play()
 	elif ParkGlobals.score >= 5:
 		$Result.bbcode_text = 	"[center] " + "Great job! You got " + str(ParkGlobals.score) + " out of 10 pieces!" + " [/center]"	
 		$stars.play("two")
+		$win.play()
 	else:
 		$Result.bbcode_text = 	"[center] " + "You got " + str(ParkGlobals.score) + " out of 10 pieces!" + " [/center]"	
 		$stars.play("one")
+		$lose.play()
 	
 func _input(event):
 	if Input.is_action_pressed("restart"):

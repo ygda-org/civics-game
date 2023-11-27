@@ -14,3 +14,5 @@ var schoolwin = false
 var parkwin = false
 var townsquarewin = false
 var courthousewin = false
+
+var firsttimewin = true

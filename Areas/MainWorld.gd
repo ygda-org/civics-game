@@ -9,9 +9,17 @@ func _ready():
 	$Player.position = MainGlobals.spawnPos
 	$CanvasLayer/PlayerIndicator.position = MainGlobals.indicatorSpawn
 	GodotTTS.speak("welcome to liberty landing!")
-
+func _input(event):
+	if Input.is_action_pressed("cheatcode"):
+		MainGlobals.schoolwin = true
+		MainGlobals.parkwin = true
+		MainGlobals.townsquarewin = true
+		MainGlobals.courthousewin = true
 
 func _process(delta):
+	if MainGlobals.schoolwin && MainGlobals.parkwin && MainGlobals.townsquarewin && MainGlobals.courthousewin && MainGlobals.firsttimewin:
+		get_tree().change_scene("res://UI/end credits.tscn")
+		MainGlobals.firsttimewin = false
 	if OS.has_feature("JavaScript"):
 			$CanvasLayer/PlayerIndicator.position += $Player.get_velo()*0.00060322245322
 	else:
