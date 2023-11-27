@@ -12,10 +12,7 @@ func _ready():
 	
 func _input(event):
 	if visible and spoken == false:
-		GodotTTS.speak("Press 1 to change brightness.")
-		GodotTTS.speak("Press 2 to change contrast")
-		GodotTTS.speak("Press 3 to change saturation")
-		GodotTTS.speak("Press 4 to reset settings")
+		GodotTTS.speak("Press 1 to change brightness. Press 2 to change contrast. Press 3 to change saturation. Press 4 to reset settings")
 		spoken = true
 	if event.is_action_pressed("pause") && visible:
 		spoken = false

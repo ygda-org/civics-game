@@ -4,6 +4,7 @@ var sfx_manager_scene = preload("res://SFX/SFX_Manager.tscn")
 var sfx_manager = sfx_manager_scene.instance()
 
 func _ready():
+	GodotTTS.speak("Press 1 to start game. Press 2 to go to settings. Press 3 to go to credits.")
 	add_child(sfx_manager)
 
 func _input(event):

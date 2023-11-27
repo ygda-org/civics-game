@@ -21,9 +21,7 @@ func _ready():
 		$Result.bbcode_text = 	"[center] " + "You got " + str(ParkGlobals.score) + " out of 10 pieces!" + " [/center]"	
 		$stars.play("one")
 		$lose.play()
-	GodotTTS.speak(toSpeak)
-	GodotTTS.speak("Press r to restart")
-	GodotTTS.speak("Press escape to go to main menu")
+	GodotTTS.speak(toSpeak+ "Press r to restart. Press escape to go to main menu")
 
 func _input(event):
 	if Input.is_action_pressed("restart"):
