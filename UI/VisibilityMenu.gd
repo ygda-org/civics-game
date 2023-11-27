@@ -38,6 +38,9 @@ func _input(event):
 		MainGlobals.brightness = 1
 		MainGlobals.contrast = 1
 		MainGlobals.saturation = 1
+		$brightnessSlider.value = MainGlobals.brightness
+		$contrastSlider.value = MainGlobals.contrast
+		$saturationSlider.value = MainGlobals.saturation
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -63,7 +66,9 @@ func _on_Reset_pressed():
 	MainGlobals.brightness = 1
 	MainGlobals.contrast = 1
 	MainGlobals.saturation = 1
-
+	$brightnessSlider.value = MainGlobals.brightness
+	$contrastSlider.value = MainGlobals.contrast
+	$saturationSlider.value = MainGlobals.saturation
 
 func _on_Return_pressed():
 	spoken = false

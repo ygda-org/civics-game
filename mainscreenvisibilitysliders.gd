@@ -30,6 +30,9 @@ func _input(event):
 		MainGlobals.brightness = 1
 		MainGlobals.contrast = 1
 		MainGlobals.saturation = 1
+		$brightnessSlider.value = MainGlobals.brightness
+		$contrastSlider.value = MainGlobals.contrast
+		$saturationSlider.value = MainGlobals.saturation
 	if event.is_action_pressed("pause"):
 		$Return.grab_focus()
 		get_tree().change_scene("res://UI/optionsmenu.tscn")
@@ -58,6 +61,9 @@ func _on_Reset_pressed():
 	MainGlobals.brightness = 1
 	MainGlobals.contrast = 1
 	MainGlobals.saturation = 1
+	$brightnessSlider.value = MainGlobals.brightness
+	$contrastSlider.value = MainGlobals.contrast
+	$saturationSlider.value = MainGlobals.saturation
 
 
 func _on_Return_pressed():

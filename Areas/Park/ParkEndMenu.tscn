@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Areas/Park/ParkEndMenu.gd" type="Script" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://starsrev2.png" type="Texture" id=5]
 [ext_resource path="res://sfx_minigame_win.wav" type="AudioStream" id=6]
 [ext_resource path="res://sfx_minigame_lose.wav" type="AudioStream" id=7]
+
+[sub_resource type="Environment" id=10]
+background_mode = 4
+adjustment_enabled = true
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -46,10 +50,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="ParkEndMenu" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="ParkEndMenu" type="Node2D"]
 script = ExtResource( 2 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 10 )
 
 [node name="lose" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
@@ -78,7 +83,33 @@ rotation = 0.261015
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 4 )
 
-[node name="Restart" type="TextureButton" parent="."]
+[node name="Sprite2" type="Sprite" parent="."]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 271, 298 )
+scale = Vector2( 4.8, 4 )
+texture = SubResource( 2 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 272, 423 )
+scale = Vector2( 4.8, 4 )
+texture = SubResource( 2 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
+
+[node name="stars" type="AnimatedSprite" parent="."]
+position = Vector2( 276, 193 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 9 )
+animation = "one"
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Restart" type="TextureButton" parent="Control"]
 margin_left = 97.0
 margin_top = 253.0
 margin_right = 445.0
@@ -87,15 +118,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Restart"]
-modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 174, 45 )
-scale = Vector2( 4.8, 4 )
-texture = SubResource( 2 )
-region_enabled = true
-region_rect = Rect2( 113, 251, 74, 23 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Restart"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Restart"]
 margin_left = 24.0
 margin_top = 18.0
 margin_right = 388.0
@@ -104,7 +127,7 @@ mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 text = "Restart (R)"
 
-[node name="Exit" type="TextureButton" parent="."]
+[node name="Exit" type="TextureButton" parent="Control"]
 margin_left = 98.0
 margin_top = 378.0
 margin_right = 452.0
@@ -113,15 +136,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Exit"]
-modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 174, 45 )
-scale = Vector2( 4.8, 4 )
-texture = SubResource( 2 )
-region_enabled = true
-region_rect = Rect2( 113, 251, 74, 23 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Exit"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Exit"]
 margin_left = 43.0
 margin_top = 20.0
 margin_right = 389.0
@@ -130,11 +145,5 @@ mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 text = "Exit (esc)"
 
-[node name="stars" type="AnimatedSprite" parent="."]
-position = Vector2( 276, 193 )
-scale = Vector2( 4, 4 )
-frames = SubResource( 9 )
-animation = "one"
-
-[connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Control/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="Control/Exit" to="." method="_on_Exit_pressed"]

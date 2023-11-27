@@ -8,7 +8,9 @@ var newPauseState
 
 func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
-	
+	$brightnessSlider.value = MainGlobals.brightness
+	$contrastSlider.value = MainGlobals.contrast
+	$saturationSlider.value = MainGlobals.saturation
 func _input(event):
 	if event.is_action_pressed("pause") && visible:
 		$Return.grab_focus()
@@ -30,6 +32,9 @@ func _input(event):
 		MainGlobals.brightness = 1
 		MainGlobals.contrast = 1
 		MainGlobals.saturation = 1
+		$brightnessSlider.value = MainGlobals.brightness
+		$contrastSlider.value = MainGlobals.contrast
+		$saturationSlider.value = MainGlobals.saturation
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -56,6 +61,9 @@ func _on_Reset_pressed():
 	MainGlobals.brightness = 1
 	MainGlobals.contrast = 1
 	MainGlobals.saturation = 1
+	$brightnessSlider.value = MainGlobals.brightness
+	$contrastSlider.value = MainGlobals.contrast
+	$saturationSlider.value = MainGlobals.saturation
 
 
 func _on_Return_pressed():

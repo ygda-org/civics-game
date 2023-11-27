@@ -1,6 +1,9 @@
-extends Control
+extends Node2D
 
 func _ready():
+	get_node("WorldEnvironment").environment.adjustment_brightness = MainGlobals.brightness
+	get_node("WorldEnvironment").environment.adjustment_contrast = MainGlobals.contrast
+	get_node("WorldEnvironment").environment.adjustment_saturation = MainGlobals.saturation
 	MainGlobals.parkwin = true
 	var toSpeak
 	if ParkGlobals.isWin == true:

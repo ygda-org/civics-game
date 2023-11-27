@@ -84,27 +84,23 @@ scale = Vector2( 5, 5 )
 [node name="schoolcheck" type="AnimatedSprite" parent="checks"]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
 position = Vector2( 7.62939e-06, -22 )
-scale = Vector2( 1, 1 )
 frames = SubResource( 5 )
 animation = "unchecked"
 
 [node name="parkcheck" type="AnimatedSprite" parent="checks"]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-scale = Vector2( 1, 1 )
 frames = SubResource( 5 )
 animation = "unchecked"
 
 [node name="townsquarecheck" type="AnimatedSprite" parent="checks"]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
 position = Vector2( 0, 22 )
-scale = Vector2( 1, 1 )
 frames = SubResource( 5 )
 animation = "unchecked"
 
 [node name="courthousecheck" type="AnimatedSprite" parent="checks"]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
 position = Vector2( 0, 44 )
-scale = Vector2( 1, 1 )
 frames = SubResource( 5 )
 animation = "unchecked"
 
