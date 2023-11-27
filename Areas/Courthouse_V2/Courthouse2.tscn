@@ -185,7 +185,6 @@ visible = false
 visible = false
 
 [node name="juryTable" type="Area2D" parent="."]
-visible = false
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="juryTable"]
