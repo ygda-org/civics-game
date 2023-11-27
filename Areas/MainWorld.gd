@@ -52,3 +52,5 @@ func _on_Courthouse_body_entered(body):
 		get_tree().change_scene("res://Areas/Courthouse_V2/Courthouse2.tscn") 
 		MainGlobals.spawnPos = Vector2(209, -1396)
 		MainGlobals.indicatorSpawn = Vector2(80, 10)
+
+

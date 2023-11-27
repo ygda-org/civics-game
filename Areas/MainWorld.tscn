@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://NPCs/realFountainDIALOGUE.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -58,6 +58,7 @@
 [ext_resource path="res://Assets/Left.png" type="Texture" id=56]
 [ext_resource path="res://UI/VisibilityMenu.tscn" type="PackedScene" id=57]
 [ext_resource path="res://UI/objectives.tscn" type="PackedScene" id=58]
+[ext_resource path="res://Areas/schoolTop.gd" type="Script" id=59]
 
 [sub_resource type="Environment" id=22]
 background_mode = 4
@@ -704,6 +705,9 @@ extents = Vector2( 131.5, 50 )
 [sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 112.5, 41.5 )
 
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 67, 86.5 )
+
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 12.5, 36 )
 
@@ -1186,6 +1190,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="School"]
 scale = Vector2( 1.5, 1.5 )
+z_index = 2
 texture = SubResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="School"]
@@ -1206,6 +1211,14 @@ lifetime = 3.0
 visibility_rect = Rect2( -150, -100, 300, 200 )
 process_material = SubResource( 34 )
 texture = SubResource( 35 )
+
+[node name="schoolTop" type="Area2D" parent="School"]
+z_index = 2
+script = ExtResource( 59 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="School/schoolTop"]
+position = Vector2( -3, -102.5 )
+shape = SubResource( 36 )
 
 [node name="Town Square - M4" type="Area2D" parent="."]
 position = Vector2( 459, -945 )
@@ -1422,4 +1435,6 @@ z_as_relative = true
 [connection signal="body_entered" from="Park" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Courthouse" to="." method="_on_Courthouse_body_entered"]
 [connection signal="body_entered" from="School" to="." method="_on_School_body_entered"]
+[connection signal="body_entered" from="School/schoolTop" to="School/schoolTop" method="_on_schoolTop_body_entered"]
+[connection signal="body_exited" from="School/schoolTop" to="School/schoolTop" method="_on_schoolTop_body_exited"]
 [connection signal="body_entered" from="Town Square - M4" to="." method="_on_Town_Square__M4_body_entered"]
