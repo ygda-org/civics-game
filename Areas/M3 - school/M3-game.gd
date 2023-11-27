@@ -33,8 +33,12 @@ var wrong = 0
 
 var inplay = true
 
+var sfx_manager_scene = preload("res://SFX/SFX_Manager.tscn")
+var sfx_manager = sfx_manager_scene.instance()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_child(sfx_manager)
 	GodotTTS.speak("pop quiz. how well do you know civics? your teacher wants to find out with a pop quiz. press one through six to find out what a card says. press b to return back to the cards. after selecting two cards, you can choose m to match or r to reset. match the cards to their correct answers. Press 1 to start.")
 	find_node("WorldEnvironment").environment.adjustment_brightness = MainGlobals.brightness
 	find_node("WorldEnvironment").environment.adjustment_contrast = MainGlobals.contrast
@@ -80,6 +84,9 @@ func zoom(mtext):
 
 func on_match():
 	if(matched == true):
+		if !sfx_manager.is_sfx_playing("school_courthouse_correct"):
+			sfx_manager.stop_sfx("school_courthouse_correct")
+			sfx_manager.play_sfx("school_courthouse_correct")
 		get_node(str(dctAnsTile[tile1])).visible = false
 		get_node(str(dctAnsTile[tile2])).visible = false
 		get_node(str(dctAnsTile[tile1])).get_node("Control/Disabled").visible = true
@@ -96,6 +103,9 @@ func on_match():
 	else:
 		#print(tile1)
 		#print(dctAnsTile[tile1])
+		if !sfx_manager.is_sfx_playing("school_courthouse_incorrect"):
+			sfx_manager.stop_sfx("school_courthouse_incorrect")
+			sfx_manager.play_sfx("school_courthouse_incorrect")
 		wrong += 1
 		GodotTTS.speak("You matched wrong")
 		get_node(str(dctAnsTile[tile1])).get_node("Control/Disabled").visible = true
@@ -125,6 +135,11 @@ func on_reset():
 
 func getNewRound():
 	if(roundNum >= len(masterLst)): 
+		if !sfx_manager.is_sfx_playing("minigame_win"):
+			sfx_manager.stop_sfx("school_courthouse_correct")
+			sfx_manager.stop_sfx("school_courthouse_incorrect")
+			sfx_manager.stop_sfx("minigame_win")
+			sfx_manager.play_sfx("minigame_win")
 		get_tree().change_scene("res://Areas/M3 - school/m3endmenu.tscn")
 	else:
 		dctMatches = masterLst[roundNum]
