@@ -8,9 +8,12 @@ var curNum = 0
 var text = "You have chosen case 0"
 var info = ". Press i to view Info"
 
+var sfx_manager_scene = preload("res://SFX/SFX_Manager.tscn")
+var sfx_manager = sfx_manager_scene.instance()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_child(sfx_manager)
 	$Label.visible = false # Replace with function body.
 
 func choose_case(num):
