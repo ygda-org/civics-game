@@ -12,6 +12,9 @@ func _ready():
 	print(number)
 	input = ["first", "second", "third", "fourth", "fifth", "sixth"][number-1]
 	print(input)
+	if(name == "case_folder"):
+		name += "1"
+	print(name)
 
 func _process(delta):
 	

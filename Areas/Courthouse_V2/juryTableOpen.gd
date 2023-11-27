@@ -32,7 +32,8 @@ func _process(delta):
 		get_parent().get_node("AmendmentInfo").visible = true
 	if(Input.is_action_just_pressed("confirm") and visible):
 		if(chosen[0] in get_parent().masterLst[get_parent().caseNum-1]["Support"] and chosen[1] in get_parent().masterLst[get_parent().caseNum-1]["Support"]):
-			$Chosen.text = "Correct"
+			visible = false
+			get_parent().get_node('Verdict').visible = true
 		else:
 			$Chosen.text = 'Incorrect'
 			

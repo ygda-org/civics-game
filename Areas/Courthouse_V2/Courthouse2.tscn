@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/courthouse_layer2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/courthouse_layer1.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Areas/Courthouse_V2/juryTable.gd" type="Script" id=9]
 [ext_resource path="res://Areas/Courthouse_V2/juryTableOpen.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Areas/Courthouse_V2/AmendmentInfo.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Areas/Courthouse_V2/Verdict.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.88966, 20.5833 )
@@ -129,6 +130,8 @@ margin_right = -1.0
 margin_bottom = -51.0
 custom_fonts/font = SubResource( 10 )
 text = "E"
+
+[node name="Verdict" parent="." instance=ExtResource( 12 )]
 
 [connection signal="body_entered" from="docTable" to="docTable" method="_on_docTable_body_entered"]
 [connection signal="body_exited" from="docTable" to="docTable" method="_on_docTable_body_exited"]
