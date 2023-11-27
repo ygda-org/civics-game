@@ -58,18 +58,21 @@ func _on_text_box_finished_displaying():
 
 var bypass = false
 
-func _unhandled_input(event):
-	if ((event.is_action_pressed("interact") or bypass == true) && is_dialog_active && can_advance_line): 
-		if bypass:
-			bypass = false
-		if text_box:
-			text_box.queue_free()
-		if current_line_index >= dialog_lines.size():
-			is_dialog_active = false
-			current_line_index = 0
-			return
-		GodotTTS.speak(dialog_lines[current_line_index])
-		_show_text_box()
-		current_line_index += 1
-		
+func inputStuff():
+	if text_box:
+		text_box.queue_free()
+	if current_line_index >= dialog_lines.size():
+		is_dialog_active = false
+		current_line_index = 0
+		return
+	GodotTTS.speak(dialog_lines[current_line_index])
+	_show_text_box()
+	current_line_index += 1
 
+func _process(delta):
+	if bypass:
+		bypass = false
+		inputStuff()
+func _unhandled_input(event):
+	if ((event.is_action_pressed("interact")) && is_dialog_active && can_advance_line): 
+		inputStuff()
