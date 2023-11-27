@@ -4,7 +4,7 @@ var newPauseState
 
 
 func _ready():
-	GodotTTS.speak("Press 1 to change brightness. Press 2 to change contrast. Press 3 to change saturation. Press 4 to reset settings. press escape to go back")
+	GodotTTS.speak("Press 1 to change brightness. Press 2 to change contrast. Press 3 to change saturation. Press 4 to reset settings")
 	$brightnessSlider.value = MainGlobals.brightness
 	$contrastSlider.value = MainGlobals.contrast
 	$saturationSlider.value = MainGlobals.saturation

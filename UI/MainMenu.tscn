@@ -171,6 +171,7 @@ wait_time = 4.0
 
 [node name="intro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+bus = "Music"
 
 [connection signal="mouse_entered" from="Control/Start" to="Control" method="_on_Start_mouse_entered"]
 [connection signal="mouse_exited" from="Control/Start" to="Control" method="_on_Start_mouse_exited"]

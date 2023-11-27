@@ -32,6 +32,7 @@ environment = SubResource( 1 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
 autoplay = true
+bus = "Music"
 
 [node name="classroom bg" parent="." instance=ExtResource( 3 )]
 position = Vector2( 281, 249 )

@@ -16,6 +16,8 @@ func _process(delta):
 func _input(event):
 	if Input.is_action_pressed("pause"):
 		get_tree().change_scene("res://UI/MainMenu.tscn")
+	if Input.is_action_pressed("first"):
+		get_tree().change_scene("res://UI/mainscreensound.tscn")
 	if Input.is_action_pressed("second"):
 		get_tree().change_scene("res://UI/mainscreenvisibility.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,7 +26,7 @@ func _input(event):
 
 
 func _on_Volume_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://UI/mainscreensound.tscn")
 
 
 func _on_Back_pressed():
