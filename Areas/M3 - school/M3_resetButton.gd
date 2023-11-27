@@ -9,7 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(((Input.is_action_just_pressed("click") and inRange) or Input.is_action_just_pressed("reset")) and not get_parent().zoomed and get_parent().bothTilesActive):
+	if(((Input.is_action_just_pressed("click") and inRange) or Input.is_action_just_pressed("reset")) and not get_parent().zoomed):
 		get_parent().on_reset()
 
 

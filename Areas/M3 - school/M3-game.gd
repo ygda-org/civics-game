@@ -47,8 +47,6 @@ func _ready():
 	$match_tile.name = "match_tile1"
 	$M3_zoom.visible = false
 	getNewRound()
-	$M3_matchButton.visible = false
-	$M3_resetButton.visible = false
 	
 
 func _process(delta):
@@ -122,10 +120,12 @@ func on_match():
 	
 func on_reset():
 	print(tile1)
-	get_node(str(dctAnsTile[tile1])).get_node("Control/Disabled").visible = true
-	get_node(str(dctAnsTile[tile1])).get_node("Control/Enabled").visible = false
-	get_node(str(dctAnsTile[tile2])).get_node("Control/Disabled").visible = true
-	get_node(str(dctAnsTile[tile2])).get_node("Control/Enabled").visible = false
+	if tile1: 
+		get_node(str(dctAnsTile[tile1])).get_node("Control/Disabled").visible = true
+		get_node(str(dctAnsTile[tile1])).get_node("Control/Enabled").visible = false
+	if(tile2):
+		get_node(str(dctAnsTile[tile2])).get_node("Control/Disabled").visible = true
+		get_node(str(dctAnsTile[tile2])).get_node("Control/Enabled").visible = false
 	tile1 = ""
 	tile2 = ""
 	matched = false

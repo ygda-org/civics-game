@@ -26,7 +26,7 @@ func _process(delta):
 				$Control/Disabled.visible = false
 				$Control/Enabled.visible = true
 				clickable = false
-		elif get_parent().zoomed == false and visible:
+		if get_parent().zoomed == false and visible:
 			if(Input.is_action_just_pressed(number) and $Control/Enabled.visible and get_parent().get_node("CanvasLayer/Pause").visible == false):
 				get_parent().zoom($Control/Label.text)	
 				clickable = false
@@ -35,7 +35,6 @@ func _process(delta):
 				$Control/Disabled.visible = false
 				$Control/Enabled.visible = true
 				clickable = false
-			
 			
 
 
