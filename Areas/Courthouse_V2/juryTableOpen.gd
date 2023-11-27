@@ -4,6 +4,9 @@ extends CanvasLayer
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+var sfx_manager_scene = preload("res://SFX/SFX_Manager.tscn")
+var sfx_manager = sfx_manager_scene.instance()
+
 var dctAmendments = {
 	1: "People may not prohibit an individual’s freedom to express religion, press, speech, assembly, and petition.",
 	3: "No Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law.",
@@ -21,7 +24,7 @@ var chosen = [0, 0]
 var chosen_i = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	add_child(sfx_manager)
 
 func _process(delta):
 	if(Input.is_action_just_pressed("back") and visible):
@@ -58,6 +61,9 @@ func set_amends(caseNum):
 	get_parent().get_node("AmendmentInfo").generateInfo(curAmends)
 
 func display_chosen(AmendNum):
+	if !sfx_manager.is_sfx_playing("courtroom_paper"):
+		sfx_manager.stop_sfx("courtroom_paper")
+		sfx_manager.play_sfx("courtroom_paper")
 	if(not AmendNum in chosen):
 		chosen[chosen_i] = AmendNum
 		chosen_i = (chosen_i + 1)%2

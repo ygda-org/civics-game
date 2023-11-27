@@ -136,16 +136,16 @@ valign = 1
 
 [node name="Sprite3" type="Sprite" parent="CanvasLayer2"]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 103, 24 )
-scale = Vector2( 2.7, 2 )
+position = Vector2( 103, 26 )
+scale = Vector2( 2.7, 2.17391 )
 texture = ExtResource( 14 )
 region_enabled = true
 region_rect = Rect2( 112.101, 251.158, 75.6884, 23.0454 )
 
 [node name="Sprite2" type="Sprite" parent="CanvasLayer2"]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 880.5, 23 )
-scale = Vector2( 3.64, 2 )
+position = Vector2( 880.5, 27.5 )
+scale = Vector2( 3.64, 2.3913 )
 texture = ExtResource( 14 )
 region_enabled = true
 region_rect = Rect2( 112.101, 251.158, 75.6884, 23.0454 )
@@ -154,9 +154,9 @@ region_rect = Rect2( 112.101, 251.158, 75.6884, 23.0454 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = 258.0
-margin_top = 15.0
+margin_top = 19.0
 margin_right = 476.0
-margin_bottom = 45.0
+margin_bottom = 49.0
 custom_fonts/normal_font = SubResource( 12 )
 text = "Cases Solved: 0"
 
@@ -164,9 +164,9 @@ text = "Cases Solved: 0"
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -487.0
-margin_top = 16.0
+margin_top = 17.0
 margin_right = -316.0
-margin_bottom = 44.0
+margin_bottom = 45.0
 custom_fonts/normal_font = SubResource( 12 )
 text = "Pause (esc)"
 
@@ -174,7 +174,7 @@ text = "Pause (esc)"
 margin_left = 12.0
 margin_top = 1.0
 margin_right = 198.0
-margin_bottom = 44.0
+margin_bottom = 48.0
 
 [node name="docTableOpen" parent="." instance=ExtResource( 7 )]
 visible = false
