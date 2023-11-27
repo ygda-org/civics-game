@@ -6,6 +6,12 @@ var sfx_manager = sfx_manager_scene.instance()
 func _ready():
 	GodotTTS.speak("Press 1 to start game. Press 2 to go to settings. Press 3 to go to credits.")
 	add_child(sfx_manager)
+	
+
+func _process(delta):
+	if not MainGlobals.startTTSPlayed and GodotTTS.ttsEnabled:
+		GodotTTS.speak("Press 1 to start game. Press 2 to go to settings. Press 3 to go to credits.")
+		MainGlobals.startTTSPlayed = true
 
 func _input(event):
 	if Input.is_action_pressed("first"):

@@ -18,3 +18,5 @@ var courthousewin = false
 var firsttimewin = true
 
 var playStart = true
+
+var startTTSPlayed = false
