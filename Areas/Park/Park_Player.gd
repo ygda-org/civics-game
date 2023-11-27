@@ -9,6 +9,12 @@ var direction = 1
 var typeWaste
 var waste
 
+var sfx_manager_scene = preload("res://SFX/SFX_Manager.tscn")
+var sfx_manager = sfx_manager_scene.instance()
+
+func _ready():
+	add_child(sfx_manager)
+
 func get_input():
 
 	if Input.is_action_pressed("topDownForward"):
@@ -43,11 +49,17 @@ func get_input():
 	velocity = velocity.normalized() * speed
 	if Input.is_action_pressed("interact"):
 		if typeWaste == "waste":
+			if !sfx_manager.is_sfx_playing("park_trash_1"):
+				sfx_manager.stop_sfx("park_trash_1")
+				sfx_manager.play_sfx("park_trash_1")
 			print(typeWaste)
 			wasteHand += 1
 			waste.die()
 			waste = null
 		elif typeWaste == "recycle":
+			if !sfx_manager.is_sfx_playing("park_trash_4"):
+				sfx_manager.stop_sfx("park_trash_4")
+				sfx_manager.play_sfx("park_trash_4")
 			recycleHand += 1
 			waste.die()
 			waste = null

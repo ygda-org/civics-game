@@ -131,6 +131,7 @@ stream = ExtResource( 8 )
 
 [node name="platformer_spread_news" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+volume_db = 10.0
 
 [node name="school_bell" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

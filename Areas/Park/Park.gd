@@ -3,12 +3,16 @@ extends Node2D
 var trashStarted = false
 var score = 0
 
+var sfx_manager_scene = preload("res://SFX/SFX_Manager.tscn")
+var sfx_manager = sfx_manager_scene.instance()
+
 func _process(delta):
 		
 	if trashStarted:
 		$TrashGame/UI/Time.text = "Time Left: " + str(int($TrashGame/Timer.time_left))
 
 func _ready():
+	add_child(sfx_manager)
 	find_node("WorldEnvironment").environment.adjustment_brightness = MainGlobals.brightness
 	find_node("WorldEnvironment").environment.adjustment_contrast = MainGlobals.contrast
 	find_node("WorldEnvironment").environment.adjustment_saturation = MainGlobals.saturation
@@ -32,6 +36,9 @@ func _ready():
 	trashStarted = true
 	
 func changeScore(newScore):
+	if !sfx_manager.is_sfx_playing("park_put_trash_in_bin"):
+		sfx_manager.stop_sfx("park_put_trash_in_bin")
+		sfx_manager.play_sfx("park_put_trash_in_bin")
 	score = newScore
 	$TrashGame/UI/Score.text = "Score: " + str(score)
 	if score == 10:
