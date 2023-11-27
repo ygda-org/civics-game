@@ -1,10 +1,16 @@
 extends Control
 
 func _ready():
+	MainGlobals.parkwin = true
 	if ParkGlobals.isWin == true:
-		$Result.bbcode_text = 	"[center] " + "You got all 10 pieces!"+ " [/center]"
+		$Result.bbcode_text = 	"[center] " + "Congrats! You got all 10 pieces!"+ " [/center]"
+		$stars.play("three")
+	elif ParkGlobals.score >= 5:
+		$Result.bbcode_text = 	"[center] " + "Great job! You got " + str(ParkGlobals.score) + " out of 10 pieces!" + " [/center]"	
+		$stars.play("two")
 	else:
-		$Result.bbcode_text = 	"[center] " + "You only got " + str(ParkGlobals.score) + " out of 10 pieces!" + " [/center]"	
+		$Result.bbcode_text = 	"[center] " + "You got " + str(ParkGlobals.score) + " out of 10 pieces!" + " [/center]"	
+		$stars.play("one")
 	
 func _input(event):
 	if Input.is_action_pressed("restart"):

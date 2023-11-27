@@ -7,6 +7,9 @@ var newPauseState
 # var b = "text"
 
 func _ready():
+	$brightnessSlider.value = MainGlobals.brightness
+	$contrastSlider.value = MainGlobals.contrast
+	$saturationSlider.value = MainGlobals.saturation
 	MenuSong.play(MainGlobals.menusongpos)
 func _process(delta):
 	MainGlobals.menusongpos = MenuSong.get_playback_position()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Areas/M4 - Town Square/m4endmenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://starsrev2.png" type="Texture" id=3]
 [ext_resource path="res://title.png" type="Texture" id=4]
+[ext_resource path="res://mayorendpic.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -42,15 +43,30 @@ animations = [ {
 
 [node name="m4endmenu" type="Node2D"]
 
+[node name="background2" type="Sprite" parent="."]
+position = Vector2( 510, 378 )
+scale = Vector2( 3.6, 4.35682 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 1, 300, 176 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 510, 422 )
+scale = Vector2( 3.6, 4.35682 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 1, 300, 176 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 288, 360 )
+rotation = -0.184135
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 1 )
-
-[node name="ColorRect" type="ColorRect" parent="Control"]
-margin_right = 1032.0
-margin_bottom = 612.0
-color = Color( 0, 0, 0, 0.156863 )
 
 [node name="Result" type="RichTextLabel" parent="Control"]
 margin_left = 2.0
@@ -61,16 +77,16 @@ custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 
 [node name="stars" type="AnimatedSprite" parent="Control"]
-position = Vector2( 519, 257 )
+position = Vector2( 724, 253 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 5 )
 animation = "one"
 
 [node name="Restart" type="TextureButton" parent="Control"]
-margin_left = 339.0
-margin_top = 343.0
-margin_right = 691.0
-margin_bottom = 434.0
+margin_left = 541.0
+margin_top = 340.0
+margin_right = 893.0
+margin_bottom = 431.0
 __meta__ = {
 "_edit_group_": true
 }
@@ -93,10 +109,10 @@ custom_fonts/normal_font = SubResource( 1 )
 text = "Restart (R)"
 
 [node name="Exit" type="TextureButton" parent="Control"]
-margin_left = 338.0
-margin_top = 479.0
-margin_right = 693.0
-margin_bottom = 572.0
+margin_left = 540.0
+margin_top = 470.0
+margin_right = 895.0
+margin_bottom = 563.0
 __meta__ = {
 "_edit_group_": true
 }

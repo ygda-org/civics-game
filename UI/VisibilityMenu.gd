@@ -7,6 +7,9 @@ var newPauseState
 # var b = "text"
 
 func _ready():
+	$brightnessSlider.value = MainGlobals.brightness
+	$contrastSlider.value = MainGlobals.contrast
+	$saturationSlider.value = MainGlobals.saturation
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	
 func _input(event):

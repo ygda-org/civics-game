@@ -2,6 +2,7 @@ extends Control
 
 
 func _ready():
+	MainGlobals.townsquarewin = true
 	if M4Globals.numhouses == 1:
 		$Result.bbcode_text = 	"[center] " + "You got " + str(M4Globals.score) + " points and passed out flyers to 1 house!" + "[/center]"	
 	else:
