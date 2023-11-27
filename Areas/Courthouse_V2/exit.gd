@@ -16,7 +16,3 @@ func _ready():
 #	pass
 
 
-func _on_exit_body_entered(body):
-	if("Player" in body.name):
-		get_tree().change_scene("res://Areas/MainWorld.tscn")# Replace with function body.
-

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/courthouse_layer2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/courthouse_layer1.png" type="Texture" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Areas/Courthouse_V2/juryTableOpen.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Areas/Courthouse_V2/AmendmentInfo.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Areas/Courthouse_V2/Verdict.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Areas/Courthouse_V2/exit.gd" type="Script" id=13]
 [ext_resource path="res://title.png" type="Texture" id=14]
 [ext_resource path="res://UI/CourtInstructions.tscn" type="PackedScene" id=15]
 [ext_resource path="res://UI/VisibilityMenu.tscn" type="PackedScene" id=16]
@@ -59,9 +58,6 @@ extents = Vector2( 54.5, 9 )
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 6 )
-
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 3, 85.5 )
 
 [node name="Courthouse" type="Node2D"]
 position = Vector2( -1, -2 )
@@ -211,13 +207,6 @@ visible = false
 current = true
 zoom = Vector2( 0.33, 0.33 )
 
-[node name="exit" type="Area2D" parent="."]
-script = ExtResource( 13 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
-position = Vector2( 164, 8.5 )
-shape = SubResource( 11 )
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource( 17 )]
@@ -232,5 +221,3 @@ visible = false
 [connection signal="pressed" from="CanvasLayer2/pause" to="CanvasLayer/Pause" method="_on_pause_pressed"]
 [connection signal="body_entered" from="juryTable" to="juryTable" method="_on_juryTable_body_entered"]
 [connection signal="body_exited" from="juryTable" to="juryTable" method="_on_juryTable_body_exited"]
-[connection signal="body_entered" from="exit" to="exit" method="_on_exit_body_entered"]
-[connection signal="body_exited" from="exit" to="exit" method="_on_exit_body_exited"]
