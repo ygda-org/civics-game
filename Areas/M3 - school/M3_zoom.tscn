@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/grass.png" type="Texture" id=1]
-[ext_resource path="res://Assets/grey_tile.png" type="Texture" id=2]
+[ext_resource path="res://title.png" type="Texture" id=2]
 [ext_resource path="res://Areas/M3 - school/M3_zoom.gd" type="Script" id=3]
 [ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=4]
 
@@ -17,15 +17,25 @@ font_data = ExtResource( 4 )
 script = ExtResource( 3 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.729412, 0.8, 0.733333, 1 )
 margin_right = 1024.0
 margin_bottom = 600.0
 texture = ExtResource( 1 )
 expand = true
 
-[node name="back" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Sprite3" type="Sprite" parent="."]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 85.375, 574 )
+scale = Vector2( 2.09667, 2 )
 texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 112.101, 251.158, 75.6884, 23.0454 )
+
+[node name="back" type="TextureRect" parent="."]
+margin_left = 14.0
+margin_top = 554.0
+margin_right = 162.0
+margin_bottom = 594.0
 expand = true
 
 [node name="Label" type="Label" parent="."]
@@ -41,10 +51,12 @@ autowrap = true
 [node name="Label2" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 32.0
+margin_top = 552.0
+margin_right = 140.0
+margin_bottom = 592.0
 custom_fonts/font = SubResource( 2 )
-text = "b"
+text = "Back (B)"
 align = 1
 valign = 1
 

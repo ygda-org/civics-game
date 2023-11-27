@@ -31,9 +31,13 @@ var matched = false
 var correct = 0
 var wrong = 0
 
+var inplay = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	find_node("WorldEnvironment").environment.adjustment_brightness = MainGlobals.brightness
+	find_node("WorldEnvironment").environment.adjustment_contrast = MainGlobals.contrast
+	find_node("WorldEnvironment").environment.adjustment_saturation = MainGlobals.saturation
 	randomize()
 	$match_tile.name = "match_tile1"
 	$M3_zoom.visible = false
@@ -41,7 +45,10 @@ func _ready():
 	$M3_matchButton.visible = false
 	$M3_resetButton.visible = false
 	
-	
+
+func _process(delta):
+	$CanvasLayer/round.text = "Round: " + str(roundNum+1)
+
 func receive_text(mtext):
 	GodotTTS.speak(mtext)
 	if not tile1:
@@ -117,7 +124,7 @@ func on_reset():
 
 func getNewRound():
 	if(roundNum >= len(masterLst)): 
-		zoom("YOU WIN")
+		get_tree().change_scene("res://Areas/M3 - school/m3endmenu.tscn")
 	else:
 		dctMatches = masterLst[roundNum]
 		var i = 0

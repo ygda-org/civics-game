@@ -16,24 +16,25 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if clickable and get_parent().zoomed == false:
-		if(Input.is_action_just_pressed("click") and $Control/Enabled.visible):
-			get_parent().zoom($Control/Label.text)	
-			clickable = false
-		elif(Input.is_action_just_pressed("click") and not get_parent().bothTilesActive):
-			get_parent().receive_text($Control/Label.text)
-			$Control/Disabled.visible = false
-			$Control/Enabled.visible = true
-			clickable = false
-	elif get_parent().zoomed == false:
-		if(Input.is_action_just_pressed(number) and $Control/Enabled.visible):
-			get_parent().zoom($Control/Label.text)	
-			clickable = false
-		elif(Input.is_action_just_pressed(number) and not get_parent().bothTilesActive):
-			get_parent().receive_text($Control/Label.text)
-			$Control/Disabled.visible = false
-			$Control/Enabled.visible = true
-			clickable = false
+	if get_parent().get_node("CanvasLayer/unpause").time_left<= 0:
+		if clickable and get_parent().zoomed == false:
+			if(Input.is_action_just_pressed("click") and get_parent().get_node("CanvasLayer/Pause").visible == false and $Control/Enabled.visible):
+				get_parent().zoom($Control/Label.text)	
+				clickable = false
+			elif(Input.is_action_just_pressed("click") and get_parent().get_node("CanvasLayer/Pause").visible == false and not get_parent().bothTilesActive):
+				get_parent().receive_text($Control/Label.text)
+				$Control/Disabled.visible = false
+				$Control/Enabled.visible = true
+				clickable = false
+		elif get_parent().zoomed == false:
+			if(Input.is_action_just_pressed(number) and $Control/Enabled.visible and get_parent().get_node("CanvasLayer/Pause").visible == false):
+				get_parent().zoom($Control/Label.text)	
+				clickable = false
+			elif(Input.is_action_just_pressed(number) and get_parent().get_node("CanvasLayer/Pause").visible == false and not get_parent().bothTilesActive):
+				get_parent().receive_text($Control/Label.text)
+				$Control/Disabled.visible = false
+				$Control/Enabled.visible = true
+				clickable = false
 			
 			
 

@@ -212,17 +212,17 @@ margin_bottom = 96.0
 
 [node name="button6" type="Sprite" parent="Return"]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 94, 48 )
+position = Vector2( 88, 34 )
 scale = Vector2( 2.83784, 3.83696 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 113, 251, 74, 23 )
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Return"]
-margin_left = 17.0
-margin_top = 15.0
-margin_right = 243.0
-margin_bottom = 114.0
+margin_left = 11.0
+margin_top = 1.0
+margin_right = 237.0
+margin_bottom = 100.0
 rect_scale = Vector2( 0.7, 0.7 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
