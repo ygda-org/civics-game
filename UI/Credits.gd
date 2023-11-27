@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	GodotTTS.speak("Press escape to go back. Credits Young Game Developers Association")
 	MenuSong.play(MainGlobals.menusongpos)
 func _process(delta):
 	MainGlobals.menusongpos = MenuSong.get_playback_position()

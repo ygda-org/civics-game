@@ -124,7 +124,6 @@ func _get_normal_rate_percentage():
 
 var normal_rate_percentage setget , _get_rate_percentage
 
-
 func speak(text, interrupt := true):
 	if ttsEnabled:
 		var utterance
@@ -138,6 +137,10 @@ func speak(text, interrupt := true):
 			"""
 				% [text.replace("\n", " "), javascript_rate]
 			)
+			if interrupt:
+				code += """
+					window.speechSynthesis.cancel()
+				"""
 			code += "window.speechSynthesis.speak(utterance)"
 			JavaScript.eval(code)
 		else:
@@ -146,10 +149,7 @@ func speak(text, interrupt := true):
 
 
 func stop():
-	if tts != null:
-		tts.stop()
-	elif OS.has_feature('JavaScript'):
-		JavaScript.eval("window.speechSynthesis.cancel()")
+	JavaScript.eval("window.speechSynthesis.cancel()")
 
 
 func _get_is_rate_supported():
