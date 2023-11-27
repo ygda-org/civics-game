@@ -57,7 +57,7 @@ region_rect = Rect2( 0, 1, 300, 176 )
 margin_left = 300.0
 margin_top = 116.0
 margin_right = 727.0
-margin_bottom = 530.0
+margin_bottom = 550.0
 rect_pivot_offset = Vector2( 227, 15 )
 color = Color( 0.541176, 0.521569, 0.807843, 0.462745 )
 
@@ -68,38 +68,6 @@ margin_right = 937.0
 margin_bottom = 115.0
 custom_fonts/normal_font = SubResource( 10 )
 text = "Sound Settings"
-
-[node name="button8" type="Sprite" parent="."]
-modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 121, 53 )
-scale = Vector2( 2.5, 2.5 )
-texture = ExtResource( 3 )
-region_enabled = true
-region_rect = Rect2( 113, 251, 74, 23 )
-
-[node name="button6" type="Sprite" parent="."]
-modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 512.5, 183 )
-scale = Vector2( 5.04054, 4 )
-texture = ExtResource( 3 )
-region_enabled = true
-region_rect = Rect2( 113, 251, 74, 23 )
-
-[node name="button11" type="Sprite" parent="."]
-modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 512, 328 )
-scale = Vector2( 5.04054, 4 )
-texture = ExtResource( 3 )
-region_enabled = true
-region_rect = Rect2( 113, 251, 74, 23 )
-
-[node name="button12" type="Sprite" parent="."]
-modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 512, 472 )
-scale = Vector2( 5.04054, 4 )
-texture = ExtResource( 3 )
-region_enabled = true
-region_rect = Rect2( 113, 251, 74, 23 )
 
 [node name="Control" type="Control" parent="."]
 margin_left = 320.0
@@ -115,6 +83,14 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 script = ExtResource( 4 )
+
+[node name="button6" type="Sprite" parent="Control/masterSlider"]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 192.5, -56 )
+scale = Vector2( 5.04054, 4 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/masterSlider"]
 margin_left = 86.0
@@ -136,6 +112,14 @@ step = 0.05
 value = 1.0
 script = ExtResource( 6 )
 
+[node name="button11" type="Sprite" parent="Control/musicSlider"]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 191, -54 )
+scale = Vector2( 5.04054, 4 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
+
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/musicSlider"]
 margin_left = 95.0
 margin_top = -65.0
@@ -155,6 +139,14 @@ step = 0.05
 value = 1.0
 script = ExtResource( 5 )
 
+[node name="button12" type="Sprite" parent="Control/sfxSlider"]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 191, -51 )
+scale = Vector2( 5.04054, 4 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
+
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/sfxSlider"]
 margin_left = 126.0
 margin_top = -62.0
@@ -169,6 +161,14 @@ margin_left = -304.0
 margin_top = -172.0
 margin_right = -95.0
 margin_bottom = -116.0
+
+[node name="button8" type="Sprite" parent="Control/Return"]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 105, -14 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/Return"]
 margin_left = 34.0
