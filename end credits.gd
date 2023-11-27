@@ -35,6 +35,9 @@ func end():
 	if not ended:
 		GodotTTS.speak("Press escape to go to main menu")
 		ended = true
+		started = false
+		$skipbutton.visible = false
+		$credits/Skip.visible = false
 		$mainmenu.visible = true
 		$credits/mainmenu.visible = true
 		$credits/reallines.get_child(0).value = 10000

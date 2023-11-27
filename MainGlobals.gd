@@ -1,7 +1,7 @@
 extends Node
 
-var spawnPos = Vector2(197, -576)
-var indicatorSpawn = Vector2(73,58)
+var spawnPos = Vector2(188, 566)
+var indicatorSpawn = Vector2(74,114)
 
 var brightness = 1
 var contrast = 1

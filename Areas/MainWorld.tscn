@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://NPCs/realFountainDIALOGUE.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -648,12 +648,6 @@ points = PoolVector2Array( 6, 53, 0, 53, 0, 2, 6, 2 )
 2/shapes = [  ]
 2/z_index = 0
 
-[sub_resource type="StreamTexture" id=15]
-load_path = "res://.import/trash_cans.png-7fc915f38894633c6ce3513b67b09d3b.stex"
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 96.5, 8 )
-
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 13.2235, 3038.34 )
 
@@ -694,7 +688,10 @@ extents = Vector2( 54.25, 29 )
 extents = Vector2( 93.5185, 27.5926 )
 
 [sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 9.25926, 10.3704 )
+extents = Vector2( 9.25926, 13.1481 )
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 15.3704, 11.4815 )
 
 [sub_resource type="StreamTexture" id=11]
 load_path = "res://.import/school.png-c7fe976986472f04e7e63fc1eb64277c.stex"
@@ -776,21 +773,6 @@ tile_set = SubResource( 19 )
 cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -34865136, 0, 0, -34865109, 0, 0, -34865082, 0, 0, -34865055, 0, 0, -34865028, 0, 0, -34865001, 0, 0, -34864983, 0, 0, -34864920, 0, 0, -34864893, 0, 0, -34864866, 0, 0, -34864839, 0, 0, -34864812, 0, 0, -34864785, 0, 0, -34864767, 0, 0, -34864739, 1, 0, -34209775, 2, 0, -34013167, 1, 0, -32702051, 1, 0, -31916015, 1, 0, -30539363, 1, 0, -29753327, 1, 0, -28376675, 1, 0, -27656175, 1, 0, -27655779, 1, 0, -20185071, 1, 0, -20184675, 1, 0, -19529711, 1, 0, -19529315, 1, 0, -17432163, 1, 0, -17367023, 1, 0, -15269871, 1, 0, -15269475, 1, 0, -13107184, 0, 0, -13107157, 0, 0, -13107130, 0, 0, -13107103, 0, 0, -13107076, 0, 0, -13107049, 0, 0, -13106950, 0, 0, -13106923, 0, 0, -13106896, 0, 0, -13106869, 0, 0, -13106842, 0, 0, -13106815, 0, 0, -3277177, 1, 0, -3211642, 0, 0, -3211615, 0, 0, -3211597, 0, 0, -3211579, 0, 0, -3211570, 0, 0, -3211453, 0, 0, -3211444, 0, 0, -3211417, 0, 0, -3211390, 0, 0, -3211362, 1, 0, -3079654, 1, 0, -3014119, 0, 0, -3014092, 0, 0, -3014083, 0, 0, -3013966, 0, 0, -3013939, 0, 0, -3013912, 0, 0, -3013885, 0, 0, -3013857, 1, 0, -2752889, 2, 0, -1180025, 1, 0, -1114210, 1, 0, -982502, 1, 0, -916705, 1, 0, 917127, 1, 0, 1048478, 1, 0, 1114650, 1, 0, 1245983, 1, 0, 3079815, 1, 0, 3145630, 1, 0, 3277338, 1, 0, 3343135, 1, 0, 5176967, 1, 0, 5505823, 1, 0, 7274119, 1, 0, 7602975, 1, 0, 9371271, 1, 0, 9765663, 1, 0, 11075486, 1, 0, 11207194, 1, 0, 11599495, 1, 0, 11796382, 1, 0, 11928090, 1, 0, 11928351, 1, 0, 12320391, 1, 0, 14090777, 0, 0, 14090804, 0, 0, 14090831, 0, 0, 14090858, 0, 0, 14090885, 0, 0, 14090912, 0, 0, 14090930, 0, 0, 14090939, 0, 0, 14090957, 0, 0, 14090984, 0, 0, 14091011, 0, 0, 14483078, 0, 0, 14483105, 0, 0, 14483132, 0, 0, 14483141, 0, 0, 14483168, 0, 0, 14483195, 0, 0, 14483222, 0, 0, 14483249, 0, 0, 14483267, 0, 0, 14483276, 0, 0, 14483294, 0, 0, 14483303, 0, 0, 14483330, 0, 0 )
-
-[node name="Home" type="StaticBody2D" parent="."]
-position = Vector2( -269, 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Home"]
-position = Vector2( 463, 630 )
-scale = Vector2( 3, 0.25 )
-texture = SubResource( 15 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Home"]
-position = Vector2( 463.5, 632 )
-shape = SubResource( 1 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -1165,12 +1147,20 @@ position = Vector2( -0.555542, 7.96295 )
 shape = SubResource( 23 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Courthouse/StaticBody2D"]
-position = Vector2( -57.7778, 41.8519 )
+position = Vector2( -57.7778, 42.4074 )
 shape = SubResource( 24 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Courthouse/StaticBody2D"]
-position = Vector2( 62.2222, 42.2222 )
+position = Vector2( 61.4815, 44.4445 )
 shape = SubResource( 24 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Courthouse/StaticBody2D"]
+position = Vector2( 82.037, 36.6667 )
+shape = SubResource( 37 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Courthouse/StaticBody2D"]
+position = Vector2( -81.8518, 36.2963 )
+shape = SubResource( 37 )
 
 [node name="courthouseparticle" type="Particles2D" parent="Courthouse"]
 position = Vector2( 2.22222, 25.9259 )
@@ -1203,15 +1193,6 @@ shape = SubResource( 13 )
 position = Vector2( -1.5, 22.5 )
 shape = SubResource( 25 )
 
-[node name="schoolparticle" type="Particles2D" parent="School"]
-position = Vector2( -2, 140 )
-scale = Vector2( 0.15, 0.15 )
-amount = 10
-lifetime = 3.0
-visibility_rect = Rect2( -150, -100, 300, 200 )
-process_material = SubResource( 34 )
-texture = SubResource( 35 )
-
 [node name="schoolTop" type="Area2D" parent="School"]
 z_index = 2
 script = ExtResource( 59 )
@@ -1219,6 +1200,16 @@ script = ExtResource( 59 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="School/schoolTop"]
 position = Vector2( -3, -102.5 )
 shape = SubResource( 36 )
+
+[node name="schoolparticle" type="Particles2D" parent="."]
+position = Vector2( -735, 282 )
+scale = Vector2( 0.15, 0.15 )
+z_index = 2
+amount = 10
+lifetime = 3.0
+visibility_rect = Rect2( -150, -100, 300, 200 )
+process_material = SubResource( 34 )
+texture = SubResource( 35 )
 
 [node name="Town Square - M4" type="Area2D" parent="."]
 position = Vector2( 459, -945 )
@@ -1404,7 +1395,7 @@ layer = 2
 [node name="Minimap" parent="CanvasLayer" instance=ExtResource( 55 )]
 
 [node name="PlayerIndicator" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 74, 58 )
+position = Vector2( 74, 114 )
 scale = Vector2( 10, 10 )
 z_index = 15
 texture = ExtResource( 56 )
@@ -1426,7 +1417,7 @@ layer = 3
 [node name="Pause" parent="pausemenu" instance=ExtResource( 44 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 197, -576 )
+position = Vector2( 184, 566 )
 scale = Vector2( 1.5, 1.5 )
 z_index = 4
 z_as_relative = true

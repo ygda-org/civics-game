@@ -227,9 +227,9 @@ script = ExtResource( 12 )
 
 [node name="Instructions" parent="m4revgame/CanvasLayer" instance=ExtResource( 16 )]
 margin_left = -5.0
-margin_top = -12.0
+margin_top = -4.0
 margin_right = -5.0
-margin_bottom = -12.0
+margin_bottom = -4.0
 
 [node name="mayortimer" type="Timer" parent="."]
 wait_time = 52.0

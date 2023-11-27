@@ -13,7 +13,7 @@ func _ready():
 	if MainGlobals.playStart == true:
 
 		var lines = [
-		"Welcome to the town of Liberty Landing!",
+		"Welcome to the town of Liberty Landing! (Press E to continue)",
 		"Use the ARROW KEYS to move, 'SHIFT' to sprint, and 'E' to interact.",
 		"Throughout the town there are sparkling minigames for you to play. Fulfill your duties and responsibilities as a citizen!",
 		"Meet the residents to learn more about civics. Have fun!"]
@@ -21,16 +21,16 @@ func _ready():
 		DialogManager.start_dialog(position, lines)
 		Input.action_press("interact")
 		GodotTTS.speak("""
-	Welcome to the town of Liberty Landing!
+		Welcome to the town of Liberty Landing! Press E to continue dialogue.
 
-	Use the ARROW KEYS to move, 'SHIFT' to sprint, and 'E' to interact.
+		Use the ARROW KEYS to move, 'SHIFT' to sprint, and 'E' to interact.
 
-	Throughout the town there are sparkling minigames for you to play. Fulfill your duties and responsibilities as a citizen!
+		Throughout the town there are sparkling minigames for you to play. Fulfill your duties and responsibilities as a citizen!
 
-	Meet the residents to learn more about civics. Have fun!
-	""")
-	yield(get_tree().create_timer(0.1), "timeout")
-	$Player.freeze(true)
+		Meet the residents to learn more about civics. Have fun!
+		""")
+		yield(get_tree().create_timer(0.1), "timeout")
+		$Player.freeze(true)
 
 func _input(event):
 	if Input.is_action_pressed("cheatcode"):
@@ -76,7 +76,7 @@ func _on_School_body_entered(body):
 func _on_Courthouse_body_entered(body):
 	if body.name == "Player":
 		get_tree().change_scene("res://Areas/Courthouse_V2/Courthouse2.tscn") 
-		MainGlobals.spawnPos = Vector2(209, -1396)
-		MainGlobals.indicatorSpawn = Vector2(80, 10)
+		MainGlobals.spawnPos = Vector2(208, -1390)
+		MainGlobals.indicatorSpawn = Vector2(74,14)
 
 

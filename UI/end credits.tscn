@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Assets/Forward-Movement.png" type="Texture" id=1]
 [ext_resource path="res://title.png" type="Texture" id=2]
@@ -8,34 +8,37 @@
 [ext_resource path="res://mayorendpic.png" type="Texture" id=6]
 [ext_resource path="res://schoolendpic.png" type="Texture" id=7]
 [ext_resource path="res://parkendpic.png" type="Texture" id=8]
+[ext_resource path="res://courthouse.png" type="Texture" id=9]
 
 [sub_resource type="Environment" id=19]
 background_mode = 4
 adjustment_enabled = true
 
-[sub_resource type="AtlasTexture" id=15]
-flags = 1
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 1306, 1548 )
+
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 1308, 1550 )
 
 [sub_resource type="AtlasTexture" id=17]
-flags = 1
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 1320, 1562 )
 
 [sub_resource type="AtlasTexture" id=16]
-flags = 1
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 1034, 1562 )
 
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ SubResource( 15 ) ],
+"frames": [ SubResource( 20 ) ],
 "loop": true,
 "name": "courthouse",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ) ],
+"frames": [ SubResource( 21 ) ],
 "loop": true,
 "name": "mayor",
 "speed": 5.0
@@ -137,7 +140,7 @@ region_rect = Rect2( 0, 1, 300, 176 )
 position = Vector2( 848, 804 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 14 )
-animation = "courthouse"
+animation = "school"
 
 [node name="skipbutton" type="Sprite" parent="."]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
