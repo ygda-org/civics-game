@@ -17,7 +17,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if get_parent().get_node("CanvasLayer/unpause").time_left<= 0:
-		if clickable and get_parent().zoomed == false:
+		if clickable and get_parent().zoomed == false and visible:
 			if(Input.is_action_just_pressed("click") and get_parent().get_node("CanvasLayer/Pause").visible == false and $Control/Enabled.visible):
 				get_parent().zoom($Control/Label.text)	
 				clickable = false
@@ -26,7 +26,7 @@ func _process(delta):
 				$Control/Disabled.visible = false
 				$Control/Enabled.visible = true
 				clickable = false
-		elif get_parent().zoomed == false:
+		elif get_parent().zoomed == false and visible:
 			if(Input.is_action_just_pressed(number) and $Control/Enabled.visible and get_parent().get_node("CanvasLayer/Pause").visible == false):
 				get_parent().zoom($Control/Label.text)	
 				clickable = false

@@ -68,6 +68,7 @@ func receive_text(mtext):
 		$M3_matchButton.visible = true
 		$M3_resetButton.visible = true
 	zoom(mtext)
+	#print(mtext)
 	#print("yes")
 		
 	#print(tile1)
