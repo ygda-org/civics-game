@@ -9,3 +9,8 @@ var saturation = 1
 
 var firstplay = true
 var menusongpos = 0
+
+var schoolwin = false
+var parkwin = false
+var townsquarewin = false
+var courthousewin = false

@@ -1,0 +1,126 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://checkbutton.png" type="Texture" id=1]
+[ext_resource path="res://uncheckbutton.png" type="Texture" id=2]
+[ext_resource path="res://objectives.gd" type="Script" id=3]
+[ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/title.png-50ae1153955eed1e1a910d67a0682202.stex"
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+extra_spacing_top = 13
+font_data = ExtResource( 4 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 56, 108, 28, 18 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 56, 108, 28, 18 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "checked",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ) ],
+"loop": true,
+"name": "unchecked",
+"speed": 5.0
+} ]
+
+[node name="objectives" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 562.0
+margin_top = 41.0
+margin_right = 1025.0
+margin_bottom = 577.0
+color = Color( 0.329412, 0.254902, 0.568627, 0.403922 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 793.7, 49 )
+scale = Vector2( 6.22432, 4 )
+texture = SubResource( 1 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = 559.0
+margin_top = 2.0
+margin_right = 599.0
+margin_bottom = 42.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control"]
+margin_left = 19.0
+margin_top = 119.0
+margin_right = 416.0
+margin_bottom = 573.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+text = "Schoolhouse
+Minigame
+
+Park 
+Minigame
+
+Town Square
+Minigame
+
+Courthouse
+Minigame"
+
+[node name="checks" type="Node2D" parent="."]
+position = Vector2( 974, 290 )
+scale = Vector2( 5, 5 )
+
+[node name="schoolcheck" type="AnimatedSprite" parent="checks"]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 7.62939e-06, -22 )
+scale = Vector2( 1, 1 )
+frames = SubResource( 5 )
+animation = "unchecked"
+
+[node name="parkcheck" type="AnimatedSprite" parent="checks"]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+scale = Vector2( 1, 1 )
+frames = SubResource( 5 )
+animation = "unchecked"
+
+[node name="townsquarecheck" type="AnimatedSprite" parent="checks"]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 0, 22 )
+scale = Vector2( 1, 1 )
+frames = SubResource( 5 )
+animation = "unchecked"
+
+[node name="courthousecheck" type="AnimatedSprite" parent="checks"]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 0, 44 )
+scale = Vector2( 1, 1 )
+frames = SubResource( 5 )
+animation = "unchecked"
+
+[node name="show" type="TextureButton" parent="."]
+margin_left = 574.0
+margin_top = 1.0
+margin_right = 1024.0
+margin_bottom = 95.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="show"]
+margin_left = 24.0
+margin_top = 19.0
+margin_right = 445.0
+margin_bottom = 67.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+text = "Objectives (O)"
+
+[connection signal="pressed" from="show" to="." method="_on_show_pressed"]
