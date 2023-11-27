@@ -11,8 +11,11 @@ var rng = RandomNumberGenerator.new()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
+var sfx_manager_scene = preload("res://SFX/SFX_Manager.tscn")
+var sfx_manager = sfx_manager_scene.instance()
 
 func _ready():
+	add_child(sfx_manager)
 	rng.randomize()
 	var num = rng.randi_range(1,2)
 	print(num)
@@ -27,6 +30,9 @@ func _ready():
 	
 func _process(delta):
 	if inreach == true && Input.is_action_just_pressed("interact"):
+		if !sfx_manager.is_sfx_playing("platformer_spread_news"):
+			sfx_manager.stop_sfx("platformer_spread_news")
+			sfx_manager.play_sfx("platformer_spread_news")
 		inreach = false
 		M4Globals.numhouses += 1
 		M4Globals.score += 50

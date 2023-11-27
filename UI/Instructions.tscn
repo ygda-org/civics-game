@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://title.png" type="Texture" id=1]
+[ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://ui_symbols.png" type="Texture" id=3]
+[ext_resource path="res://UI/Instructions.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Instructions/civics game instructions (park).png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+extra_spacing_top = 13
+font_data = ExtResource( 2 )
+
+[node name="Instructions" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1027.0
+margin_bottom = 619.0
+color = Color( 0.329412, 0.254902, 0.568627, 0.403922 )
+
+[node name="Start" type="TextureButton" parent="."]
+margin_left = 695.0
+margin_top = 287.0
+margin_right = 980.0
+margin_bottom = 343.0
+
+[node name="button" type="Sprite" parent="Start"]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 144.75, 30 )
+scale = Vector2( 4.27703, 3.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
+
+[node name="play" type="Sprite" parent="Start"]
+position = Vector2( -673, -32 )
+scale = Vector2( 4, 3 )
+texture = ExtResource( 3 )
+offset = Vector2( 232, 20 )
+region_enabled = true
+region_rect = Rect2( 60, 37, 9, 14 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Start"]
+margin_left = 30.0
+margin_top = 7.0
+margin_right = 288.0
+margin_bottom = 52.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+text = "Start (1)"
+
+[node name="Instruction" type="Sprite" parent="."]
+position = Vector2( 344, 305 )
+texture = ExtResource( 5 )
+
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]

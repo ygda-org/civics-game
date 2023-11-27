@@ -12,6 +12,12 @@ var direction = 1
 
 signal hit
 
+var sfx_manager_scene = preload("res://SFX/SFX_Manager.tscn")
+var sfx_manager = sfx_manager_scene.instance()
+
+func _ready():
+	add_child(sfx_manager)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 		velocity = move_and_slide(velocity, floo)
@@ -20,6 +26,9 @@ func _physics_process(delta):
 		velocity.y += gravity
 		#up arrow key pressed
 		if (is_on_floor() && Input.is_action_pressed("ui_up") && walk == false):
+			if !sfx_manager.is_sfx_playing("platformer_jump"):
+				sfx_manager.stop_sfx("platformer_jump")
+				sfx_manager.play_sfx("platformer_jump")
 			velocity.y += jump
 		if (move == true):
 			position += Vector2.RIGHT * 100 * delta

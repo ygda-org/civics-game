@@ -123,7 +123,7 @@ func _get_normal_rate_percentage():
 
 
 var normal_rate_percentage setget , _get_rate_percentage
-
+var bufferspeak = false
 func speak(text, interrupt := true):
 	if ttsEnabled:
 		var utterance
@@ -138,6 +138,12 @@ func speak(text, interrupt := true):
 				% [text.replace("\n", " "), javascript_rate]
 			)
 			if interrupt:
+				if bufferspeak == false:
+					bufferspeak = true
+					speak("", true)
+					yield(get_tree().create_timer(0.1), "timeout")
+				else:
+					bufferspeak = false
 				code += """
 					window.speechSynthesis.cancel()
 				"""

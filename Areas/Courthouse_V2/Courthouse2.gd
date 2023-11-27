@@ -7,6 +7,10 @@ extends Node2D
 var caseNum = 0
 var NumSolved = 0
 var caseSolved = false
+
+var sfx_manager_scene = preload("res://SFX/SFX_Manager.tscn")
+var sfx_manager = sfx_manager_scene.instance()
+
 var masterLst = [
 	{"Name": "Joshua Cavin",
 	"Age": "32",
@@ -40,6 +44,7 @@ var masterLst = [
 ]
 
 func _ready():
+	add_child(sfx_manager)
 	$docTableOpen.visible = false
 	$caseInfo.visible = false
 	$docTable/Label.visible = false
@@ -54,6 +59,9 @@ func setNum(num):
 		caseSolved = true
 	
 func solve_case():
+	if !sfx_manager.is_sfx_playing("courtroom_gavel"):
+			sfx_manager.stop_sfx("courtroom_gavel")
+			sfx_manager.play_sfx("courtroom_gavel")
 	get_node("docTableOpen/HBoxContainer/case_folder" + str(caseNum) +"/unsolved").visible = false
 	get_node("docTableOpen/Label").text = ""
 	NumSolved += 1

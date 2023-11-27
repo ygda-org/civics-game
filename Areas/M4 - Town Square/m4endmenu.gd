@@ -20,9 +20,7 @@ func _ready():
 	else:
 		$stars.play("two")
 		get_parent().get_node("win").play()
-	GodotTTS.speak("You got " + str(M4Globals.score) + " points and passed out flyers to " + str(M4Globals.numhouses) + " houses!")
-	GodotTTS.speak("Press r to restart")
-	GodotTTS.speak("Press escape to exit")
+	GodotTTS.speak("You got " + str(M4Globals.score) + " points and passed out flyers to " + str(M4Globals.numhouses) + " houses! Press r to restart. Press escape to exit")
 		
 func _input(event):
 	if Input.is_action_pressed("restart"):
