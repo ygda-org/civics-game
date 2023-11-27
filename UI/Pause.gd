@@ -6,7 +6,8 @@ func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
 
 func _input(event):
-	if event.is_action_pressed("pause") || (event.is_action_pressed("first") && visible):
+	if (event.is_action_pressed("pause") || (event.is_action_pressed("first") && visible)) and not DialogManager.is_dialog_active:
+		print(DialogManager.is_dialog_active)
 		if get_tree().paused == false:
 			GodotTTS.speak("Press 1 to resume. Press 2 to change volume. Press 3 to go to visibility settings. Press 4 to exit")
 		$Resume.grab_focus()
@@ -51,6 +52,7 @@ func _on_Visibility_pressed():
 
 
 func _on_pause_pressed():
-	newPauseState = !get_tree().paused
-	get_tree().paused = newPauseState
-	visible = newPauseState
+	if not DialogManager.is_dialog_active:
+		newPauseState = !get_tree().paused
+		get_tree().paused = newPauseState
+		visible = newPauseState

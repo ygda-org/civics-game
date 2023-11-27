@@ -31,7 +31,7 @@ func end_dialog():
 	is_dialog_active = false
 	can_advance_line = false
 	
-var stopSFX = false
+
 func _show_text_box():
 	text_box = text_box_scene.instance()
 	text_box.connect("finished_displaying", self, "_on_text_box_finished_displaying")
@@ -44,12 +44,13 @@ func _show_text_box():
 	text_box.display_text(dialog_lines[current_line_index])
 	audio.get_node("Audio").play()
 	
-	if !sfx_manager.is_sfx_playing("sys_text") and stopSFX == false:
+	if !sfx_manager.is_sfx_playing("sys_text"):
 			sfx_manager.stop_sfx("sys_text")
 			sfx_manager.play_sfx("sys_text")
 	
 	can_advance_line = false
-	
+func stopSFX():
+	sfx_manager.stop_sfx("sys_text")
 func _on_text_box_finished_displaying():
 	audio.get_node("Audio").stop()
 	sfx_manager.stop_sfx("sys_text")

@@ -1,16 +1,14 @@
 extends Node2D
 
+
 func _ready():
-
-
-
 	MenuSong.stop()
 	find_node("WorldEnvironment").environment.adjustment_brightness = MainGlobals.brightness
 	find_node("WorldEnvironment").environment.adjustment_contrast = MainGlobals.contrast
 	find_node("WorldEnvironment").environment.adjustment_saturation = MainGlobals.saturation
 	$Player.position = MainGlobals.spawnPos
 	$CanvasLayer/PlayerIndicator.position = MainGlobals.indicatorSpawn
-	if MainGlobals.playStart == true:
+	if MainGlobals.playStart:
 
 		var lines = [
 		"Welcome to the town of Liberty Landing! (Press E to continue)",
@@ -20,17 +18,10 @@ func _ready():
 		DialogManager.bypass = true
 		DialogManager.start_dialog(position, lines)
 		Input.action_press("interact")
-		GodotTTS.speak("""
-		Welcome to the town of Liberty Landing! Press E to continue dialogue.
-
-		Use the ARROW KEYS to move, 'SHIFT' to sprint, and 'E' to interact.
-
-		Throughout the town there are sparkling minigames for you to play. Fulfill your duties and responsibilities as a citizen!
-
-		Meet the residents to learn more about civics. Have fun!
-		""")
 		yield(get_tree().create_timer(0.1), "timeout")
+		MenuSong.stop()
 		$Player.freeze(true)
+		MainGlobals.playStart = false
 
 func _input(event):
 	if Input.is_action_pressed("cheatcode"):
@@ -40,9 +31,11 @@ func _input(event):
 		MainGlobals.courthousewin = true
 
 func _process(delta):
-	if not DialogManager.is_dialog_active and MainGlobals.playStart:
+	if not DialogManager.is_dialog_active and not MainGlobals.playStart:
 		$Player.freeze(false)
 		MainGlobals.playStart = false
+		MenuSong.stop()
+
 	if MainGlobals.schoolwin && MainGlobals.parkwin && MainGlobals.townsquarewin && MainGlobals.courthousewin && MainGlobals.firsttimewin:
 		get_tree().change_scene("res://UI/end credits.tscn")
 		MainGlobals.firsttimewin = false
