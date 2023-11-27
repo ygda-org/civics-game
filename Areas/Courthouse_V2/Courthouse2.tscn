@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/courthouse_layer2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/courthouse_layer1.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Areas/Courthouse_V2/docTableOpen.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Areas/Courthouse_V2/caseInfo.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Areas/Courthouse_V2/juryTable.gd" type="Script" id=9]
+[ext_resource path="res://Areas/Courthouse_V2/juryTableOpen.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Areas/Courthouse_V2/AmendmentInfo.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.88966, 20.5833 )
@@ -108,6 +110,10 @@ valign = 1
 [node name="docTableOpen" parent="." instance=ExtResource( 7 )]
 
 [node name="caseInfo" parent="." instance=ExtResource( 8 )]
+
+[node name="juryTableOpen" parent="." instance=ExtResource( 10 )]
+
+[node name="AmendmentInfo" parent="." instance=ExtResource( 11 )]
 
 [node name="juryTable" type="Area2D" parent="."]
 script = ExtResource( 9 )

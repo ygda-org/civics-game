@@ -41,7 +41,8 @@ func _ready():
 	$docTableOpen.visible = false
 	$caseInfo.visible = false
 	$docTable/Label.visible = false
-
+	$juryTableOpen.visible = false
+	$AmendmentInfo.visible = false
 func setNum(num):
 	caseNum = num
 
