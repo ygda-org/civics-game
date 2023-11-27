@@ -8,6 +8,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GodotTTS.speak("Press 1 to go to volume settings")
+	GodotTTS.speak("Press 2 to go to visibility settings")
 	MenuSong.play(MainGlobals.menusongpos)
 func _process(delta):
 	MainGlobals.menusongpos = MenuSong.get_playback_position()

@@ -2,11 +2,12 @@ extends Control
 
 var newPauseState
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 func _ready():
+	GodotTTS.speak("Press 1 to change brightness.")
+	GodotTTS.speak("Press 2 to change contrast")
+	GodotTTS.speak("Press 3 to change saturation")
+	GodotTTS.speak("Press 4 to reset settings")
 	$brightnessSlider.value = MainGlobals.brightness
 	$contrastSlider.value = MainGlobals.contrast
 	$saturationSlider.value = MainGlobals.saturation

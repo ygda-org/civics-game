@@ -4,9 +4,14 @@ var newPauseState
 
 func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
-	
+
 func _input(event):
 	if event.is_action_pressed("pause") || (event.is_action_pressed("first") && visible):
+		if get_tree().paused == false:
+			GodotTTS.speak("Press 1 to resume")
+			GodotTTS.speak("Press 2 to change volume")
+			GodotTTS.speak("Press 3 to go to visibility settings")
+			GodotTTS.speak("Press 4 to exit")
 		$Resume.grab_focus()
 		newPauseState = !get_tree().paused
 		get_tree().paused = newPauseState

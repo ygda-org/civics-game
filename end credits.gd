@@ -7,6 +7,7 @@ var frame = 1
 var move = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GodotTTS.speak("Thanks to your civic engagement in Liberty Landing, you've been declared an outstanding citizen! Everyone is thankful for your help and hard work.")
 	find_node("WorldEnvironment").environment.adjustment_brightness = MainGlobals.brightness
 	find_node("WorldEnvironment").environment.adjustment_contrast = MainGlobals.contrast
 	find_node("WorldEnvironment").environment.adjustment_saturation = MainGlobals.saturation
@@ -17,10 +18,14 @@ func _ready():
 	$playermenu/AnimatedSprite.play("walk")
 	$credits/reallines.get_child(0).modulate.a = 0
 
+var spokeSkip = false
 func _process(delta):
 	if frame >= 6:
 		end()
 	if started:
+		if spokeSkip == false:
+			GodotTTS.speak("Press s to skip end credits")
+			spokeSkip = true
 		$skipbutton.visible = true
 		$credits/Skip.visible = true
 		$credits/reallines.get_child(0).value += 0.5
@@ -28,6 +33,7 @@ func _process(delta):
 		$polaroid.position.y -= delta * 200
 func end():
 	if not ended:
+		GodotTTS.speak("Press escape to go to main menu")
 		ended = true
 		$mainmenu.visible = true
 		$credits/mainmenu.visible = true

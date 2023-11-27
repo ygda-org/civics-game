@@ -2,9 +2,7 @@ extends Control
 
 var newPauseState
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var spoken = false
 
 func _ready():
 	$brightnessSlider.value = MainGlobals.brightness
@@ -13,7 +11,14 @@ func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	
 func _input(event):
+	if visible and spoken == false:
+		GodotTTS.speak("Press 1 to change brightness.")
+		GodotTTS.speak("Press 2 to change contrast")
+		GodotTTS.speak("Press 3 to change saturation")
+		GodotTTS.speak("Press 4 to reset settings")
+		spoken = true
 	if event.is_action_pressed("pause") && visible:
+		spoken = false
 		$Return.grab_focus()
 		newPauseState = !get_tree().paused
 		get_tree().paused = newPauseState
@@ -61,5 +66,6 @@ func _on_Reset_pressed():
 
 
 func _on_Return_pressed():
+	spoken = false
 	visible = false
 	get_parent().get_node("Pause").visible = true

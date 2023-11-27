@@ -14,6 +14,10 @@ func _ready():
 		M4Globals.win = true
 	else:
 		$stars.play("two")
+	GodotTTS.speak("You got " + str(M4Globals.score) + " points and passed out flyers to " + str(M4Globals.numhouses) + " houses!")
+	GodotTTS.speak("Press r to restart")
+	GodotTTS.speak("Press escape to exit")
+		
 func _input(event):
 	if Input.is_action_pressed("restart"):
 		M4Globals.score = 0
