@@ -43,8 +43,12 @@ func _on_Town_Square__M4_body_entered(body):
 func _on_School_body_entered(body):
 	if body.name == "Player":
 		get_tree().change_scene("res://Areas/M3 - school/M3-game.tscn")
+		MainGlobals.spawnPos = Vector2(-739, 331)
+		MainGlobals.indicatorSpawn = Vector2(30, 98)
 
 
 func _on_Courthouse_body_entered(body):
 	if body.name == "Player":
 		get_tree().change_scene("res://Areas/Courthouse_V2/Courthouse2.tscn") 
+		MainGlobals.spawnPos = Vector2(209, -1396)
+		MainGlobals.indicatorSpawn = Vector2(80, 10)
