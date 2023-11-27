@@ -16,3 +16,5 @@ var townsquarewin = false
 var courthousewin = false
 
 var firsttimewin = true
+
+var playStart = true
