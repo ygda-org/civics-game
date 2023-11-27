@@ -36,18 +36,9 @@ func is_any_sfx_playing() -> bool:
 
 #example of using the SFX Manager in other scenes:
 
-#var sfx_manager_scene = preload("res://SFX/SFX_Manager.tscn")
-#var sfx_manager
-
-#func _ready():
-	#sfx_manager = sfx_manager_scene.instance()
-	#add_child(sfx_manager)
-
-# Example: Play a sound effect named "sfx_1"
-#sfx_manager.play_sfx("sfx_1")
-
-# Example: Stop a sound effect named "sfx_2"
-#sfx_manager.stop_sfx("sfx_2")
-
-# Example: Stop all sound effects
-#sfx_manager.stop_all_sfx()
+#if is_sprinting == true && !$SFX_Manager.is_sfx_playing("footsteps_hard_sprint"):
+			#$SFX_Manager.stop_sfx("footsteps_hard_walk")
+			#$SFX_Manager.play_sfx("footsteps_hard_sprint")
+		#elif is_sprinting == false && !$SFX_Manager.is_sfx_playing("footsteps_hard_walk"):
+			#$SFX_Manager.stop_sfx("footsteps_hard_sprint")
+			#$SFX_Manager.play_sfx("footsteps_hard_walk")

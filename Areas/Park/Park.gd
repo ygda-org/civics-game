@@ -9,6 +9,9 @@ func _process(delta):
 		$TrashGame/UI/Time.text = "Time Left: " + str(int($TrashGame/Timer.time_left))
 
 func _ready():
+	find_node("WorldEnvironment").environment.adjustment_brightness = MainGlobals.brightness
+	find_node("WorldEnvironment").environment.adjustment_contrast = MainGlobals.contrast
+	find_node("WorldEnvironment").environment.adjustment_saturation = MainGlobals.saturation
 	trashStarted = true
 	$TrashGame/UI/Score.text = "Score: " + str(score)
 	var random = RandomNumberGenerator.new()

@@ -589,6 +589,7 @@ custom_fonts/normal_font = SubResource( 16 )
 text = "Score:"
 
 [node name="Pause" parent="TrashGame/UI" instance=ExtResource( 10 )]
+visible = false
 
 [node name="VisibilityMenu" parent="TrashGame/UI" instance=ExtResource( 11 )]
 script = ExtResource( 2 )

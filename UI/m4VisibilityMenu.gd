@@ -11,9 +11,25 @@ func _ready():
 	
 func _input(event):
 	if event.is_action_pressed("pause") && visible:
+		$Return.grab_focus()
 		newPauseState = !get_tree().paused
 		get_tree().paused = newPauseState
-		visible = newPauseState
+		visible = false
+		get_parent().get_node("Pause").visible = true
+	if event.is_action_pressed("first") && visible:
+		$brightnessSlider.grab_focus()
+	if event.is_action_pressed("second") && visible:
+		$contrastSlider.grab_focus()
+	if event.is_action_pressed("third") && visible:
+		$saturationSlider.grab_focus()
+	if event.is_action_pressed("fourth") && visible:
+		$Reset.grab_focus()
+		get_parent().get_parent().get_parent().find_node("WorldEnvironment").environment.adjustment_brightness = 1
+		get_parent().get_parent().get_parent().find_node("WorldEnvironment").environment.adjustment_contrast = 1
+		get_parent().get_parent().get_parent().find_node("WorldEnvironment").environment.adjustment_saturation = 1
+		MainGlobals.brightness = 1
+		MainGlobals.contrast = 1
+		MainGlobals.saturation = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

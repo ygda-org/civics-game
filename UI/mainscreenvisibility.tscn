@@ -59,33 +59,17 @@ margin_right = 968.0
 margin_bottom = 489.0
 color = Color( 0.478431, 0.454902, 0.745098, 1 )
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-margin_left = 158.0
-margin_top = 332.0
-margin_right = 551.0
-margin_bottom = 366.0
-rect_pivot_offset = Vector2( 227, 15 )
-color = Color( 0.541176, 0.521569, 0.807843, 0.462745 )
-
-[node name="ColorRect5" type="ColorRect" parent="."]
-margin_left = 158.0
-margin_top = 474.0
-margin_right = 551.0
-margin_bottom = 508.0
-rect_pivot_offset = Vector2( 227, 15 )
-color = Color( 0.541176, 0.521569, 0.807843, 0.462745 )
-
 [node name="ColorRect4" type="ColorRect" parent="."]
 margin_left = 158.0
-margin_top = 190.0
+margin_top = 153.0
 margin_right = 544.0
-margin_bottom = 224.0
+margin_bottom = 505.0
 rect_pivot_offset = Vector2( 227, 15 )
 color = Color( 0.541176, 0.521569, 0.807843, 0.462745 )
 
 [node name="button6" type="Sprite" parent="."]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 341.5, 141 )
+position = Vector2( 351.5, 141 )
 scale = Vector2( 5.04054, 4 )
 texture = ExtResource( 3 )
 region_enabled = true
@@ -93,7 +77,7 @@ region_rect = Rect2( 113, 251, 74, 23 )
 
 [node name="button11" type="Sprite" parent="."]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 340, 286 )
+position = Vector2( 351, 286 )
 scale = Vector2( 5.04054, 4 )
 texture = ExtResource( 3 )
 region_enabled = true
@@ -101,7 +85,7 @@ region_rect = Rect2( 113, 251, 74, 23 )
 
 [node name="button12" type="Sprite" parent="."]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 340, 430 )
+position = Vector2( 351, 430 )
 scale = Vector2( 5.04054, 4 )
 texture = ExtResource( 3 )
 region_enabled = true
@@ -109,8 +93,8 @@ region_rect = Rect2( 113, 251, 74, 23 )
 
 [node name="button10" type="Sprite" parent="."]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 353, 547 )
-scale = Vector2( 4, 4 )
+position = Vector2( 355.5, 547 )
+scale = Vector2( 4.06757, 4 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 113, 251, 74, 23 )
@@ -153,9 +137,9 @@ step = 0.05
 value = 1.0
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/brightnessSlider"]
-margin_left = 25.0
+margin_left = 38.0
 margin_top = -68.0
-margin_right = 388.0
+margin_right = 401.0
 margin_bottom = 7.0
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
@@ -192,9 +176,9 @@ step = 0.05
 value = 1.0
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/saturationSlider"]
-margin_left = 27.0
+margin_left = 37.0
 margin_top = -63.0
-margin_right = 364.0
+margin_right = 374.0
 margin_bottom = 12.0
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
