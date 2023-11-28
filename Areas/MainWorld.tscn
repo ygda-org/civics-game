@@ -64,6 +64,7 @@
 
 [sub_resource type="Environment" id=22]
 background_mode = 4
+background_canvas_max_layer = 10
 adjustment_enabled = true
 
 [sub_resource type="TileSet" id=10]
@@ -1214,13 +1215,11 @@ shape = SubResource( 39 )
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="School/StaticBody2D"]
 position = Vector2( -80.5939, 105.869 )
 rotation = 0.0233893
-scale = Vector2( 1, 1 )
 shape = SubResource( 39 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="School/StaticBody2D"]
 position = Vector2( 73, 102 )
 rotation = 0.0233893
-scale = Vector2( 1, 1 )
 shape = SubResource( 39 )
 
 [node name="schoolTop" type="Area2D" parent="School"]

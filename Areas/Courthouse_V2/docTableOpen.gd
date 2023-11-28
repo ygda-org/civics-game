@@ -30,6 +30,8 @@ func choose_case(num):
 
 var spoke = false
 func _process(delta):
+	if not visible:
+		spoke = false
 	if spoke == false and visible:
 		GodotTTS.speak("Press a number one through six to select a case, then press i to read about it. when you are done, press x to go back")
 		spoke = true
