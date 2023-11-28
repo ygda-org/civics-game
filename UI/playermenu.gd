@@ -14,9 +14,10 @@ func _ready():
 	$AnimatedSprite.play("default") # Replace with function body.
 
 func playmvt():
-	print("smth")
-	get_parent().find_node("walkingtime").start()
-	mvt = true
+	if get_parent().get_node("Control").startenabled:
+		print("smth")
+		get_parent().find_node("walkingtime").start()
+		mvt = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	MainGlobals.menusongpos = MenuSong.get_playback_position()

@@ -182,14 +182,8 @@ wait_time = 4.0
 stream = ExtResource( 7 )
 bus = "Music"
 
-[connection signal="mouse_entered" from="Control/Start" to="Control" method="_on_Start_mouse_entered"]
-[connection signal="mouse_exited" from="Control/Start" to="Control" method="_on_Start_mouse_exited"]
 [connection signal="pressed" from="Control/Start" to="Control" method="_on_Start_pressed"]
-[connection signal="mouse_entered" from="Control/Options" to="Control" method="_on_Options_mouse_entered"]
-[connection signal="mouse_exited" from="Control/Options" to="Control" method="_on_Options_mouse_exited"]
 [connection signal="pressed" from="Control/Options" to="Control" method="_on_Options_pressed"]
-[connection signal="mouse_entered" from="Control/Credits" to="Control" method="_on_Credits_mouse_entered"]
-[connection signal="mouse_exited" from="Control/Credits" to="Control" method="_on_Credits_mouse_exited"]
 [connection signal="pressed" from="Control/Credits" to="Control" method="_on_Credits_pressed"]
 [connection signal="timeout" from="walkingtime" to="Control" method="_on_walkingtime_timeout"]
 [connection signal="finished" from="intro" to="playermenu" method="_on_intro_finished"]
