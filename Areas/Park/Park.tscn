@@ -18,7 +18,7 @@
 [ext_resource path="res://title.png" type="Texture" id=16]
 [ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=17]
 [ext_resource path="res://mus_j_park.ogg" type="AudioStream" id=18]
-[ext_resource path="res://UI/TownSquareInstructions.tscn" type="PackedScene" id=19]
+[ext_resource path="res://UI/Instructions.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Environment" id=6]
 background_mode = 4
@@ -613,10 +613,6 @@ wait_time = 30.0
 layer = 3
 
 [node name="Instructions" parent="CanvasLayer" instance=ExtResource( 19 )]
-margin_left = -2.0
-margin_top = -2.0
-margin_right = -2.0
-margin_bottom = -2.0
 
 [connection signal="pressed" from="TrashGame/UI/pause" to="TrashGame/UI/Pause" method="_on_pause_pressed"]
 [connection signal="timeout" from="TrashGame/Timer" to="." method="_on_Timer_timeout"]

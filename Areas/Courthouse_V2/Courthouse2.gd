@@ -42,7 +42,7 @@ var masterLst = [
 ]
 
 func _ready():
-	GodotTTS.speak("jury duty.  you have been summoned to jury duty. help the court decide the verdict. first, walk to the document table. pick a case and read about it. second, go to the jurors table and select two ammendments to support your claim. third, declare your claim, innocent or guilty? press 1 to start.")
+	GodotTTS.speak("jury duty.  you have been summoned to jury duty. help the court decide the verdict. first, walk to the document table. pick a case with one through five then press i to read about it. you can press x to go back. second, go to the jurors table and select two ammendments to support your claim. third, declare your claim, innocent or guilty? press 1 to start.")
 	add_child(sfx_manager)
 	find_node("WorldEnvironment").environment.adjustment_brightness = MainGlobals.brightness
 	find_node("WorldEnvironment").environment.adjustment_contrast = MainGlobals.contrast

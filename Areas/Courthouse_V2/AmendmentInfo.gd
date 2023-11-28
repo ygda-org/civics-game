@@ -29,14 +29,18 @@ var dctAmendments = {
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
+var text = ""
 func generateInfo(curAmends):
-	var text = ""
+
 	for amend in curAmends:
 		text += 'Amendment ' + str(amend) + ": " + dctAmendments[amend] + "\n"+"\n"
 	$Label.text = text
 
+var spoke = false
 func _process(delta):
+	if visible and not spoke:
+		GodotTTS.speak(text + " Press x to go back")
+		spoke = true
 	if visible and Input.is_action_just_pressed("back"):
 		visible = false
 		get_parent().get_node("juryTableOpen").visible = true

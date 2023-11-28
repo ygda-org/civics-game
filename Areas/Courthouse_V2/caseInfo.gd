@@ -21,6 +21,7 @@ func generateInfo(dict):
 		text += "\n" + "\n"+"Age: " + dict["Age"]
 	text += "\n" + "\n"+"Case: " + dict["Case"]
 	$Label.text = text
+	GodotTTS.speak(text + "press x to go back")
 
 func _process(delta):
 	if visible and Input.is_action_just_pressed("back"):

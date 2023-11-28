@@ -38,12 +38,14 @@ func _process(delta):
 			visible = false
 			get_parent().get_node('Verdict').visible = true
 		else:
+			GodotTTS.speak("Incorrect")
 			$Chosen.text = 'Incorrect'
 			
 
 func print_case(dict):
 	$Name.text = "Find two relevant amendments to deliver a verdict on " + dict["Name"]
 	$Case.text = "Case: " + dict["Case"]
+	GodotTTS.speak("Find two relevant amendments to deliver a verdict on " + dict["Name"])
 
 func set_amends(caseNum):
 	if(caseNum== 1):
@@ -71,7 +73,7 @@ func display_chosen(AmendNum):
 	if chosen[1] > 0:
 		text += " And Amendment " + str(chosen[1])
 	$Chosen.text = text + "\n" + "Press Y to confirm. Otherwise press a different number to make changes" 
-	
+	GodotTTS.speak(text + ". Press i to view more info. Press y to confirm.")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

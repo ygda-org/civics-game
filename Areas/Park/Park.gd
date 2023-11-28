@@ -12,7 +12,7 @@ func _process(delta):
 		$TrashGame/UI/Time.text = "Time Left: " + str(int($TrashGame/Timer.time_left))
 
 func _ready():
-	GodotTTS.speak("Park cleanup. pick up and sort litter into recyclables or trash before time runs out. Careful though, you can only hold one type of litter at a time. win stars based on your score. used w a s d keys to move. walk into a trash can or recycling bin to clear you litter and increase your score. press 1 to start.")
+	GodotTTS.speak("Park cleanup. pick up and sort litter into recyclables or trash before time runs out. Careful though, you can only hold one type of litter at a time. win stars based on your score. used w a s d keys to move and e to pick up litter. walk into a trash can or recycling bin to clear your litter and increase your score. press 1 to start.")
 	add_child(sfx_manager)
 	find_node("WorldEnvironment").environment.adjustment_brightness = MainGlobals.brightness
 	find_node("WorldEnvironment").environment.adjustment_contrast = MainGlobals.contrast

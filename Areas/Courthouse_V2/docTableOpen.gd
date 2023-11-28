@@ -16,6 +16,7 @@ func _ready():
 	add_child(sfx_manager)
 	$Label.visible = false # Replace with function body.
 
+
 func choose_case(num):
 	curNum = num
 	get_parent().setNum(num)
@@ -26,8 +27,12 @@ func choose_case(num):
 		get_parent().get_node("juryTableOpen").set_amends(num)
 		$Label.text = text + info
 		$Label.visible = true
-		
+
+var spoke = false
 func _process(delta):
+	if spoke == false and visible:
+		GodotTTS.speak("Press a number one through six to select a case, then press i to read about it. when you are done, press x to go back")
+		spoke = true
 	if Input.is_action_just_pressed("back") and visible:
 		print("back")
 		visible = false
