@@ -22,6 +22,7 @@
 
 [sub_resource type="Environment" id=6]
 background_mode = 4
+background_canvas_max_layer = 10
 adjustment_enabled = true
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
