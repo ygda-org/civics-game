@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://title.png" type="Texture" id=1]
 [ext_resource path="res://Assets/dogicapixelbold.ttf" type="DynamicFontData" id=2]
@@ -15,6 +15,11 @@ extra_spacing_top = 5
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
+size = 32
+extra_spacing_bottom = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
 size = 32
 extra_spacing_bottom = 10
 font_data = ExtResource( 2 )
@@ -37,7 +42,7 @@ region_rect = Rect2( 0, 1, 300, 176 )
 
 [node name="button" type="Sprite" parent="."]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 501, 245 )
+position = Vector2( 501, 206 )
 scale = Vector2( 6, 5.5 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -45,7 +50,15 @@ region_rect = Rect2( 113, 251, 74, 23 )
 
 [node name="button2" type="Sprite" parent="."]
 modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
-position = Vector2( 501, 414 )
+position = Vector2( 501, 351 )
+scale = Vector2( 6, 5.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 113, 251, 74, 23 )
+
+[node name="button3" type="Sprite" parent="."]
+modulate = Color( 0.737255, 0.737255, 0.933333, 1 )
+position = Vector2( 501, 496 )
 scale = Vector2( 6, 5.5 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -76,9 +89,9 @@ text = "Options"
 
 [node name="Volume" type="TextureButton" parent="Control"]
 margin_left = 277.0
-margin_top = 193.0
+margin_top = 156.0
 margin_right = 574.0
-margin_bottom = 264.0
+margin_bottom = 227.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/Volume"]
@@ -93,9 +106,9 @@ text = "Volume Settings (1)"
 
 [node name="Display" type="TextureButton" parent="Control"]
 margin_left = 281.0
-margin_top = 355.0
+margin_top = 292.0
 margin_right = 574.0
-margin_bottom = 433.0
+margin_bottom = 370.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="Control/Display"]
@@ -107,6 +120,23 @@ rect_scale = Vector2( 0.7, 0.7 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 3 )
 text = "Display Settings (2)"
+
+[node name="TTS" type="TextureButton" parent="Control"]
+margin_left = 281.0
+margin_top = 438.0
+margin_right = 574.0
+margin_bottom = 516.0
+rect_scale = Vector2( 1.5, 1.5 )
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/TTS"]
+margin_left = 22.6667
+margin_top = 14.0
+margin_right = 438.667
+margin_bottom = 90.0
+rect_scale = Vector2( 0.7, 0.7 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 5 )
+text = "Enable Text  to Speech (3)"
 
 [node name="Back" type="TextureButton" parent="Control"]
 margin_left = 31.0
@@ -125,4 +155,5 @@ text = "Back (esc)"
 
 [connection signal="pressed" from="Control/Volume" to="Control" method="_on_Volume_pressed"]
 [connection signal="pressed" from="Control/Display" to="Control" method="_on_Display_pressed"]
+[connection signal="pressed" from="Control/TTS" to="Control" method="_on_TTS_pressed"]
 [connection signal="pressed" from="Control/Back" to="Control" method="_on_Back_pressed"]
