@@ -19,11 +19,13 @@ func get_input():
 	$AnimatedSprite.speed_scale = sprint_multiplier
 
 	if Input.is_action_pressed("sprint"):
+		MainGlobals.playersprinting = true
 		sprint_multiplier = 1.5
 		$AnimatedSprite.speed_scale = sprint_multiplier
 		is_sprinting = true
 	else:
 		is_sprinting = false
+		MainGlobals.playersprinting = false
 	if Input.is_action_pressed("topDownForward") or Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
 		$AnimatedSprite.play("walkUp")

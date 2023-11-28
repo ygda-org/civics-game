@@ -33,9 +33,15 @@ func _process(delta):
 		get_tree().change_scene("res://UI/end credits.tscn")
 		MainGlobals.firsttimewin = false
 	if OS.has_feature("JavaScript"):
-			$CanvasLayer/PlayerIndicator.position += $Player.get_velo()*0.000522792792791
+			if MainGlobals.playersprinting:
+				$CanvasLayer/PlayerIndicator.position += $Player.get_velo()*0.000522792792791
+			else:
+				$CanvasLayer/PlayerIndicator.position += $Player.get_velo()*0.0008541
 	else:
-		$CanvasLayer/PlayerIndicator.position += $Player.get_velo()*0.000280126126124
+		if MainGlobals.playersprinting:
+			$CanvasLayer/PlayerIndicator.position += $Player.get_velo()*0.000280126126124
+		else:
+			$CanvasLayer/PlayerIndicator.position += $Player.get_velo()*0.000620189
 
 
 func _on_Area2D_body_entered(body):
