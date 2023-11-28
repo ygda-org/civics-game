@@ -31,7 +31,7 @@ func _ready():
 	pass # Replace with function body.
 var text = ""
 func generateInfo(curAmends):
-
+	text = ""
 	for amend in curAmends:
 		text += 'Amendment ' + str(amend) + ": " + dctAmendments[amend] + "\n"+"\n"
 	$Label.text = text
