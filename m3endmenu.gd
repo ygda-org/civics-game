@@ -8,9 +8,7 @@ func _ready():
 	MainGlobals.schoolwin = true
 	get_parent().get_node("win").play()
 	$Result.bbcode_text = 	"[center] " + "Great job! You're an A+ student!" + "[/center]"	
-	GodotTTS.speak("Great job! You're an A+ student!")
-	GodotTTS.speak("Press r to restart")
-	GodotTTS.speak("Press escape to exit")
+	GodotTTS.speak("Great job! You're an A+ student! Press r to restart. Press escape to exit")
 		
 func _input(event):
 	if Input.is_action_pressed("restart"):
