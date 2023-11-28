@@ -980,7 +980,7 @@ z_index = 1
 position = Vector2( -620, -167 )
 rotation = 3.14159
 scale = Vector2( 2, -2 )
-z_index = 1
+z_index = 2
 
 [node name="Fancy Lamp" type="Node2D" parent="OverworldElements"]
 position = Vector2( 950, 157 )
