@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=2]
+[gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://NPCs/realFountainDIALOGUE.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -699,10 +699,13 @@ extents = Vector2( 15.3704, 11.4815 )
 load_path = "res://.import/school.png-c7fe976986472f04e7e63fc1eb64277c.stex"
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 131.5, 50 )
+extents = Vector2( 38, 50 )
 
 [sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 112.5, 41.5 )
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 53.6291, 44.0615 )
 
 [sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 67, 86.5 )
@@ -802,297 +805,297 @@ shape = SubResource( 8 )
 [node name="OverworldElements" type="Node2D" parent="."]
 position = Vector2( -3.05176e-05, 0 )
 
-[node name="Trees" type="Node2D" parent="OverworldElements"]
+[node name="Tree" type="Node2D" parent="OverworldElements"]
 
-[node name="Tree" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 337, 610 )
 
-[node name="Tree2" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree2" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 380, 610 )
 
-[node name="Tree3" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree3" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 423, 610 )
 
-[node name="Tree4" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree4" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 466, 610 )
 
-[node name="Tree5" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree5" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 509, 610 )
 
-[node name="Tree6" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree6" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 552, 610 )
 
-[node name="Tree7" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree7" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 595, 610 )
 
-[node name="Tree8" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree8" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 638, 610 )
 
-[node name="Tree9" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree9" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 681, 610 )
 
-[node name="Tree10" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree10" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 724, 610 )
 
-[node name="Tree11" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree11" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 767, 610 )
 
-[node name="Tree12" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree12" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 810, 610 )
 
-[node name="Tree13" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree13" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -419, 610 )
 
-[node name="Tree14" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree14" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -376, 610 )
 
-[node name="Tree15" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree15" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -333, 610 )
 
-[node name="Tree16" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree16" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -290, 610 )
 
-[node name="Tree17" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree17" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -247, 610 )
 
-[node name="Tree18" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree18" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -204, 610 )
 
-[node name="Tree19" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree19" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -161, 610 )
 
-[node name="Tree20" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree20" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -118, 610 )
 
-[node name="Tree21" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree21" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -75, 610 )
 
-[node name="Tree22" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree22" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -32, 610 )
 
-[node name="Tree23" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree23" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 11, 610 )
 
-[node name="Tree24" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree24" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 54, 610 )
 
-[node name="Tree25" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree25" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -467, -460 )
 
-[node name="Tree26" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree26" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -361, -94 )
 
-[node name="Tree27" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree27" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 534, -298 )
 
-[node name="Tree28" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree28" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 718, -469 )
 
-[node name="Tree29" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree29" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 783, -1017 )
 
-[node name="Tree30" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree30" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -456, -1030 )
 
-[node name="Tree31" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree31" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 1066, -1463 )
 
-[node name="Tree32" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree32" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 837, -1579 )
 
-[node name="Tree33" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree33" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -266, -1508 )
 
-[node name="Tree34" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree34" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -651, -1545 )
 
-[node name="Tree35" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree35" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 1186, 296 )
 
-[node name="Tree36" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree36" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 1325, 267 )
 
-[node name="Tree37" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree37" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 922, 380 )
 
-[node name="Tree38" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree38" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( 1276, 35 )
 
-[node name="Tree39" parent="OverworldElements/Trees" instance=ExtResource( 16 )]
+[node name="Tree39" parent="OverworldElements/Tree" instance=ExtResource( 16 )]
 position = Vector2( -801, 410 )
 
-[node name="Lamp1s" type="Node2D" parent="OverworldElements"]
+[node name="Hanging Lamp" type="Node2D" parent="OverworldElements"]
 
-[node name="Lamp1" parent="OverworldElements/Lamp1s" instance=ExtResource( 15 )]
+[node name="Lamp1" parent="OverworldElements/Hanging Lamp" instance=ExtResource( 15 )]
 position = Vector2( 133, 159 )
 scale = Vector2( 2, 2 )
 z_index = 1
 
-[node name="Lamp1_2" parent="OverworldElements/Lamp1s" instance=ExtResource( 15 )]
+[node name="Lamp1_2" parent="OverworldElements/Hanging Lamp" instance=ExtResource( 15 )]
 position = Vector2( 261, 159 )
 rotation = 3.14159
 scale = Vector2( 2, -2 )
 z_index = 1
 
-[node name="Lamp1_3" parent="OverworldElements/Lamp1s" instance=ExtResource( 15 )]
+[node name="Lamp1_3" parent="OverworldElements/Hanging Lamp" instance=ExtResource( 15 )]
 position = Vector2( 981, -167 )
 scale = Vector2( 2, 2 )
 z_index = 1
 
-[node name="Lamp1_4" parent="OverworldElements/Lamp1s" instance=ExtResource( 15 )]
+[node name="Lamp1_4" parent="OverworldElements/Hanging Lamp" instance=ExtResource( 15 )]
 position = Vector2( 981, -592 )
 scale = Vector2( 2, 2 )
 z_index = 1
 
-[node name="Lamp1_5" parent="OverworldElements/Lamp1s" instance=ExtResource( 15 )]
+[node name="Lamp1_5" parent="OverworldElements/Hanging Lamp" instance=ExtResource( 15 )]
 position = Vector2( 981, -816 )
 scale = Vector2( 2, 2 )
 z_index = 1
 
-[node name="Lamp1_6" parent="OverworldElements/Lamp1s" instance=ExtResource( 15 )]
+[node name="Lamp1_6" parent="OverworldElements/Hanging Lamp" instance=ExtResource( 15 )]
 position = Vector2( 981, -1163 )
 scale = Vector2( 2, 2 )
 z_index = 1
 
-[node name="Lamp1_7" parent="OverworldElements/Lamp1s" instance=ExtResource( 15 )]
+[node name="Lamp1_7" parent="OverworldElements/Hanging Lamp" instance=ExtResource( 15 )]
 position = Vector2( -620, -1163 )
 rotation = 3.14159
 scale = Vector2( 2, -2 )
 z_index = 1
 
-[node name="Lamp1_8" parent="OverworldElements/Lamp1s" instance=ExtResource( 15 )]
+[node name="Lamp1_8" parent="OverworldElements/Hanging Lamp" instance=ExtResource( 15 )]
 position = Vector2( -620, -816 )
 rotation = 3.14159
 scale = Vector2( 2, -2 )
 z_index = 1
 
-[node name="Lamp1_9" parent="OverworldElements/Lamp1s" instance=ExtResource( 15 )]
+[node name="Lamp1_9" parent="OverworldElements/Hanging Lamp" instance=ExtResource( 15 )]
 position = Vector2( -620, -592 )
 rotation = 3.14159
 scale = Vector2( 2, -2 )
 z_index = 1
 
-[node name="Lamp1_10" parent="OverworldElements/Lamp1s" instance=ExtResource( 15 )]
+[node name="Lamp1_10" parent="OverworldElements/Hanging Lamp" instance=ExtResource( 15 )]
 position = Vector2( -620, -167 )
 rotation = 3.14159
 scale = Vector2( 2, -2 )
 z_index = 1
 
-[node name="Lamp2s" type="Node2D" parent="OverworldElements"]
+[node name="Fancy Lamp" type="Node2D" parent="OverworldElements"]
 position = Vector2( 950, 157 )
 scale = Vector2( 2, 2.5 )
 
-[node name="Lamp2" parent="OverworldElements/Lamp2s" instance=ExtResource( 12 )]
+[node name="Lamp2" parent="OverworldElements/Fancy Lamp" instance=ExtResource( 12 )]
 scale = Vector2( 1, 1 )
 
-[node name="Lamp2_2" parent="OverworldElements/Lamp2s" instance=ExtResource( 12 )]
+[node name="Lamp2_2" parent="OverworldElements/Fancy Lamp" instance=ExtResource( 12 )]
 position = Vector2( -587, -224.8 )
 scale = Vector2( 1, 1 )
 
-[node name="Lamp2_3" parent="OverworldElements/Lamp2s" instance=ExtResource( 12 )]
+[node name="Lamp2_3" parent="OverworldElements/Fancy Lamp" instance=ExtResource( 12 )]
 position = Vector2( -587, -490.4 )
 scale = Vector2( 1, 1 )
 
-[node name="Lamp2_4" parent="OverworldElements/Lamp2s" instance=ExtResource( 12 )]
+[node name="Lamp2_4" parent="OverworldElements/Fancy Lamp" instance=ExtResource( 12 )]
 position = Vector2( -165, -490.4 )
 scale = Vector2( 1, 1 )
 
-[node name="Lamp2_5" parent="OverworldElements/Lamp2s" instance=ExtResource( 12 )]
+[node name="Lamp2_5" parent="OverworldElements/Fancy Lamp" instance=ExtResource( 12 )]
 position = Vector2( -165, -224.8 )
 scale = Vector2( 1, 1 )
 
-[node name="Lamp3s" type="Node2D" parent="OverworldElements"]
+[node name="Two-Faced Lamp" type="Node2D" parent="OverworldElements"]
 
-[node name="Lamp3" parent="OverworldElements/Lamp3s" instance=ExtResource( 13 )]
+[node name="Lamp3" parent="OverworldElements/Two-Faced Lamp" instance=ExtResource( 13 )]
 position = Vector2( 261, -1239 )
 scale = Vector2( 2, 2 )
 
-[node name="Lamp3_1" parent="OverworldElements/Lamp3s" instance=ExtResource( 13 )]
+[node name="Lamp3_1" parent="OverworldElements/Two-Faced Lamp" instance=ExtResource( 13 )]
 position = Vector2( 133, -1239 )
 scale = Vector2( 2, 2 )
 
-[node name="Lamp3_2" parent="OverworldElements/Lamp3s" instance=ExtResource( 13 )]
+[node name="Lamp3_2" parent="OverworldElements/Two-Faced Lamp" instance=ExtResource( 13 )]
 position = Vector2( -139, -1425 )
 scale = Vector2( 2, 2 )
 
-[node name="Lamp3_3" parent="OverworldElements/Lamp3s" instance=ExtResource( 13 )]
+[node name="Lamp3_3" parent="OverworldElements/Two-Faced Lamp" instance=ExtResource( 13 )]
 position = Vector2( 542, -1425 )
 scale = Vector2( 2, 2 )
 
-[node name="FireHydrants" type="Node2D" parent="OverworldElements"]
+[node name="Fire Hydrant" type="Node2D" parent="OverworldElements"]
 
-[node name="FireHydrant" parent="OverworldElements/FireHydrants" instance=ExtResource( 14 )]
+[node name="FireHydrant" parent="OverworldElements/Fire Hydrant" instance=ExtResource( 14 )]
 position = Vector2( -119, 187 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="FireHydrant2" parent="OverworldElements/FireHydrants" instance=ExtResource( 14 )]
+[node name="FireHydrant2" parent="OverworldElements/Fire Hydrant" instance=ExtResource( 14 )]
 position = Vector2( 823, -758 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="FireHydrant3" parent="OverworldElements/FireHydrants" instance=ExtResource( 14 )]
+[node name="FireHydrant3" parent="OverworldElements/Fire Hydrant" instance=ExtResource( 14 )]
 position = Vector2( -678, -1398 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="House1s" type="Node2D" parent="OverworldElements"]
+[node name="House" type="Node2D" parent="OverworldElements"]
 
-[node name="House1" parent="OverworldElements/House1s" instance=ExtResource( 11 )]
+[node name="House1" parent="OverworldElements/House" instance=ExtResource( 11 )]
 position = Vector2( -552, 576 )
 scale = Vector2( 5, 5 )
 script = ExtResource( 17 )
 
-[node name="House2" parent="OverworldElements/House1s" instance=ExtResource( 11 )]
+[node name="House2" parent="OverworldElements/House" instance=ExtResource( 11 )]
 position = Vector2( -763, 576 )
 scale = Vector2( 5, 5 )
 script = ExtResource( 17 )
 
-[node name="House3" parent="OverworldElements/House1s" instance=ExtResource( 11 )]
+[node name="House3" parent="OverworldElements/House" instance=ExtResource( 11 )]
 position = Vector2( -972, 576 )
 scale = Vector2( 5, 5 )
 script = ExtResource( 17 )
 
-[node name="House4" parent="OverworldElements/House1s" instance=ExtResource( 11 )]
+[node name="House4" parent="OverworldElements/House" instance=ExtResource( 11 )]
 position = Vector2( 1357, 575 )
 scale = Vector2( 5, 5 )
 script = ExtResource( 17 )
 
-[node name="House5" parent="OverworldElements/House1s" instance=ExtResource( 11 )]
+[node name="House5" parent="OverworldElements/House" instance=ExtResource( 11 )]
 position = Vector2( 1146, 575 )
 scale = Vector2( 5, 5 )
 script = ExtResource( 17 )
 
-[node name="House6" parent="OverworldElements/House1s" instance=ExtResource( 11 )]
+[node name="House6" parent="OverworldElements/House" instance=ExtResource( 11 )]
 position = Vector2( 937, 575 )
 scale = Vector2( 5, 5 )
 script = ExtResource( 17 )
 
-[node name="BenchFronts" type="Node2D" parent="OverworldElements"]
+[node name="Front-Facing Bench" type="Node2D" parent="OverworldElements"]
 position = Vector2( 6.00003, 188 )
 scale = Vector2( 2, 2 )
 
-[node name="BenchFront" parent="OverworldElements/BenchFronts" instance=ExtResource( 18 )]
+[node name="BenchFront" parent="OverworldElements/Front-Facing Bench" instance=ExtResource( 18 )]
 position = Vector2( 190.5, -1 )
 
-[node name="BenchFront2" parent="OverworldElements/BenchFronts" instance=ExtResource( 18 )]
+[node name="BenchFront2" parent="OverworldElements/Front-Facing Bench" instance=ExtResource( 18 )]
 position = Vector2( 500, 0.5 )
 
-[node name="BenchFront3" parent="OverworldElements/BenchFronts" instance=ExtResource( 18 )]
+[node name="BenchFront3" parent="OverworldElements/Front-Facing Bench" instance=ExtResource( 18 )]
 position = Vector2( 239, -794.5 )
 z_index = 2
 
-[node name="BenchFront4" parent="OverworldElements/BenchFronts" instance=ExtResource( 18 )]
+[node name="BenchFront4" parent="OverworldElements/Front-Facing Bench" instance=ExtResource( 18 )]
 position = Vector2( -41, -795 )
 z_index = 2
 
-[node name="BenchFront5" parent="OverworldElements/BenchFronts" instance=ExtResource( 18 )]
+[node name="BenchFront5" parent="OverworldElements/Front-Facing Bench" instance=ExtResource( 18 )]
 position = Vector2( 441.5, -471.5 )
 
-[node name="BenchSides" type="Node2D" parent="OverworldElements"]
+[node name="Side-Facing Bench" type="Node2D" parent="OverworldElements"]
 position = Vector2( -606, -161 )
 scale = Vector2( 2, 2 )
 
-[node name="BenchSide" parent="OverworldElements/BenchSides" instance=ExtResource( 19 )]
+[node name="BenchSide" parent="OverworldElements/Side-Facing Bench" instance=ExtResource( 19 )]
 
-[node name="BenchSide2" parent="OverworldElements/BenchSides" instance=ExtResource( 19 )]
+[node name="BenchSide2" parent="OverworldElements/Side-Facing Bench" instance=ExtResource( 19 )]
 position = Vector2( 786, -458.5 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
@@ -1189,7 +1192,7 @@ z_index = 2
 texture = SubResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="School"]
-position = Vector2( -1.5, 113 )
+position = Vector2( -1, 113 )
 shape = SubResource( 13 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="School"]
@@ -1197,6 +1200,28 @@ shape = SubResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="School/StaticBody2D"]
 position = Vector2( -1.5, 22.5 )
 shape = SubResource( 25 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="School/StaticBody2D"]
+position = Vector2( -68.626, 43.4694 )
+rotation = 0.428903
+shape = SubResource( 39 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="School/StaticBody2D"]
+position = Vector2( 65, 48 )
+rotation = -0.490368
+shape = SubResource( 39 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="School/StaticBody2D"]
+position = Vector2( -80.5939, 105.869 )
+rotation = 0.0233893
+scale = Vector2( 1, 1 )
+shape = SubResource( 39 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="School/StaticBody2D"]
+position = Vector2( 73, 102 )
+rotation = 0.0233893
+scale = Vector2( 1, 1 )
+shape = SubResource( 39 )
 
 [node name="schoolTop" type="Area2D" parent="School"]
 z_index = 2
@@ -1240,150 +1265,150 @@ texture = SubResource( 35 )
 
 [node name="NPCs" type="Node2D" parent="."]
 
-[node name="BaseNPC" parent="NPCs" instance=ExtResource( 22 )]
+[node name="LITTLE KID" parent="NPCs" instance=ExtResource( 22 )]
 position = Vector2( 724, -75 )
 scale = Vector2( 1.2, 1.2 )
 LINES = "LITTLE KID: HEY, WANNA HEAR ABOUT THE REVOLUTIONARY WAR?!*YOU: Uh, no not really-*LITTLE KID: IN THE 1770'S AFTER THE 7 YEAR'S WAR, THE BRITISH WERE IN DEBT!*LITTLE KID: SO THEY PUT A BUNCH OF HEAVY TAXES ON THE 13 AMERICAN COLONIES, LIKE...*LITTLE KID: ...THE SUGAR, STAMP, AND TEA ACTS!!*LITTLE KID: SO AMERICA GOT MAD AND DECLARED WAR ON BRITAIN-*LITTLE KID: WITH THE DECLARATION OF INDEPENDENCE IN 1776!!!!!!!*LITTLE KID: AFTER THE WAR, THE CONSTITUTION WAS WRITTEN TO DICTATE HOW TO GOVERN THE NEW COUNTRY!*LITTLE KID: BUT AMERICANS WERE AFRAID THAT IT WOULD GIVE TOO MUCH POWER TO THE CENTRAL GOVERNMENT...*LITTLE KID: SO THE BILL OF RIGHTS WAS ADDED TO PROTECT THE CITIZENS' NATURAL RIGHTS!!!*YOU: Oh...cool...haha."
 
-[node name="CrowdWomanNPC" parent="NPCs" instance=ExtResource( 27 )]
+[node name="WOMAN IN CROWD" parent="NPCs" instance=ExtResource( 27 )]
 position = Vector2( -46, -798 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "WOMAN IN CROWD: Are you going to vote Jeffrey Thomas this year?"
 
-[node name="jessicaNPC" parent="NPCs" instance=ExtResource( 26 )]
+[node name="JESS" parent="NPCs" instance=ExtResource( 26 )]
 position = Vector2( -9, -812 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "JESS: I like what Johnson is saying about school reforms,* JESS: But I'm afraid he might be biting off more than he can chew with what he's proposing..."
 
-[node name="Judge" parent="NPCs" instance=ExtResource( 28 )]
+[node name="JUDGE" parent="NPCs" instance=ExtResource( 28 )]
 position = Vector2( 65, -1394 )
 scale = Vector2( 1.5, 1.5 )
 z_index = 1
 LINES = "YOU: Am you a judge?*JUDGE: Yes, I'm here to preside over court proceedings.*JUDGE: All trials will be heard by me today."
 
-[node name="miku" parent="NPCs" instance=ExtResource( 29 )]
+[node name="MIKA" parent="NPCs" instance=ExtResource( 29 )]
 position = Vector2( -252, -1414 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "YOU: Are you here for a trial?* MIKA: I plead the 5th!*YOU: Huh?*MIKA: I have the right to remain silent!*MIKA: I do not have to incriminate myself by speaking to you!*YOU: Okay..."
 
-[node name="raymondNPC" parent="NPCs" instance=ExtResource( 30 )]
+[node name="RAY" parent="NPCs" instance=ExtResource( 30 )]
 position = Vector2( 492, -1410 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "YOU: What are you doing at the courthouse?*RAY: I was summoned for jury duty, so it's my civic duty to come.*YOU: Why you?*RAY: I'm fair and impartial to the case, which makes me perfect for jury duty!"
 
-[node name="BackOldManNPC" parent="NPCs" instance=ExtResource( 25 )]
+[node name="OLD MAN IN CROWD" parent="NPCs" instance=ExtResource( 25 )]
 position = Vector2( -85, -808 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "OLD MAN IN CROWD: I'm not sure who to vote for...*OLD MAN: It's great that Mayor Thomas passed a funding bill to conserve our ponds...*OLD MAN: But we've been trying to get resources to clean public spaces for the past year now... "
 
-[node name="realFountainDIALOGUE" parent="NPCs" instance=ExtResource( 1 )]
+[node name="FOUNTAIN" parent="NPCs" instance=ExtResource( 1 )]
 position = Vector2( 196, -725 )
 scale = Vector2( 2, 2 )
 LINES = "It's the town fountain!*Water sprinkles across your face as you toss a coin in."
 
-[node name="SkipSchoolNPC" parent="NPCs" instance=ExtResource( 32 )]
+[node name="SKIPPING SCHOOL KID" parent="NPCs" instance=ExtResource( 32 )]
 position = Vector2( -636, -64 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "YOU: What are you doing back here, doesn't school start soon?*SKIPPING SCHOOL KID: I'm going to skip school and play all day!*YOU: You can't do that! The law says that it's your responsiblity as a student to attend school.*YOU: You can't just skip whenever you want.*SKIPPING SCHOOL KID: Oh... I guess I'll go to class..."
 
-[node name="FlowerpickingNPC" parent="NPCs" instance=ExtResource( 31 )]
+[node name="FLOWERPICKING GIRLS" parent="NPCs" instance=ExtResource( 31 )]
 position = Vector2( -928, 348 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "LEFT GIRL: I'm so excited for class today. We're learning about the government!*RIGHT GIRL: When I grow up, I'm going to be president!"
 
-[node name="actualOld Bench NPC" parent="NPCs" instance=ExtResource( 21 )]
+[node name="REMINISCENT MAN" parent="NPCs" instance=ExtResource( 21 )]
 position = Vector2( 1007, 183 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "REMINISCENT MAN: Why isn't anyone here at the park?*REMINISCENT MAN: It wasn't always like this! People used to come here all the time.*YOU: What happened?*REMINISCENT MAN: They never cleaned up after themselves, that's what!*REMINISCENT MAN: I'd do it myself, but these knees don't work the way they used to..."
 
-[node name="mandyNPC" parent="NPCs" instance=ExtResource( 34 )]
+[node name="AMANDA" parent="NPCs" instance=ExtResource( 34 )]
 position = Vector2( 1165, 302 )
 scale = Vector2( 1.5, 1.5 )
 z_index = 1
 LINES = "YOU: What are you thinking about?*AMANDA: Who to vote to be in the House of Representatives from our congressional district!*AMANDA: Not only do I have to think about who will represent me for the next two years,*AMANDA: I have to think about who they might elect into Senate for 6 years!*YOU: How many people do you have to vote for?*AMANDA: The Members of the House depend on a state's population,*AMANDA: But for the Senate, each state gets 2.*YOU: What do they do?*AMANDA: As a part of the legislative branch, they create laws about taxes, *AMANDA: Imports and exports, military, that sort of thing.*AMANDA: Both the Senate and the House have to approve laws for them to pass.*YOU: I should start thinking about elections too!"
 
-[node name="jimiNPC" parent="NPCs" instance=ExtResource( 36 )]
+[node name="JIM" parent="NPCs" instance=ExtResource( 36 )]
 position = Vector2( 778, -764 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "YOU: Why the sad face?*JIM: I got into a fight with my brother over the Civil War...how ironic.*YOU: Oh.*JIM: Yeah, I'm like the Confederacy splitting off from the US.*JIM: Now he's the Union all by himself back at home...*JIM: And I'm just standing here.*JIM: Defiantly.* YOU: You know how the Civil War ends, right?*JIM: I know the Union wins, but I'll get some of my friends to back me up!*YOU: Okay..."
 
-[node name="matthewNPC" parent="NPCs" instance=ExtResource( 35 )]
+[node name="MATT" parent="NPCs" instance=ExtResource( 35 )]
 position = Vector2( 343, 175 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "MATT: Argh, I don't have enough money to buy a Mika plush!*YOU: It could be worse.*MATT: Tell me about it!*MATT: If this were the Great Depression, I don't know how I could ever pay for anything.*MATT: Skyrocketing unemployment and the stock market crash in 1929...*MATT: Wow, it's crazy to think about.*YOU: Maybe you don't need a Mika plush after all.*MATT: What??? No!"
 
-[node name="blondekidNPC" parent="NPCs" instance=ExtResource( 37 )]
+[node name="LITTLE GIRL" parent="NPCs" instance=ExtResource( 37 )]
 position = Vector2( -33, -131 )
 scale = Vector2( 1.2, 1.2 )
 LINES = "LITTLE GIRL: I've learned so much about civil rights at school!*YOU: Oh, really?*LITTLE GIRL: Yes!*LITTLE GIRL: When World War 1 began for the US,*LITTLE GIRL: It started to give African Americans more civil rights in and out of the army.*LITTLE GIRL: But things really started to pick up from 1954 with the Civil Rights Movement!*LITTLE GIRL: World War 2 helped more women enter a broader workforce,*LITTLE GIRL: And people of different genders, races, and abilities...*LITTLE GIRL: ...Started to demand equal treatment and opportunities!*YOU: Wow, it's great that you know so much!*LITTLE GIRL: Ehe~"
 
-[node name="emogirlNPC" parent="NPCs" instance=ExtResource( 39 )]
+[node name="EMO GIRL" parent="NPCs" instance=ExtResource( 39 )]
 position = Vector2( -346, -366 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "EMO GIRL: Man, I was just thinking about how much people got hurt during the Civil War.*EMO GIRL: It's so terrible.*YOU: Yeah, from the first shots at Fort Sumter to the bloody Battle of Gettysburg...*YOU: This wasn't America's finest moment.*EMO GIRL: The Civil War was the deadliest in US history, and was still felt even after it ended...*EMO GIRL: ...Like with Lincoln's assassination.*YOU: At least it ended with the abolishment of slavery!*EMO GIRL: Yeah...the Civil War was a necessary step to bringing us closer to a more united nation."
 
-[node name="randommanNPC" parent="NPCs" instance=ExtResource( 40 )]
+[node name="TALL MAN" parent="NPCs" instance=ExtResource( 40 )]
 position = Vector2( -447, -897 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "YOU: There are some really big history fanatics in town...*TALL MAN: We live in Liberty Landing-*TALL MAN: Of course we know how America won its liberty!*TALL MAN: Did you know that the Revolutionary War began at the Battles of Lexington and Concord?*YOU: With the 'shot heard around the world'?*TALL MAN: Yup, and lots happened soon after...*TALL MAN: ...Such as the signing of the Declaration of Independence and the Crossing of the Delaware River!*YOU: Wow, how interesting!"
 
-[node name="randomman2NPC" parent="NPCs" instance=ExtResource( 41 )]
+[node name="WORRIED MAN" parent="NPCs" instance=ExtResource( 41 )]
 position = Vector2( 968, -471 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "YOU: Hello.*WORRIED MAN: Are you the ones who came to my house earlier?!*WORRIED MAN: Get out of here, I already told you I don't have any smuggled goods!*WORRIED MAN: I need to see a warrant before any of you search me-*WORRIED MAN: That's my 4th Amendment Right!*YOU: I'm not with the police!*WORRIED MAN: Huh? Oh, sorry...*YOU: No worries, you sure know your rights though.*WORRIED MAN: I've been a US citizen since birth- it's only right that I know my rights!"
 
-[node name="mayorNPC" parent="NPCs" instance=ExtResource( 49 )]
+[node name="MAYOR" parent="NPCs" instance=ExtResource( 49 )]
 position = Vector2( -48, -918 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "MAYOR: I pledge to dedicate my term to resolving the people's problems—*MAYOR: I will improve the conditions and accessibility of our roads, start programs in schools to financially aid the struggling families, and reduce our town's carbon footprint!*MAYOR: Reelect me and I will lead Liberty Landing into a brighter future!*MAYOR: Vote Jeffrey Thomas!"
 
-[node name="judebenchDIALOGUE" parent="NPCs" instance=ExtResource( 42 )]
+[node name="BENCH" parent="NPCs" instance=ExtResource( 42 )]
 position = Vector2( 195, -874 )
 scale = Vector2( 2, 2 )
 LINES = "BENCH: In Loving Memory of Judas Caldwell, beloved husband and wife.*YOU: Huh..."
 
-[node name="benchgirlNPC" parent="NPCs" instance=ExtResource( 38 )]
+[node name="BENCH GIRL" parent="NPCs" instance=ExtResource( 38 )]
 position = Vector2( 973, -1085 )
 scale = Vector2( 1.5, 1.5 )
 z_index = 3
 LINES = "BENCH GIRL: I wish I worked in D.C, the buildings there are so cool!*BENCH GIRL: Like the Jefferson Memorial, the Washington Monument, the White House—*BENCH GIRL: What if I just saw the President live and work there every day?*YOU: Where would you work, though?*BENCH GIRL: Ideally, somewhere on Capitol Hill.*BENCH GIRL: The Library of Congress, which is the largest library in the world...*BENCH GIRL: And Congress, which passes federal bills, are both there!"
 
-[node name="jimibenchDIALOGUE" parent="NPCs" instance=ExtResource( 43 )]
+[node name="MEMORY BENCH" parent="NPCs" instance=ExtResource( 43 )]
 position = Vector2( 559, -767 )
 scale = Vector2( 2, 2 )
 LINES = "BENCH: In Memory of James Vance, loving brother and uncle."
 
-[node name="jimibenchDIALOGUE2" parent="NPCs" instance=ExtResource( 43 )]
+[node name="MEMORY BENCHH" parent="NPCs" instance=ExtResource( 43 )]
 position = Vector2( 559, -597 )
 scale = Vector2( 2, 2 )
 LINES = "BENCH: In Memory of James Vance, loving brother and uncle."
 
-[node name="mayorsignDIALOGUE" parent="NPCs" instance=ExtResource( 51 )]
+[node name="FLYER" parent="NPCs" instance=ExtResource( 51 )]
 position = Vector2( 125, -367 )
 scale = Vector2( 2, 2 )
 LINES = "FLYER: Reelect Jefferey Thomas for a brighter Tom-orrow!"
 
-[node name="mayorsignDIALOGUE2" parent="NPCs" instance=ExtResource( 51 )]
+[node name="VOTING FLYER" parent="NPCs" instance=ExtResource( 51 )]
 position = Vector2( -221, -776 )
 scale = Vector2( 2, 2 )
 LINES = "FLYER: Vote Adam Johnson! Save education, save children, save lives."
 
-[node name="litteringsignDIALOGUE" parent="NPCs" instance=ExtResource( 52 )]
+[node name="NO LITTERING SIGN" parent="NPCs" instance=ExtResource( 52 )]
 position = Vector2( 1141, 26 )
 scale = Vector2( 2, 2 )
 LINES = "SIGN: No Littering."
 
-[node name="mayorsignDIALOGUE3" parent="NPCs" instance=ExtResource( 51 )]
+[node name="SCHOOL FLYER" parent="NPCs" instance=ExtResource( 51 )]
 position = Vector2( -573, 268 )
 scale = Vector2( 2, 2 )
 LINES = "FLYER: Liberty Landing Elementary - Home of the Eagles!*FLYER: Come join us on April 14 for the Spring Sock Hop!"
 
-[node name="flyermanNPC" parent="NPCs" instance=ExtResource( 53 )]
+[node name="FLYER MAN" parent="NPCs" instance=ExtResource( 53 )]
 position = Vector2( 494, -506 )
 scale = Vector2( 1.5, 1.5 )
 LINES = "YOU: What are you doing?*FLYER MAN: I'm trying to raise awareness about issues in town, like the littering problem in the park, the upcoming election, or all the youths skipping school nowadays.*YOU: Is it working?*FLYER MAN: No... people keep ignoring me and I'm too scared to ask them to take flyers...*YOU: I'll take some!"
 
-[node name="noskipschoolDIALOGUE" parent="NPCs" instance=ExtResource( 54 )]
+[node name="NO SKIPPING SCHOOL SIGN" parent="NPCs" instance=ExtResource( 54 )]
 position = Vector2( -397, 166 )
 scale = Vector2( 2, 2 )
 LINES = "SIGN: The Dangers of Ditching School"
