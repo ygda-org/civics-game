@@ -12,7 +12,7 @@ var sfx_manager = sfx_manager_scene.instance()
 var masterLst = [
 	{"Name": "Joshua Cavin",
 	"Age": "32",
-	"Case": "Last Thursday, two police officers were in Mr. Calvin’s neighborhood and saw the suncatchers on his upstairs windows and suspected that he was partaking in illicit substances. When they were at his door, Mr. Calvin resisted the police officers and was arrested for not cooperating. He then refused to pay the $2,000,000 fine that he received and was charged with further punishment.",
+	"Case": "Last Thursday, two police officers were in Mr. Cavin’s neighborhood and saw the suncatchers on his upstairs windows and suspected that he was partaking in illicit substances. When they were at his door, Mr. Cavin resisted the police officers and was arrested for not cooperating. He then refused to pay the $2,000,000 fine that he received and was charged with further punishment.",
 	"Verdict": "Not Guilty",
 	"Support": [4, 8]
 	},
@@ -71,6 +71,9 @@ func solve_case():
 			sfx_manager.play_sfx("courtroom_gavel")
 	get_node("docTableOpen/HBoxContainer/case_folder" + str(caseNum) +"/unsolved").visible = false
 	get_node("docTableOpen/Label").text = ""
+	get_node("juryTableOpen/Chosen").text = ""
+	get_node("juryTableOpen").chosen = [0,0]
+	get_node("juryTableOpen").chosen_i = 0
 	if caseSolved == false:
 		NumSolved += 1
 	if(NumSolved == 3):

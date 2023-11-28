@@ -135,3 +135,4 @@ margin_bottom = -20.0
 custom_fonts/font = SubResource( 4 )
 align = 1
 valign = 1
+autowrap = true

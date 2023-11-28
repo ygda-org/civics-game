@@ -72,7 +72,8 @@ func display_chosen(AmendNum):
 	var text = "You Have Selected Amendment " + str(chosen[0])
 	if chosen[1] > 0:
 		text += " And Amendment " + str(chosen[1])
-	$Chosen.text = text + "\n" + "Press Y to confirm. Otherwise press a different number to make changes" 
+		text += "\n" + "Press Y to confirm. Otherwise press a different number to change Amendments" 
+	$Chosen.text = text
 	GodotTTS.speak(text + ". Press i to view more info. Press y to confirm.")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
