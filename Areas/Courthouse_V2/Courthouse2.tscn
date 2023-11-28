@@ -20,7 +20,6 @@
 
 [sub_resource type="Environment" id=13]
 background_mode = 4
-background_canvas_max_layer = 10
 adjustment_enabled = true
 
 [sub_resource type="RectangleShape2D" id=1]
